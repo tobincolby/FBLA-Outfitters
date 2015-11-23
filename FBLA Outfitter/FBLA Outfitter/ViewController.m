@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     //hey ryan this is a test!!
+    //Alright bro, that is cool, Bet 50 cash bet bet!!! bet!
 }
 
 - (void)didReceiveMemoryWarning {
