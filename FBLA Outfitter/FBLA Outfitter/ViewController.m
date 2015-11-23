@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SWRevealViewController.h"
+
 
 @interface ViewController ()
 
@@ -17,9 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _barButton.target = self.revealViewController;
+    _barButton.action = @selector(revealToggle:);
     
-    //hey ryan this is a test!!
-    //Alright bro, that is cool, Bet 50 cash bet bet!!! bet!
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
