@@ -24,6 +24,10 @@
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
+    UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2, 50, 20)];
+    label.text = @"HIIII";
+    
+    [self.view addSubview:label];
     
 }
 
