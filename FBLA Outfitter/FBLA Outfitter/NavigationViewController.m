@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    menu = @[@"tab1", @"tab2", @"tab3"];
+    menu = @[@"tab1", @"tab2", @"tab3",@"tab4"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,6 +30,13 @@
 
 #pragma mark - Table view data source
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.row == 3){
+        [self performSegueWithIdentifier:@"logout" sender:self];
+    }
+    
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     // Return the number of sections.

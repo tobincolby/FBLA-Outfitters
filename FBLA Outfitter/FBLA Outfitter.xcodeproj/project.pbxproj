@@ -16,6 +16,7 @@
 		EEAFB9E81BDD883D00AFF6C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAFB9E71BDD883D00AFF6C9 /* Images.xcassets */; };
 		EEAFB9EB1BDD883D00AFF6C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAFB9E91BDD883D00AFF6C9 /* LaunchScreen.xib */; };
 		EEAFB9F71BDD883D00AFF6C9 /* FBLA_OutfitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9F61BDD883D00AFF6C9 /* FBLA_OutfitterTests.m */; };
+		EEC893741C120F680067C65D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC893731C120F680067C65D /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		EEAFB9F01BDD883D00AFF6C9 /* FBLA OutfitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FBLA OutfitterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAFB9F51BDD883D00AFF6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAFB9F61BDD883D00AFF6C9 /* FBLA_OutfitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBLA_OutfitterTests.m; sourceTree = "<group>"; };
+		EEC893721C120F670067C65D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EEC893731C120F680067C65D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 			children = (
 				EEAFB9DE1BDD883C00AFF6C9 /* AppDelegate.h */,
 				EEAFB9DF1BDD883C00AFF6C9 /* AppDelegate.m */,
+				EEC893721C120F670067C65D /* LoginViewController.h */,
+				EEC893731C120F680067C65D /* LoginViewController.m */,
 				EEAFB9E11BDD883C00AFF6C9 /* ViewController.h */,
 				EEAFB9E21BDD883C00AFF6C9 /* ViewController.m */,
 				94BC0D7D1C038962004A5D62 /* NavigationViewController.h */,
@@ -239,6 +244,7 @@
 			files = (
 				EEAFB9E31BDD883C00AFF6C9 /* ViewController.m in Sources */,
 				EEAFB9E01BDD883C00AFF6C9 /* AppDelegate.m in Sources */,
+				EEC893741C120F680067C65D /* LoginViewController.m in Sources */,
 				94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */,
 				EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */,
 				94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */,
