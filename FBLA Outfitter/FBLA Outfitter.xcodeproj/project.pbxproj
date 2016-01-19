@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */; };
 		94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7E1C038962004A5D62 /* NavigationViewController.m */; };
+		EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */; };
+		EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9EC1C4DE07000A03B2D /* UploadOutfitViewController.m */; };
 		EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9DC1BDD883C00AFF6C9 /* main.m */; };
 		EEAFB9E01BDD883C00AFF6C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9DF1BDD883C00AFF6C9 /* AppDelegate.m */; };
 		EEAFB9E31BDD883C00AFF6C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9E21BDD883C00AFF6C9 /* ViewController.m */; };
@@ -34,6 +36,10 @@
 		94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		94BC0D7D1C038962004A5D62 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		94BC0D7E1C038962004A5D62 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		EE53B9E61C4DDFF700A03B2D /* ViewMyOutfitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewMyOutfitsViewController.h; sourceTree = "<group>"; };
+		EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewMyOutfitsViewController.m; sourceTree = "<group>"; };
+		EE53B9EB1C4DE07000A03B2D /* UploadOutfitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadOutfitViewController.h; sourceTree = "<group>"; };
+		EE53B9EC1C4DE07000A03B2D /* UploadOutfitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadOutfitViewController.m; sourceTree = "<group>"; };
 		EEAFB9D71BDD883C00AFF6C9 /* FBLA Outfitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FBLA Outfitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAFB9DB1BDD883C00AFF6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAFB9DC1BDD883C00AFF6C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,6 +84,24 @@
 			path = SlideOutMenuFiles;
 			sourceTree = "<group>";
 		};
+		EE53B9E91C4DE04200A03B2D /* viewmyoutfits */ = {
+			isa = PBXGroup;
+			children = (
+				EE53B9E61C4DDFF700A03B2D /* ViewMyOutfitsViewController.h */,
+				EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */,
+			);
+			name = viewmyoutfits;
+			sourceTree = "<group>";
+		};
+		EE53B9EA1C4DE05C00A03B2D /* uploadoufit */ = {
+			isa = PBXGroup;
+			children = (
+				EE53B9EB1C4DE07000A03B2D /* UploadOutfitViewController.h */,
+				EE53B9EC1C4DE07000A03B2D /* UploadOutfitViewController.m */,
+			);
+			name = uploadoufit;
+			sourceTree = "<group>";
+		};
 		EEAFB9CE1BDD883C00AFF6C9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +123,8 @@
 		EEAFB9D91BDD883C00AFF6C9 /* FBLA Outfitter */ = {
 			isa = PBXGroup;
 			children = (
+				EE53B9EA1C4DE05C00A03B2D /* uploadoufit */,
+				EE53B9E91C4DE04200A03B2D /* viewmyoutfits */,
 				EEAFB9DE1BDD883C00AFF6C9 /* AppDelegate.h */,
 				EEAFB9DF1BDD883C00AFF6C9 /* AppDelegate.m */,
 				EEC893721C120F670067C65D /* LoginViewController.h */,
@@ -244,9 +270,11 @@
 			files = (
 				EEAFB9E31BDD883C00AFF6C9 /* ViewController.m in Sources */,
 				EEAFB9E01BDD883C00AFF6C9 /* AppDelegate.m in Sources */,
+				EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */,
 				EEC893741C120F680067C65D /* LoginViewController.m in Sources */,
 				94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */,
 				EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */,
+				EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */,
 				94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
