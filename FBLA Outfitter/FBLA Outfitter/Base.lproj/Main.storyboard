@@ -27,30 +27,99 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-dA-Kpf">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-dA-Kpf">
                                 <rect key="frame" x="159" y="260" width="56" height="22"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5IJ-G5-16V" kind="presentation" id="WOC-fm-bgp"/>
+                                    <segue destination="5IJ-G5-16V" kind="presentation" id="NWq-de-IiC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-Bo-1HN">
+                                <rect key="frame" x="140" y="319" width="94" height="30"/>
+                                <state key="normal" title="Register Here"/>
+                                <connections>
+                                    <action selector="addRegisterStuff:" destination="lFU-rX-ILC" eventType="touchUpInside" id="QXa-LW-RuK"/>
+                                </connections>
+                            </button>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7K-LV-vVs">
+                                <rect key="frame" x="20" y="122" width="316" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Qh-Fe-jHU">
+                                <rect key="frame" x="20" y="160" width="316" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVr-O7-fPf">
+                                <rect key="frame" x="20" y="198" width="316" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5Z-N4-lXP">
+                                <rect key="frame" x="20" y="236" width="316" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdj-XS-1Ft">
+                                <rect key="frame" x="20" y="274" width="316" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rpn-qh-LKm">
+                                <rect key="frame" x="20" y="312" width="316" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <navigationBar hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Of1-yF-5WF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="FBLA Outfitters" id="aOx-hU-DO7">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Vz9-m1-lDp">
+                                            <connections>
+                                                <action selector="addLoginStuff:" destination="lFU-rX-ILC" id="aeV-O6-IOG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dds-DP-Hcs">
+                                <rect key="frame" x="279" y="379" width="57" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="submitRegistration:" destination="lFU-rX-ILC" eventType="touchUpInside" id="GQY-dP-dxn"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JDo-dA-Kpf" firstAttribute="centerY" secondItem="6jW-Ax-L5i" secondAttribute="centerY" id="Vx4-L8-HaH"/>
                             <constraint firstItem="YNd-pS-Lj9" firstAttribute="centerX" secondItem="6jW-Ax-L5i" secondAttribute="centerX" id="epU-D0-hCz"/>
                             <constraint firstItem="JDo-dA-Kpf" firstAttribute="centerX" secondItem="6jW-Ax-L5i" secondAttribute="centerX" id="f6u-RD-6iu"/>
                             <constraint firstItem="G7h-LO-Yh4" firstAttribute="centerX" secondItem="6jW-Ax-L5i" secondAttribute="centerX" id="jyj-ej-jfe"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="confirmpassRegister" destination="rpn-qh-LKm" id="NkX-pR-Gy6"/>
+                        <outlet property="email" destination="AVr-O7-fPf" id="Z9g-bQ-OJZ"/>
+                        <outlet property="firstname" destination="Y7K-LV-vVs" id="3MT-eE-b9B"/>
+                        <outlet property="lastname" destination="3Qh-Fe-jHU" id="VMn-zD-ub7"/>
+                        <outlet property="loginButton" destination="JDo-dA-Kpf" id="hbM-S0-Knw"/>
+                        <outlet property="navbar" destination="Of1-yF-5WF" id="atc-3w-IbB"/>
+                        <outlet property="passwordLogin" destination="G7h-LO-Yh4" id="LIq-Ue-cR3"/>
+                        <outlet property="passwordRegister" destination="xdj-XS-1Ft" id="2Nv-yq-IOc"/>
+                        <outlet property="registerSubmit" destination="dds-DP-Hcs" id="loO-CF-vlj"/>
+                        <outlet property="registerhere" destination="rpn-qh-LKm" id="tRN-Zj-YPj"/>
+                        <outlet property="usernameLogin" destination="YNd-pS-Lj9" id="iVY-Hr-QG3"/>
+                        <outlet property="usernameRegister" destination="J5Z-N4-lXP" id="tRg-7r-DdD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVb-jn-gJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-428" y="-669"/>
+            <point key="canvasLocation" x="-984.5" y="-645.5"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="rm4-to-qJf">

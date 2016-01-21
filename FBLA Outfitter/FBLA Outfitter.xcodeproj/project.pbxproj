@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */; };
 		94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7E1C038962004A5D62 /* NavigationViewController.m */; };
+		EE1FDFEC1C50779400487D2A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1FDFEB1C50779400487D2A /* RegisterViewController.m */; };
 		EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */; };
 		EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9EC1C4DE07000A03B2D /* UploadOutfitViewController.m */; };
 		EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9DC1BDD883C00AFF6C9 /* main.m */; };
@@ -36,6 +37,8 @@
 		94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		94BC0D7D1C038962004A5D62 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		94BC0D7E1C038962004A5D62 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		EE1FDFEA1C50779400487D2A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		EE1FDFEB1C50779400487D2A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		EE53B9E61C4DDFF700A03B2D /* ViewMyOutfitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewMyOutfitsViewController.h; sourceTree = "<group>"; };
 		EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewMyOutfitsViewController.m; sourceTree = "<group>"; };
 		EE53B9EB1C4DE07000A03B2D /* UploadOutfitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadOutfitViewController.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				EEAFB9E71BDD883D00AFF6C9 /* Images.xcassets */,
 				EEAFB9E91BDD883D00AFF6C9 /* LaunchScreen.xib */,
 				EEAFB9DA1BDD883C00AFF6C9 /* Supporting Files */,
+				EE1FDFEA1C50779400487D2A /* RegisterViewController.h */,
+				EE1FDFEB1C50779400487D2A /* RegisterViewController.m */,
 			);
 			path = "FBLA Outfitter";
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				EEAFB9E01BDD883C00AFF6C9 /* AppDelegate.m in Sources */,
 				EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */,
 				EEC893741C120F680067C65D /* LoginViewController.m in Sources */,
+				EE1FDFEC1C50779400487D2A /* RegisterViewController.m in Sources */,
 				94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */,
 				EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */,
 				EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */,
