@@ -32,7 +32,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 3){
+    if (indexPath.row == 4){
         [self performSegueWithIdentifier:@"logout" sender:self];
     }
     
