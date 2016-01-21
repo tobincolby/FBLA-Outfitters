@@ -105,7 +105,25 @@
  }
  */
 - (IBAction)submitRegistration:(id)sender {
+    if([[self.passwordRegister text] isEqualToString:[self.confirmpassRegister text]]){
+        if(![[self.passwordRegister text] isEqualToString:@""] && ![[self.firstname text] isEqualToString:@""] && ![[self.lastname text]isEqualToString:@""] && ![[self.email text]isEqualToString:@""] && ![[self.usernameRegister text] isEqualToString:@""]){
     [self submitData];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Registration Error"
+                                                           message: @"You must fill out all parts of this form!"
+                                                          delegate: self
+                                                 cancelButtonTitle:@"Dismiss"
+                                                 otherButtonTitles:nil];
+            [alert show];
+        }
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Registration Error"
+                                                       message: @"Your passwords do not match!"
+                                                      delegate: self
+                                             cancelButtonTitle:@"Dismiss"
+                                             otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 
