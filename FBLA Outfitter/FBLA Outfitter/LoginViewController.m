@@ -32,6 +32,8 @@
     self.passwordLogin.hidden = YES;
     self.loginButton.hidden = YES;
     self.registerhere.hidden = YES;
+    self.logo.hidden = YES;
+    self.titleLabel.hidden = YES;
     
     self.firstname.hidden = NO;
     self.lastname.hidden = NO;
@@ -55,6 +57,8 @@
     self.passwordLogin.hidden = NO;
     self.loginButton.hidden = NO;
     self.registerhere.hidden = NO;
+    self.logo.hidden = NO;
+    self.titleLabel.hidden = NO;
     
     self.firstname.hidden = YES;
     self.lastname.hidden = YES;

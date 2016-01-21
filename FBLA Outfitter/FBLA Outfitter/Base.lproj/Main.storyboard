@@ -17,33 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7h-LO-Yh4">
-                                <rect key="frame" x="91" y="222" width="193" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-pS-Lj9">
-                                <rect key="frame" x="91" y="184" width="193" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-dA-Kpf">
-                                <rect key="frame" x="159" y="260" width="56" height="22"/>
-                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="5IJ-G5-16V" kind="presentation" id="NWq-de-IiC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-Bo-1HN">
-                                <rect key="frame" x="140" y="319" width="94" height="30"/>
-                                <state key="normal" title="Register Here"/>
-                                <connections>
-                                    <action selector="addRegisterStuff:" destination="lFU-rX-ILC" eventType="touchUpInside" id="QXa-LW-RuK"/>
-                                </connections>
-                            </button>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7K-LV-vVs">
                                 <rect key="frame" x="20" y="122" width="316" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -79,6 +52,7 @@
                                 <items>
                                     <navigationItem title="FBLA Outfitters" id="aOx-hU-DO7">
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Vz9-m1-lDp">
+                                            <color key="tintColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="addLoginStuff:" destination="lFU-rX-ILC" id="aeV-O6-IOG"/>
                                             </connections>
@@ -88,16 +62,56 @@
                             </navigationBar>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dds-DP-Hcs">
                                 <rect key="frame" x="279" y="379" width="57" height="30"/>
-                                <state key="normal" title="Register"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="submitRegistration:" destination="lFU-rX-ILC" eventType="touchUpInside" id="GQY-dP-dxn"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-pS-Lj9">
+                                <rect key="frame" x="78" y="312" width="218" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7h-LO-Yh4">
+                                <rect key="frame" x="78" y="350" width="218" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-dA-Kpf">
+                                <rect key="frame" x="240" y="383" width="56" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5IJ-G5-16V" kind="presentation" id="NWq-de-IiC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-Bo-1HN">
+                                <rect key="frame" x="78" y="379" width="94" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Register Here">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addRegisterStuff:" destination="lFU-rX-ILC" eventType="touchUpInside" id="QXa-LW-RuK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="f4f-9P-mEh">
+                                <rect key="frame" x="112" y="138" width="150" height="150"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FBLA Outfitters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ3-1e-T9e">
+                                <rect key="frame" x="101" y="93" width="172" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YNd-pS-Lj9" firstAttribute="centerX" secondItem="6jW-Ax-L5i" secondAttribute="centerX" id="epU-D0-hCz"/>
-                            <constraint firstItem="JDo-dA-Kpf" firstAttribute="centerX" secondItem="6jW-Ax-L5i" secondAttribute="centerX" id="f6u-RD-6iu"/>
                             <constraint firstItem="G7h-LO-Yh4" firstAttribute="centerX" secondItem="6jW-Ax-L5i" secondAttribute="centerX" id="jyj-ej-jfe"/>
                         </constraints>
                     </view>
@@ -108,11 +122,13 @@
                         <outlet property="firstname" destination="Y7K-LV-vVs" id="3MT-eE-b9B"/>
                         <outlet property="lastname" destination="3Qh-Fe-jHU" id="VMn-zD-ub7"/>
                         <outlet property="loginButton" destination="JDo-dA-Kpf" id="hbM-S0-Knw"/>
+                        <outlet property="logo" destination="f4f-9P-mEh" id="Wzp-RM-G9Q"/>
                         <outlet property="navbar" destination="Of1-yF-5WF" id="atc-3w-IbB"/>
                         <outlet property="passwordLogin" destination="G7h-LO-Yh4" id="LIq-Ue-cR3"/>
                         <outlet property="passwordRegister" destination="xdj-XS-1Ft" id="2Nv-yq-IOc"/>
                         <outlet property="registerSubmit" destination="dds-DP-Hcs" id="loO-CF-vlj"/>
-                        <outlet property="registerhere" destination="rpn-qh-LKm" id="tRN-Zj-YPj"/>
+                        <outlet property="registerhere" destination="BeK-Bo-1HN" id="zxY-5G-pBw"/>
+                        <outlet property="titleLabel" destination="uJ3-1e-T9e" id="aTM-jt-KYh"/>
                         <outlet property="usernameLogin" destination="YNd-pS-Lj9" id="iVY-Hr-QG3"/>
                         <outlet property="usernameRegister" destination="J5Z-N4-lXP" id="tRg-7r-DdD"/>
                     </connections>
@@ -153,8 +169,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.17614215350000001" green="0.17614215350000001" blue="0.17614215350000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tab1" textLabel="F97-VW-PQw" style="IBUITableViewCellStyleDefault" id="Jqq-59-eTf">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="title" textLabel="VpK-BL-qSX" style="IBUITableViewCellStyleDefault" id="n7o-nL-Vew">
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n7o-nL-Vew" id="pwI-5X-XgZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="FBLA Outfitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VpK-BL-qSX">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.17614215350000001" green="0.17614215350000001" blue="0.17614215350000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tab1" textLabel="F97-VW-PQw" style="IBUITableViewCellStyleDefault" id="Jqq-59-eTf">
+                                <rect key="frame" x="0.0" y="66" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jqq-59-eTf" id="vIr-sG-WZt">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -175,7 +209,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tab2" textLabel="o3k-Cj-4fu" style="IBUITableViewCellStyleDefault" id="X4c-Jb-W2c">
-                                <rect key="frame" x="0.0" y="66" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X4c-Jb-W2c" id="vTm-sC-X5f">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -196,7 +230,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tab3" textLabel="BwL-9m-MDi" style="IBUITableViewCellStyleDefault" id="7aP-cJ-a4K">
-                                <rect key="frame" x="0.0" y="110" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="154" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7aP-cJ-a4K" id="uKv-6K-gNc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -217,7 +251,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tab4" textLabel="dqQ-gm-Lps" style="IBUITableViewCellStyleDefault" id="lhJ-re-dii">
-                                <rect key="frame" x="0.0" y="154" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="198" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lhJ-re-dii" id="Ln2-HT-Trz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -279,7 +313,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="FBLA Outfitter" id="0SG-Gt-op9">
-                        <barButtonItem key="leftBarButtonItem" title="=" id="YZE-vj-b1e"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu2.png" id="YZE-vj-b1e">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -327,7 +363,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="lzd-fc-GrG">
-                        <barButtonItem key="leftBarButtonItem" title="=" id="Ady-ZF-eP0"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu2.png" id="Ady-ZF-eP0">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -391,7 +429,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="JQn-pd-xYf">
-                        <barButtonItem key="leftBarButtonItem" title="=" id="Odm-WG-lIp"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu2.png" id="Odm-WG-lIp">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -405,6 +445,10 @@
             <point key="canvasLocation" x="1082.5" y="-1007.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="app icon.png" width="87" height="87"/>
+        <image name="menu2.png" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="u7U-30-PxU"/>
     </inferredMetricsTieBreakers>

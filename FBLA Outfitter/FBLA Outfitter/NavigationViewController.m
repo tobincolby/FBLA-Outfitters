@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    menu = @[@"tab1", @"tab2", @"tab3",@"tab4"];
+    menu = @[@"title", @"tab1", @"tab2", @"tab3",@"tab4"];
 }
 
 - (void)didReceiveMemoryWarning {

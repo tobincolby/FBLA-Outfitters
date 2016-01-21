@@ -21,6 +21,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);
+    _barButton.image = [UIImage imageNamed:@"menu2.png"];
+    self.navigationItem.title = @"Upload Outfit";
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
