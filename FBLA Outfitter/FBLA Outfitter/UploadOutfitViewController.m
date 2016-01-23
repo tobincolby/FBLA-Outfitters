@@ -143,8 +143,9 @@
     
     //Populate a dictionary with all the regular values you would like to send.
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    
-    [parameters setValue:@"1" forKey:@"user_id"];
+    NSString *user = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+        
+    [parameters setValue:user forKey:@"user_id"];
     
     [parameters setValue:text forKey:@"post_text"];
     

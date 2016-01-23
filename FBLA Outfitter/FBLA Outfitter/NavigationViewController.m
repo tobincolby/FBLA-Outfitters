@@ -33,6 +33,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row == 4){
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"email"];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"name"];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"user_id"];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         [self performSegueWithIdentifier:@"logout" sender:self];
     }
     

@@ -16,7 +16,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSString *identifier;
+    NSString *user = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+    if(user != nil)
+        identifier = @"logged";
+    else
+        identifier = @"fail";
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:identifier];
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber=10;
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

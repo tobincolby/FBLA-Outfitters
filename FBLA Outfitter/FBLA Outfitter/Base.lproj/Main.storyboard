@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="Hta-Fc-cOT">
             <objects>
-                <viewController id="lFU-rX-ILC" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fail" id="lFU-rX-ILC" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cdc-Zw-IfJ"/>
                         <viewControllerLayoutGuide type="bottom" id="WC0-dN-qlx"/>
@@ -141,7 +141,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="rm4-to-qJf">
             <objects>
-                <viewController id="5IJ-G5-16V" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logged" id="5IJ-G5-16V" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2st-QJ-SZZ"/>
                         <viewControllerLayoutGuide type="bottom" id="CeJ-xJ-WIe"/>
@@ -443,6 +443,6 @@
         <image name="menu2.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8fj-4J-06A"/>
+        <segue reference="u7U-30-PxU"/>
     </inferredMetricsTieBreakers>
 </document>
