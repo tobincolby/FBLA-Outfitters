@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+    
+    IBOutlet UITableView *tableView;
+    NSMutableArray *json;
+    IBOutlet UILabel *messageLabel;
+   
+}
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 

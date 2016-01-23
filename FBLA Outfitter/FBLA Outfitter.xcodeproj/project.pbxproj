@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941BA4C81C53EBCA000CD909 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 941BA4C71C53EBCA000CD909 /* CustomCell.m */; };
+		94222A5B1C53FF0100E64EA9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94222A5A1C53FF0100E64EA9 /* DetailViewController.m */; };
 		9493B8361C533AF700E050CD /* THChatInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9493B8351C533AF700E050CD /* THChatInput.m */; };
 		94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */; };
 		94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7E1C038962004A5D62 /* NavigationViewController.m */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		941BA4C61C53EBCA000CD909 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		941BA4C71C53EBCA000CD909 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		94222A591C53FF0100E64EA9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		94222A5A1C53FF0100E64EA9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9493B8341C533AF700E050CD /* THChatInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THChatInput.h; sourceTree = "<group>"; };
 		9493B8351C533AF700E050CD /* THChatInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THChatInput.m; sourceTree = "<group>"; };
 		94BC0D7A1C038915004A5D62 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -145,8 +151,12 @@
 				EEC893731C120F680067C65D /* LoginViewController.m */,
 				EEAFB9E11BDD883C00AFF6C9 /* ViewController.h */,
 				EEAFB9E21BDD883C00AFF6C9 /* ViewController.m */,
+				94222A591C53FF0100E64EA9 /* DetailViewController.h */,
+				94222A5A1C53FF0100E64EA9 /* DetailViewController.m */,
 				94BC0D7D1C038962004A5D62 /* NavigationViewController.h */,
 				94BC0D7E1C038962004A5D62 /* NavigationViewController.m */,
+				941BA4C61C53EBCA000CD909 /* CustomCell.h */,
+				941BA4C71C53EBCA000CD909 /* CustomCell.m */,
 				EEAFB9E41BDD883C00AFF6C9 /* Main.storyboard */,
 				EEAFB9E71BDD883D00AFF6C9 /* Images.xcassets */,
 				EEAFB9E91BDD883D00AFF6C9 /* LaunchScreen.xib */,
@@ -292,6 +302,7 @@
 			files = (
 				EEAFB9E31BDD883C00AFF6C9 /* ViewController.m in Sources */,
 				EEAFB9E01BDD883C00AFF6C9 /* AppDelegate.m in Sources */,
+				941BA4C81C53EBCA000CD909 /* CustomCell.m in Sources */,
 				9493B8361C533AF700E050CD /* THChatInput.m in Sources */,
 				EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */,
 				EEC893741C120F680067C65D /* LoginViewController.m in Sources */,
@@ -300,6 +311,7 @@
 				EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */,
 				EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */,
 				94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */,
+				94222A5B1C53FF0100E64EA9 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "SWRevealViewController.h"
+#import "CustomCell.h"
+#import "DetailViewController.h"
 
 
 @interface ViewController ()
@@ -26,12 +28,102 @@
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2, 50, 20)];
-    label.text = @"HIIII";
+    [self getPosts];
     
-    [self.view addSubview:label];
-    
+    self->tableView.rowHeight = 125;
+        
 }
+
+-(void) getData:(NSData *) data{
+    NSError *error;
+    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+}
+
+
+-(void) getPosts{
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/viewalloutfits.php"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    [self getData:data];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"go" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"go"]){
+        DetailViewController *detailView = [segue destinationViewController];
+        NSIndexPath *indexPath = [self->tableView indexPathForSelectedRow];
+        NSDictionary *info = [json objectAtIndex:indexPath.row];
+        detailView.post_id = [info objectForKey:@"post_id"];
+        detailView.caption = [info objectForKey:@"post_text"];
+        detailView.likes = [info objectForKey:@"num_likes"];
+        detailView.user_id = [info objectForKey:@"user_id"];
+        NSString *img = [@"http://www.thestudysolution.com/fbla_outfitter/" stringByAppendingString:[info objectForKey:@"post_image_url"]];
+        
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:img]];
+        detailView.photo = data;
+    }
+
+}
+
+
+//Table view properties
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    if ([json count]) {
+        
+        messageLabel.text = @"";
+        messageLabel.hidden = YES;
+        self->tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+        
+    } else {
+        
+        // Display a message when the table is empty
+        /*UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];*/
+        messageLabel.hidden = NO;
+        messageLabel.text = @"No data is available. Pull to refresh";
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Arial" size:15];
+        [messageLabel sizeToFit];
+        
+        self->tableView.backgroundView = messageLabel;
+        self->tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    
+    return 0;
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [json count];
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"thisCell"];
+    
+    CustomCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"thisCell"];
+    
+    NSDictionary *info = [json objectAtIndex:indexPath.row];
+    
+    NSString *img = [@"http://www.thestudysolution.com/fbla_outfitter/" stringByAppendingString:[info objectForKey:@"post_image_url"]];
+    
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:img]];
+
+    
+    cell.caption.text = [info objectForKey:@"post_text"];
+    cell.photo.image = [UIImage imageWithData:data];
+    
+    return cell;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

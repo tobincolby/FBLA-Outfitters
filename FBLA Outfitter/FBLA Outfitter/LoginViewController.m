@@ -18,9 +18,11 @@
 - (void)viewDidLoad {
     
     self.navbar.hidden = YES;
-    self.bio.layer.borderWidth = 1.0f;
+    self.bio.layer.borderWidth = 0.4f;
     self.bio.layer.borderColor = [[UIColor lightGrayColor]CGColor];
     self.bio.layer.cornerRadius = 6;
+    self.bio.text = @"About me...";
+    self.bio.textColor = [UIColor lightGrayColor];
     [super viewDidLoad];
  
 }
@@ -162,7 +164,7 @@
 
 - (IBAction)submitRegistration:(id)sender {
     if([[self.passwordRegister text] isEqualToString:[self.confirmpassRegister text]]){
-        if(![[self.passwordRegister text] isEqualToString:@""] && ![[self.firstname text] isEqualToString:@""] && ![[self.lastname text]isEqualToString:@""] && ![[self.email text]isEqualToString:@""] && ![[self.usernameRegister text] isEqualToString:@""] && ![[self.bio text]isEqualToString:@""]){
+        if(![[self.passwordRegister text] isEqualToString:@""] && ![[self.firstname text] isEqualToString:@""] && ![[self.lastname text]isEqualToString:@""] && ![[self.email text]isEqualToString:@""] && ![[self.usernameRegister text] isEqualToString:@""] && ![[self.bio text]isEqualToString:@"About me..."] && ![[self.bio text]isEqualToString:@""]) {
     [self registration];
         }else{
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Registration Error"
@@ -181,6 +183,27 @@
         [alert show];
     }
 }
+
+//Text View Properties
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textField {
+    
+    self.bio.text = @"";
+    self.bio.textColor = [UIColor blackColor];
+    
+    return YES;
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch * touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan){
+        [self.bio resignFirstResponder];
+        self.bio.text = @"About me...";
+        self.bio.textColor = [UIColor lightGrayColor];
+    }
+    
+}
+
 
 
 /*
