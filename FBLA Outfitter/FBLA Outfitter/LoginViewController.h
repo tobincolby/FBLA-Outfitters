@@ -32,5 +32,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordRegister;
 @property (strong, nonatomic) IBOutlet UITextField *confirmpassRegister;
 @property (strong, nonatomic) IBOutlet UIImageView *logo;
+@property (strong, nonatomic) IBOutlet UITextView *bio;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @end

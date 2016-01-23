@@ -102,7 +102,7 @@ static BOOL isIos7;
    
     self.lblPlaceholder = [[UILabel alloc] initWithFrame:CGRectMake(78.0f, topGap+2, 160, 20)];
     lblPlaceholder.font = [UIFont systemFontOfSize:15.0f];
-    lblPlaceholder.text = @"Caption your photo...";
+    lblPlaceholder.text = @"What do you want to know about this outfit?";
     lblPlaceholder.textColor = [UIColor lightGrayColor];
     lblPlaceholder.backgroundColor = [UIColor clearColor];
 	[self addSubview:lblPlaceholder];

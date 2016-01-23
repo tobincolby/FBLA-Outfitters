@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     
     self.navbar.hidden = YES;
+    self.bio.layer.borderWidth = 1.0f;
+    self.bio.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+    self.bio.layer.cornerRadius = 6;
     [super viewDidLoad];
  
 }
@@ -46,7 +49,7 @@
     self.confirmpassRegister.hidden = NO;
     self.registerSubmit.hidden = NO;
     self.navbar.hidden = NO;
-    
+    self.bio.hidden = NO;
     
 }
 
@@ -71,6 +74,7 @@
     self.confirmpassRegister.hidden = YES;
     self.registerSubmit.hidden = YES;
     self.navbar.hidden = YES;
+    self.bio.hidden = YES;
 }
 
 -(void)login: (NSString *) username withString:(NSString *) password{
@@ -116,13 +120,12 @@
 
 -(void)registration{
     NSMutableString *str = [NSMutableString stringWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/newuser.php?"];
-    [str appendFormat:@"first_name=%@&last_name=%@&username=%@&email=%@&password=%@",[self.firstname text],[self.lastname text],[self.usernameRegister text],[self.email text],[self.passwordRegister text]];
+    [str appendFormat:@"first_name=%@&last_name=%@&username=%@&email=%@&password=%@&bio=%@",[self.firstname text],[self.lastname text],[self.usernameRegister text],[self.email text],[self.passwordRegister text],[self.bio text]];
     NSURL *url = [NSURL URLWithString:str];
     
     NSError *error = nil;
     
     NSString *returnString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
-    
     if([returnString isEqualToString:@"failure"]){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Registration Failure"
                                                        message: @"Sorry for the inconvenience, but this user could not be registered. Please try again at a later time!"
@@ -130,14 +133,28 @@
                                              cancelButtonTitle:@"Dismiss"
                                              otherButtonTitles:nil];
         [alert show];
-    }else{
+    }else if ([returnString isEqualToString:@"success"]){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Registration Success"
                                                        message: @"This user has been successfully registered!"
                                                       delegate: self
                                              cancelButtonTitle:@"Dismiss"
                                              otherButtonTitles:nil];
         [alert show];
+        self.firstname.text = @"";
+        self.lastname.text = @"";
+        self.email.text = @"";
+        self.usernameRegister.text = @"";
+        self.passwordRegister.text = @"";
+        self.confirmpassRegister.text = @"";
+        self.bio.text = @"";
         [self loginStuffAppear];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Registration Failure"
+                                                       message: @"Sorry, but this usename/email has already been taken, so please use a different username/email!"
+                                                      delegate: self
+                                             cancelButtonTitle:@"Dismiss"
+                                             otherButtonTitles:nil];
+        [alert show];
     }
     
 }
@@ -145,7 +162,7 @@
 
 - (IBAction)submitRegistration:(id)sender {
     if([[self.passwordRegister text] isEqualToString:[self.confirmpassRegister text]]){
-        if(![[self.passwordRegister text] isEqualToString:@""] && ![[self.firstname text] isEqualToString:@""] && ![[self.lastname text]isEqualToString:@""] && ![[self.email text]isEqualToString:@""] && ![[self.usernameRegister text] isEqualToString:@""]){
+        if(![[self.passwordRegister text] isEqualToString:@""] && ![[self.firstname text] isEqualToString:@""] && ![[self.lastname text]isEqualToString:@""] && ![[self.email text]isEqualToString:@""] && ![[self.usernameRegister text] isEqualToString:@""] && ![[self.bio text]isEqualToString:@""]){
     [self registration];
         }else{
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Registration Error"
