@@ -25,22 +25,55 @@
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    self.commentText.layer.cornerRadius = 5;
-    self.commentText.clipsToBounds = YES;
-    self.commentText.layer.borderWidth = 1.0f;
-    self.commentText.layer.borderColor = [[UIColor blackColor]CGColor];
+    self.imgHolder.layer.cornerRadius = 6;
+    self.imgHolder.clipsToBounds = YES;
+    self.imgHolder.layer.borderWidth = 1.0f;
+    
     
     // Do any additional setup after loading the view.
-    
+    [_chatInput.textView becomeFirstResponder];
     [super viewDidLoad];
 
 }
 - (IBAction)lookInLibrary:(id)sender {
     [self selectImageFromLibrary];
+
 }
 - (IBAction)takePic:(id)sender {
     [self takeImageWithCamera];
+
 }
+
+
+//Chat Input Properties
+- (void)tappedView:(UITapGestureRecognizer*)tapper
+{
+    [_chatInput resignFirstResponder];
+}
+
+#pragma mark - THChatInputDelegate
+
+- (void)chat:(THChatInput*)input sendWasPressed:(NSString*)text
+{
+    //[self postMessage:text];
+    [self uploadPost:text];
+    [_chatInput setText:@""];
+    [_chatInput resignFirstResponder];
+    //[self refreshTable];
+}
+
+- (void)chatShowEmojiInput:(THChatInput*)input
+{
+    _chatInput.textView.inputView = _chatInput.textView.inputView == nil ? _emojiInputView : nil;
+    
+    [_chatInput.textView reloadInputViews];
+}
+
+- (void)chatShowAttachInput:(THChatInput*)input
+{
+    
+}
+
 
 -(void)takeImageWithCamera{
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
@@ -73,20 +106,24 @@
     UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
     self.imgHolder.image = selectedImage;
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    [_chatInput.textView becomeFirstResponder];
+
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    [_chatInput.textView becomeFirstResponder];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)uploadPost:(id)sender {
+- (void)uploadPost: (NSString *) text {
     
     //this is where db connection comes in and post is uploaded
-    if(![self.imgHolder.image isEqual:nil] && ! [self.commentText.text isEqualToString:@""]){
+    if(![self.imgHolder.image isEqual:nil] && ! [text isEqualToString:@""]){
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     //Set Params
@@ -109,7 +146,7 @@
     
     [parameters setValue:@"1" forKey:@"user_id"];
     
-    [parameters setValue:[self.commentText text] forKey:@"post_text"];
+    [parameters setValue:text forKey:@"post_text"];
     
     
     
@@ -153,13 +190,15 @@
                                if ([httpResponse statusCode] == 200 && [responseString isEqualToString:@"success"]) {
                                    NSLog(@"success");
                                    self.imgHolder.image = nil;
-                                   self.commentText.text = @"";
+                                   //text = @"";
                                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Upload Success"
                                                                                   message: @"Your outfit has been successfully uploaded!"
                                                                                  delegate: self
                                                                         cancelButtonTitle:@"Dismiss"
                                                                         otherButtonTitles:nil];
                                    [alert show];
+                                   [_chatInput.textView becomeFirstResponder];
+
                                }else{
                                    NSLog(@"error");
                                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Upload Error"

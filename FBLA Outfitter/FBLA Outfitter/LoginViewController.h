@@ -9,6 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController
+{
+    NSString *loginSuc;
+    NSMutableArray *json;
+    NSString *email;
+    NSString *firstName;
+    NSString *lastName;
+    NSString *name;
+    NSString *userID;
+    NSString *usrname;
+}
 @property (strong, nonatomic) IBOutlet UITextField *email;
 @property (strong, nonatomic) IBOutlet UITextField *passwordLogin;
 @property (strong, nonatomic) IBOutlet UITextField *usernameLogin;

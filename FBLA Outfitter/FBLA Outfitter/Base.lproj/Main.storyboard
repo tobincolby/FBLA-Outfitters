@@ -47,19 +47,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <navigationBar hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Of1-yF-5WF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="FBLA Outfitters" id="aOx-hU-DO7">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Vz9-m1-lDp">
-                                            <color key="tintColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="addLoginStuff:" destination="lFU-rX-ILC" id="aeV-O6-IOG"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dds-DP-Hcs">
                                 <rect key="frame" x="279" y="379" width="57" height="30"/>
                                 <state key="normal" title="Register">
@@ -69,28 +56,29 @@
                                     <action selector="submitRegistration:" destination="lFU-rX-ILC" eventType="touchUpInside" id="GQY-dP-dxn"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-pS-Lj9">
-                                <rect key="frame" x="78" y="312" width="218" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-pS-Lj9">
+                                <rect key="frame" x="45" y="312" width="266" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7h-LO-Yh4">
-                                <rect key="frame" x="78" y="350" width="218" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7h-LO-Yh4">
+                                <rect key="frame" x="45" y="350" width="266" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-dA-Kpf">
-                                <rect key="frame" x="240" y="383" width="56" height="22"/>
+                                <rect key="frame" x="255" y="383" width="56" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5IJ-G5-16V" kind="presentation" id="NWq-de-IiC"/>
+                                    <action selector="sendLogin:" destination="lFU-rX-ILC" eventType="touchUpInside" id="eli-ZB-Bhb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-Bo-1HN">
-                                <rect key="frame" x="78" y="379" width="94" height="30"/>
+                                <rect key="frame" x="45" y="379" width="94" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Register Here">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,12 +96,24 @@
                                 <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Of1-yF-5WF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="FBLA Outfitters" id="aOx-hU-DO7">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Vz9-m1-lDp">
+                                            <color key="tintColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="addLoginStuff:" destination="lFU-rX-ILC" id="aeV-O6-IOG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="YNd-pS-Lj9" firstAttribute="centerX" secondItem="6jW-Ax-L5i" secondAttribute="centerX" id="epU-D0-hCz"/>
-                            <constraint firstItem="G7h-LO-Yh4" firstAttribute="centerX" secondItem="6jW-Ax-L5i" secondAttribute="centerX" id="jyj-ej-jfe"/>
-                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -131,11 +131,12 @@
                         <outlet property="titleLabel" destination="uJ3-1e-T9e" id="aTM-jt-KYh"/>
                         <outlet property="usernameLogin" destination="YNd-pS-Lj9" id="iVY-Hr-QG3"/>
                         <outlet property="usernameRegister" destination="J5Z-N4-lXP" id="tRg-7r-DdD"/>
+                        <segue destination="5IJ-G5-16V" kind="presentation" identifier="login" id="Byy-px-fgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVb-jn-gJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-984.5" y="-645.5"/>
+            <point key="canvasLocation" x="-968.5" y="-247.5"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="rm4-to-qJf">
@@ -377,7 +378,7 @@
             </objects>
             <point key="canvasLocation" x="1092.5" y="-230.5"/>
         </scene>
-        <!--Upload Outfit View Controller-->
+        <!--Delegate-->
         <scene sceneID="Juc-W4-dra">
             <objects>
                 <viewController id="CS5-Ug-tY7" customClass="UploadOutfitViewController" sceneMemberID="viewController">
@@ -390,41 +391,33 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpZ-Va-Qhy">
-                                <rect key="frame" x="20" y="248" width="107" height="30"/>
-                                <state key="normal" title="Library Capture"/>
+                                <rect key="frame" x="184" y="298" width="107" height="30"/>
+                                <state key="normal" title="Library Capture">
+                                    <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="lookInLibrary:" destination="CS5-Ug-tY7" eventType="touchUpInside" id="CMq-Ib-sQl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYa-XI-19k">
-                                <rect key="frame" x="297" y="248" width="58" height="30"/>
-                                <state key="normal" title="Take Pic"/>
+                                <rect key="frame" x="83" y="298" width="58" height="30"/>
+                                <state key="normal" title="Take Pic">
+                                    <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="takePic:" destination="CS5-Ug-tY7" eventType="touchUpInside" id="bbm-en-fFg"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HdE-72-3bC">
-                                <rect key="frame" x="20" y="352" width="335" height="164"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a comment to your picture?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duk-J6-gat">
-                                <rect key="frame" x="65" y="323" width="245" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOO-lq-BRp">
-                                <rect key="frame" x="224" y="560" width="131" height="30"/>
-                                <state key="normal" title="Upload your Outfit!"/>
-                                <connections>
-                                    <action selector="uploadPost:" destination="CS5-Ug-tY7" eventType="touchUpInside" id="jFd-WU-OQR"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dbk-4R-V4d">
-                                <rect key="frame" x="93" y="70" width="188" height="170"/>
+                                <rect key="frame" x="83" y="96" width="208" height="186"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JlT-Nt-J0k" customClass="THChatInput">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CS5-Ug-tY7" id="gBz-1m-Xuj"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -436,7 +429,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="barButton" destination="Odm-WG-lIp" id="nx3-Yy-84g"/>
-                        <outlet property="commentText" destination="HdE-72-3bC" id="mGQ-nK-DTN"/>
+                        <outlet property="chatInput" destination="JlT-Nt-J0k" id="olf-uX-DBd"/>
                         <outlet property="imgHolder" destination="Dbk-4R-V4d" id="6yX-NA-hTn"/>
                     </connections>
                 </viewController>
@@ -450,6 +443,6 @@
         <image name="menu2.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u7U-30-PxU"/>
+        <segue reference="8fj-4J-06A"/>
     </inferredMetricsTieBreakers>
 </document>

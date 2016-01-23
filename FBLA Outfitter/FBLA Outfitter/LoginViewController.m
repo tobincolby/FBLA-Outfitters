@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "SWRevealViewController.h"
 @interface LoginViewController (){
 }
 
@@ -15,6 +16,8 @@
 @implementation LoginViewController
 
 - (void)viewDidLoad {
+    
+    self.navbar.hidden = YES;
     [super viewDidLoad];
  
 }
@@ -70,8 +73,48 @@
     self.navbar.hidden = YES;
 }
 
+-(void)login: (NSString *) username withString:(NSString *) password{
+    NSString *post =[NSString stringWithFormat:@"username=%@&password=%@",username, password];
+    NSString *strUrl = @"http://www.thestudysolution.com/fbla_outfitter/serverside/login.php?";
+    strUrl = [strUrl stringByAppendingString:post];
+    NSData *dataUrl = [NSData dataWithContentsOfURL:[NSURL URLWithString:strUrl]];
+    NSString *serverOutput = [[NSString alloc] initWithData:dataUrl encoding:NSUTF8StringEncoding];
+    if(![serverOutput isEqualToString:@"failure"]){
+        NSError *error;
+        json = [NSJSONSerialization JSONObjectWithData:dataUrl options:kNilOptions error:&error];
+        if([json count] > 0){
+        NSDictionary *info = [json objectAtIndex:0];
+        email = [info objectForKey:@"email"];
+        firstName = [[info objectForKey:@"first_name"]stringByAppendingString:@" "];
+        lastName = [info objectForKey:@"last_name"];
+        name = [firstName stringByAppendingString:lastName];
+        userID = [info objectForKey:@"user_id"];
+        usrname = [info objectForKey:@"username"];
+        }
+        [[NSUserDefaults standardUserDefaults] setObject:email forKey:@"email"];
+        [[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
+        [[NSUserDefaults standardUserDefaults] setObject:userID forKey:@"user_id"];
+        [[NSUserDefaults standardUserDefaults] setObject:usrname forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self performSegueWithIdentifier:@"login" sender:self];
+        
+    } else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @""
+                                                       message: @"Invalid username or password"
+                                                      delegate: self
+                                             cancelButtonTitle:@"Okay"
+                                             otherButtonTitles:nil];
+        [alert show];
 
--(void)submitData{
+    }
+}
+
+-(IBAction)sendLogin:(id)sender{
+    [self login:_usernameLogin.text withString:_passwordLogin.text];
+}
+
+
+-(void)registration{
     NSMutableString *str = [NSMutableString stringWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/newuser.php?"];
     [str appendFormat:@"first_name=%@&last_name=%@&username=%@&email=%@&password=%@",[self.firstname text],[self.lastname text],[self.usernameRegister text],[self.email text],[self.passwordRegister text]];
     NSURL *url = [NSURL URLWithString:str];
@@ -99,19 +142,11 @@
     
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 - (IBAction)submitRegistration:(id)sender {
     if([[self.passwordRegister text] isEqualToString:[self.confirmpassRegister text]]){
         if(![[self.passwordRegister text] isEqualToString:@""] && ![[self.firstname text] isEqualToString:@""] && ![[self.lastname text]isEqualToString:@""] && ![[self.email text]isEqualToString:@""] && ![[self.usernameRegister text] isEqualToString:@""]){
-    [self submitData];
+    [self registration];
         }else{
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Registration Error"
                                                            message: @"You must fill out all parts of this form!"

@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "THChatInput.h"
 
-@interface UploadOutfitViewController : UIViewController <UIImagePickerControllerDelegate>
+@interface UploadOutfitViewController : UIViewController <UIImagePickerControllerDelegate, THChatInputDelegate>
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet THChatInput *chatInput;
+@property (strong, nonatomic) IBOutlet UIView *emojiInputView;
+
 @property (strong, nonatomic) IBOutlet UIImageView *imgHolder;
-@property (strong, nonatomic) IBOutlet UITextView *commentText;
 
 @end
