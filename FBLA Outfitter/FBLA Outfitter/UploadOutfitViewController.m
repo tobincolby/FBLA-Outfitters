@@ -148,8 +148,9 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                
                                NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-                               
-                               if ([httpResponse statusCode] == 200) {
+                               NSString *responseString = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                               NSLog(responseString);
+                               if ([httpResponse statusCode] == 200 && [responseString isEqualToString:@"success"]) {
                                    NSLog(@"success");
                                    self.imgHolder.image = nil;
                                    self.commentText.text = @"";
