@@ -86,21 +86,23 @@
     NSData *dataUrl = [NSData dataWithContentsOfURL:[NSURL URLWithString:strUrl]];
     NSString *serverOutput = [[NSString alloc] initWithData:dataUrl encoding:NSUTF8StringEncoding];
     if(![serverOutput isEqualToString:@"failure"]){
-        NSError *error;
-        json = [NSJSONSerialization JSONObjectWithData:dataUrl options:kNilOptions error:&error];
-        if([json count] > 0){
-        NSDictionary *info = [json objectAtIndex:0];
-        email = [info objectForKey:@"email"];
-        firstName = [[info objectForKey:@"first_name"]stringByAppendingString:@" "];
-        lastName = [info objectForKey:@"last_name"];
-        name = [firstName stringByAppendingString:lastName];
-        userID = [info objectForKey:@"user_id"];
-        usrname = [info objectForKey:@"username"];
-        }
+            NSError *error;
+            json = [NSJSONSerialization JSONObjectWithData:dataUrl options:kNilOptions error:&error];
+            if([json count] > 0){
+                NSDictionary *info = [json objectAtIndex:0];
+                email = [info objectForKey:@"email"];
+                firstName = [[info objectForKey:@"first_name"]stringByAppendingString:@" "];
+                lastName = [info objectForKey:@"last_name"];
+                name = [firstName stringByAppendingString:lastName];
+                userID = [info objectForKey:@"user_id"];
+                usrname = [info objectForKey:@"username"];
+                about_me = [info objectForKey:@"bio"];
+            }
         [[NSUserDefaults standardUserDefaults] setObject:email forKey:@"email"];
         [[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
         [[NSUserDefaults standardUserDefaults] setObject:userID forKey:@"user_id"];
         [[NSUserDefaults standardUserDefaults] setObject:usrname forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults] setObject:about_me forKey:@"bio"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self performSegueWithIdentifier:@"login" sender:self];
         

@@ -18,6 +18,7 @@
     NSString *name;
     NSString *userID;
     NSString *usrname;
+    NSString *about_me;
 }
 @property (strong, nonatomic) IBOutlet UITextField *email;
 @property (strong, nonatomic) IBOutlet UITextField *passwordLogin;

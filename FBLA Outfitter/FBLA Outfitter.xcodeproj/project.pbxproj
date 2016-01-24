@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		941BA4C81C53EBCA000CD909 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 941BA4C71C53EBCA000CD909 /* CustomCell.m */; };
 		94222A5B1C53FF0100E64EA9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94222A5A1C53FF0100E64EA9 /* DetailViewController.m */; };
+		946153D91C55341C00FA866A /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 946153D81C55341C00FA866A /* CollectionViewCell.m */; };
 		9493B8361C533AF700E050CD /* THChatInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9493B8351C533AF700E050CD /* THChatInput.m */; };
 		94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */; };
 		94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7E1C038962004A5D62 /* NavigationViewController.m */; };
@@ -43,6 +44,8 @@
 		941BA4C71C53EBCA000CD909 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		94222A591C53FF0100E64EA9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		94222A5A1C53FF0100E64EA9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		946153D71C55341C00FA866A /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		946153D81C55341C00FA866A /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		9493B8341C533AF700E050CD /* THChatInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THChatInput.h; sourceTree = "<group>"; };
 		9493B8351C533AF700E050CD /* THChatInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THChatInput.m; sourceTree = "<group>"; };
 		94BC0D7A1C038915004A5D62 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				94BC0D7E1C038962004A5D62 /* NavigationViewController.m */,
 				941BA4C61C53EBCA000CD909 /* CustomCell.h */,
 				941BA4C71C53EBCA000CD909 /* CustomCell.m */,
+				946153D71C55341C00FA866A /* CollectionViewCell.h */,
+				946153D81C55341C00FA866A /* CollectionViewCell.m */,
 				EEAFB9E41BDD883C00AFF6C9 /* Main.storyboard */,
 				EEAFB9E71BDD883D00AFF6C9 /* Images.xcassets */,
 				EEAFB9E91BDD883D00AFF6C9 /* LaunchScreen.xib */,
@@ -311,6 +316,7 @@
 				EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */,
 				EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */,
 				94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */,
+				946153D91C55341C00FA866A /* CollectionViewCell.m in Sources */,
 				94222A5B1C53FF0100E64EA9 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -37,6 +37,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"name"];
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"user_id"];
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"bio"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self performSegueWithIdentifier:@"logout" sender:self];
     }

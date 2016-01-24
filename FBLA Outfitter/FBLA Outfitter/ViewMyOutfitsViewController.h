@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewMyOutfitsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ViewMyOutfitsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>{
+    IBOutlet UICollectionView *collectionView;
+    IBOutlet UILabel *username;
+    IBOutlet UILabel *name;
+    IBOutlet UITextView *bio;
+    NSMutableArray *json;
+}
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
+@property (strong, nonatomic) NSString *user_id;
 
-@property (strong, nonatomic) IBOutlet UICollectionView *allOutfits;
 
 @end
