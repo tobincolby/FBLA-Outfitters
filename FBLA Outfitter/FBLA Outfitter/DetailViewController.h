@@ -15,10 +15,11 @@
     
 }
 
+@property (weak, nonatomic) IBOutlet UIButton *likeOufit;
 @property (strong, nonatomic) NSString *post_id;
 @property (strong, nonatomic) NSData *photo;
-@property (strong, nonatomic) NSArray *caption;
-@property (strong, nonatomic) NSArray *likes;
+@property (strong, nonatomic) NSString *caption;
+@property (strong, nonatomic) NSString *likes;
 @property (strong, nonatomic) NSString *user_id;
 
 @end
