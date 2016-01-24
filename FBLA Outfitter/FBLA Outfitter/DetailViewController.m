@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.likeOufit.enabled = YES;
     NSError *error;
     NSString *user_id = _user_id;
     
@@ -50,6 +50,7 @@
             if ([[dict2 objectForKey:@"user_id" ] isEqualToString: [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]]) {
                 //blur out like_oufit
                 self.likeOufit.enabled = NO;
+                [self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             }
         }
     }
@@ -65,14 +66,15 @@
                        
 -(void)likeOutfit{
     NSError *error;
-                           NSString *user_id = [[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"];
-                           
-                           NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/likeoutfit.php?user_id=%@&post_id=%@",user_id,_post_id]];
+    NSString *user_id = [[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/likeoutfit.php?user_id=%@&post_id=%@",user_id,_post_id]];
+    NSLog(@"%@", url);
     NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     if([result isEqualToString:@"success"]){
         likesLabel.text = [NSString stringWithFormat:@"Likes: %i",([_likes intValue] + 1)];
         self.likeOufit.enabled = NO;
-        
+        [self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+
     }else{
         
     }

@@ -31,6 +31,11 @@
     [self getPosts];
     
     self->tableView.rowHeight = 125;
+    
+    refreshControl = [[UIRefreshControl alloc]init];
+    [self->tableView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+
         
 }
 
@@ -66,6 +71,12 @@
         detailView.photo = data;
     }
 
+}
+
+-(void) refreshTable{
+    [self getPosts];
+    [refreshControl endRefreshing];
+    [self->tableView reloadData];
 }
 
 

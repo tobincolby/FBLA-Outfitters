@@ -13,6 +13,7 @@
     IBOutlet UITableView *tableView;
     NSMutableArray *json;
     IBOutlet UILabel *messageLabel;
+    UIRefreshControl *refreshControl;
    
 }
 
