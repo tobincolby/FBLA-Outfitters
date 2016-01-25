@@ -11,6 +11,6 @@
 @interface CustomCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *photo;
-@property (strong, nonatomic) IBOutlet UITextView *caption;
+@property (strong, nonatomic) IBOutlet UILabel *caption;
 
 @end

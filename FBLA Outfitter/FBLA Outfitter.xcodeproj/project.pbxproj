@@ -46,8 +46,8 @@
 		94222A5A1C53FF0100E64EA9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		946153D71C55341C00FA866A /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		946153D81C55341C00FA866A /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
-		9493B8341C533AF700E050CD /* THChatInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THChatInput.h; sourceTree = "<group>"; };
-		9493B8351C533AF700E050CD /* THChatInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THChatInput.m; sourceTree = "<group>"; };
+		9493B8341C533AF700E050CD /* THChatInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THChatInput.h; path = ../THChatInput.h; sourceTree = "<group>"; };
+		9493B8351C533AF700E050CD /* THChatInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THChatInput.m; path = ../THChatInput.m; sourceTree = "<group>"; };
 		94BC0D7A1C038915004A5D62 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		94BC0D7D1C038962004A5D62 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
@@ -126,8 +126,6 @@
 		EEAFB9CE1BDD883C00AFF6C9 = {
 			isa = PBXGroup;
 			children = (
-				9493B8341C533AF700E050CD /* THChatInput.h */,
-				9493B8351C533AF700E050CD /* THChatInput.m */,
 				EEAFB9D91BDD883C00AFF6C9 /* FBLA Outfitter */,
 				EEAFB9F31BDD883D00AFF6C9 /* FBLA OutfitterTests */,
 				EEAFB9D81BDD883C00AFF6C9 /* Products */,
@@ -146,6 +144,8 @@
 		EEAFB9D91BDD883C00AFF6C9 /* FBLA Outfitter */ = {
 			isa = PBXGroup;
 			children = (
+				9493B8341C533AF700E050CD /* THChatInput.h */,
+				9493B8351C533AF700E050CD /* THChatInput.m */,
 				EE53B9EA1C4DE05C00A03B2D /* uploadoufit */,
 				EE53B9E91C4DE04200A03B2D /* viewmyoutfits */,
 				EEAFB9DE1BDD883C00AFF6C9 /* AppDelegate.h */,

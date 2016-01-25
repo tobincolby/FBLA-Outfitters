@@ -30,11 +30,17 @@
     
     [self getPosts];
     
-    self->tableView.rowHeight = 125;
+    self->tableView.rowHeight = UITableViewAutomaticDimension;
     
     refreshControl = [[UIRefreshControl alloc]init];
     [self->tableView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    
+    [self refreshTable];
+    
+    UIBarButtonItem *BackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [[self navigationItem] setBackBarButtonItem:BackButton];
 
         
 }
@@ -72,7 +78,10 @@
     }
 
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [self refreshTable];
 
+}
 -(void) refreshTable{
     [self getPosts];
     [refreshControl endRefreshing];

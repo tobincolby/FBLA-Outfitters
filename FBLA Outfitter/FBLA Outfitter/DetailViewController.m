@@ -36,14 +36,14 @@
     captionText.text = _caption;
     photoImg.image = [UIImage imageWithData:_photo];
     self.navigationItem.title = @"View Outfits";
-    self.navigationItem.backBarButtonItem.title = @"";
+    
     
     NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getlikesforoutfit.php?post_id=%@",_post_id]];
     NSString *resultS = [NSString stringWithContentsOfURL:url2 encoding:NSUTF8StringEncoding error:&error];
     if([resultS isEqualToString:@"0"]){
         
     }else{
-        NSData *data2 = [NSData dataWithContentsOfURL:url];
+        NSData *data2 = [NSData dataWithContentsOfURL:url2];
         NSMutableArray *json2 = [NSJSONSerialization JSONObjectWithData:data2 options:kNilOptions error:&error];
         for(int i=0;i<[json2 count];i++){
             NSDictionary *dict2 = [json2 objectAtIndex:i];
