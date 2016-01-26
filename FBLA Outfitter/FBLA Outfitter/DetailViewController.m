@@ -17,21 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.likeOufit.enabled = YES;
-    NSError *error;
-    NSString *user_id = _user_id;
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/infoforuser.php?user_id=%@",user_id]];
-    NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
-    if([result isEqualToString:@"failure"]){
-        //nserror alert
-    }else{
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-        NSDictionary *dict = [json objectAtIndex:0];
-        
-    }
-    
-    //NSLog(@"%@", _user_id);
     likesLabel.text = [NSString stringWithFormat:@"Likes: %@",_likes];
     captionText.text = _caption;
     photoImg.image = [UIImage imageWithData:_photo];
@@ -40,6 +26,7 @@
     [self getUserName];
     [self setUsername];
     
+    NSError *error;
     NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getlikesforoutfit.php?post_id=%@",_post_id]];
     NSString *resultS = [NSString stringWithContentsOfURL:url2 encoding:NSUTF8StringEncoding error:&error];
     if([resultS isEqualToString:@"0"]){
