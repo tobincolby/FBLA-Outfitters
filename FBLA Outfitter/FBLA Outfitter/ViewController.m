@@ -29,8 +29,9 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     [self getPosts];
-    
+    [self getUsers];
     self->tableView.rowHeight = UITableViewAutomaticDimension;
+    self->tableView.estimatedRowHeight = 310;
     
     refreshControl = [[UIRefreshControl alloc]init];
     [self->tableView addSubview:refreshControl];
@@ -56,6 +57,17 @@
     NSURL *url = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/viewalloutfits.php"];
     NSData *data = [NSData dataWithContentsOfURL:url];
     [self getData:data];
+}
+
+-(void) getUsernames:(NSData *) data{
+    NSError *error;
+    userArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+}
+
+-(void) getUsers{
+    NSURL *url = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getUsers.php"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    [self getUsernames:data];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -132,12 +144,19 @@
     CustomCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"thisCell"];
     
     NSDictionary *info = [json objectAtIndex:indexPath.row];
+    /*//for (int i=0; i<[userArray count]; i++) {
+        NSDictionary *userInfo = [userArray objectAtIndex:indexPath.row];
+        //if ([[userInfo objectForKey:@"user_id"] isEqualToString:[info objectForKey:@"user_id"]]) {
+            cell.username.text = [userInfo objectForKey:@"username"];
+        //}
+    //}*/
     
     NSString *img = [@"http://www.thestudysolution.com/fbla_outfitter/" stringByAppendingString:[info objectForKey:@"post_image_url"]];
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:img]];
-
     
+    
+    cell.username.text = [info objectForKey:@"user_id"];
     cell.caption.text = [info objectForKey:@"post_text"];
     cell.photo.image = [UIImage imageWithData:data];
     

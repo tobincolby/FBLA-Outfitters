@@ -9,6 +9,7 @@
 #import "ViewMyOutfitsViewController.h"
 #import "SWRevealViewController.h"
 #import "CollectionViewCell.h"
+#import "DetailViewController.h"
 
 @interface ViewMyOutfitsViewController ()
 
@@ -32,6 +33,17 @@
     //NSLog(@"%@", _user_id);
     [self getMyPhotos];
     
+    refreshControl = [[UIRefreshControl alloc]init];
+    [self->collectionView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(refreshCollection) forControlEvents:UIControlEventValueChanged];
+    self->collectionView.alwaysBounceVertical = YES;
+    
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    [self getMyPhotos];
+    [self refreshCollection];
+    [super viewDidAppear:YES];
 }
 
 -(void) getData:(NSData *) data{
@@ -51,6 +63,17 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     [self getData:data];
     //NSLog(@"%@", postString);
+    
+    UIBarButtonItem *BackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [[self navigationItem] setBackBarButtonItem:BackButton];
+}
+
+-(void) refreshCollection{
+    //[refreshControl beginRefreshing];
+    [self getMyPhotos];
+    [refreshControl endRefreshing];
+    [self->collectionView reloadData];
 }
 
 
@@ -59,6 +82,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"go" sender:self];
+}*/
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"go"]){
+        DetailViewController *detailView = [segue destinationViewController];
+        NSArray *arrayOfIndexPaths = [self->collectionView indexPathsForSelectedItems];
+        NSIndexPath *indexPath = [arrayOfIndexPaths firstObject];
+        NSDictionary *info = [json objectAtIndex:indexPath.row];
+        detailView.post_id = [info objectForKey:@"post_id"];
+        detailView.caption = [info objectForKey:@"post_text"];
+        detailView.likes = [info objectForKey:@"num_likes"];
+        detailView.user_id = [info objectForKey:@"user_id"];
+        NSString *img = [@"http://www.thestudysolution.com/fbla_outfitter/" stringByAppendingString:[info objectForKey:@"post_image_url"]];
+        
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:img]];
+        detailView.photo = data;
+    }
+    
+}
+
+
+
+//Collection View properties
 -(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }

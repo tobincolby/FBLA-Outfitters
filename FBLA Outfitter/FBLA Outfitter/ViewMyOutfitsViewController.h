@@ -14,6 +14,7 @@
     IBOutlet UILabel *name;
     IBOutlet UITextView *bio;
     NSMutableArray *json;
+    UIRefreshControl *refreshControl;
 }
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;

@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *photo;
 @property (strong, nonatomic) IBOutlet UILabel *caption;
+@property (strong, nonatomic) IBOutlet UILabel *username;
 
 @end

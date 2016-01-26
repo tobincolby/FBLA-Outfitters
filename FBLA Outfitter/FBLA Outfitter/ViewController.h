@@ -14,6 +14,9 @@
     NSMutableArray *json;
     IBOutlet UILabel *messageLabel;
     UIRefreshControl *refreshControl;
+    NSString *user_id;
+    NSString *username;
+    NSMutableArray *userArray;
    
 }
 
