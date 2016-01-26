@@ -31,12 +31,14 @@
         
     }
     
-    NSLog(@"%@", _user_id);
+    //NSLog(@"%@", _user_id);
     likesLabel.text = [NSString stringWithFormat:@"Likes: %@",_likes];
     captionText.text = _caption;
     photoImg.image = [UIImage imageWithData:_photo];
     self.navigationItem.title = @"View Outfits";
     
+    [self getUserName];
+    [self setUsername];
     
     NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getlikesforoutfit.php?post_id=%@",_post_id]];
     NSString *resultS = [NSString stringWithContentsOfURL:url2 encoding:NSUTF8StringEncoding error:&error];
@@ -60,6 +62,32 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) getUser:(NSData *)data{
+    NSError *error;
+    jsonUser = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+}
+
+-(void) getUserName{
+    NSMutableString *postString = [NSMutableString stringWithString:@"http://thestudysolution.com/fbla_outfitter/serverside/infoforuser.php"];
+    [postString appendString:[NSString stringWithFormat:@"?%@=%@", @"user_id", _user_id]];
+    [postString setString:[postString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:postString]];
+    [request setHTTPMethod:@"POST"];
+    postConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    NSURL *url = [NSURL URLWithString:postString];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    [self getUser:data];
+    NSLog(@"%@", jsonUser);
+}
+
+-(void) setUsername{
+    NSIndexPath *indexPath;
+    NSDictionary *info = [jsonUser objectAtIndex:indexPath.row];
+    usernameLabel.text = [info objectForKey:@"username"];
+}
+
+
 - (IBAction)like:(id)sender {
     [self likeOutfit];
 }

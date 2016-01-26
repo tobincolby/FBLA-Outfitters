@@ -478,6 +478,7 @@
                         <outlet property="likeOufit" destination="DcW-8o-kDd" id="Jno-Yi-pTx"/>
                         <outlet property="likesLabel" destination="bKy-or-7rQ" id="xuw-Ja-KLw"/>
                         <outlet property="photoImg" destination="Tkb-jV-W4n" id="ZAa-8H-N86"/>
+                        <outlet property="usernameLabel" destination="eeO-ik-uJx" id="Cts-I3-wDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhG-CK-ZLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
