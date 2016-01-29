@@ -144,21 +144,25 @@
     CustomCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"thisCell"];
     
     NSDictionary *info = [json objectAtIndex:indexPath.row];
-    /*//for (int i=0; i<[userArray count]; i++) {
-        NSDictionary *userInfo = [userArray objectAtIndex:indexPath.row];
-        //if ([[userInfo objectForKey:@"user_id"] isEqualToString:[info objectForKey:@"user_id"]]) {
-            cell.username.text = [userInfo objectForKey:@"username"];
-        //}
-    //}*/
+    NSDictionary *userInfo = [userArray objectAtIndex:indexPath.row];
+    for (int i=0; i<[userArray count]; i++) {
+        if ([[userInfo objectForKey:@"user_id"] isEqualToString:[info objectForKey:@"user_id"]]) {
+            [usernameArray addObject:[userInfo objectForKey:@"user_id"]];
+        }
+    }
+    
     
     NSString *img = [@"http://www.thestudysolution.com/fbla_outfitter/" stringByAppendingString:[info objectForKey:@"post_image_url"]];
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:img]];
     
+    NSLog(@"%@", usernameArray);
     
     cell.username.text = [info objectForKey:@"user_id"];
+    //cell.username.text = [usernameArray objectAtIndex:indexPath.row];
     cell.caption.text = [info objectForKey:@"post_text"];
     cell.photo.image = [UIImage imageWithData:data];
+    
     
     return cell;
 }

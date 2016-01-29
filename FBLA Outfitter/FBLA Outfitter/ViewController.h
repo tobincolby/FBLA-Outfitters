@@ -17,6 +17,7 @@
     NSString *user_id;
     NSString *username;
     NSMutableArray *userArray;
+    NSMutableArray *usernameArray;
    
 }
 
