@@ -118,10 +118,10 @@
         /*UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];*/
         messageLabel.hidden = NO;
         messageLabel.text = @"No data is available. Pull to refresh";
-        messageLabel.textColor = [UIColor blackColor];
+        //messageLabel.textColor = [UIColor blackColor];
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = NSTextAlignmentCenter;
-        messageLabel.font = [UIFont fontWithName:@"Arial" size:15];
+        //messageLabel.font = [UIFont fontWithName:@"Arial" size:15];
         [messageLabel sizeToFit];
         
         self->tableView.backgroundView = messageLabel;

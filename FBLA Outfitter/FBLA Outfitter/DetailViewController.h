@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController{
+@interface DetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     IBOutlet UITextView *captionText;
     IBOutlet UILabel *likesLabel;
     IBOutlet UIImageView *photoImg;
     IBOutlet UILabel *usernameLabel;
-    NSArray *jsonUser;
+    NSMutableArray *jsonUser;
+    NSMutableArray *jsonComments;
     NSURLConnection *postConnection;
+    IBOutlet UITableView *tableView;
+    UIRefreshControl *refreshControl;
+    IBOutlet UILabel *messageLabel;
     
 }
 

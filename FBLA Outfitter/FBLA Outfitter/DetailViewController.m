@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "CommentViewCell.h"
 
 @interface DetailViewController ()
 
@@ -25,6 +26,14 @@
     
     [self getUserName];
     [self setUsername];
+    [self receiveComments];
+    self->tableView.rowHeight = UITableViewAutomaticDimension;
+    self->tableView.estimatedRowHeight = 75;
+    
+    refreshControl = [[UIRefreshControl alloc]init];
+    [self->tableView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    
     
     NSError *error;
     NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getlikesforoutfit.php?post_id=%@",_post_id]];
@@ -65,13 +74,37 @@
     NSURL *url = [NSURL URLWithString:postString];
     NSData *data = [NSData dataWithContentsOfURL:url];
     [self getUser:data];
-    NSLog(@"%@", jsonUser);
+    //NSLog(@"%@", jsonUser);
 }
 
 -(void) setUsername{
     NSIndexPath *indexPath;
     NSDictionary *info = [jsonUser objectAtIndex:indexPath.row];
     usernameLabel.text = [info objectForKey:@"username"];
+}
+
+-(void)getComments:(NSData *) data{
+    NSError * error;
+    jsonComments = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+}
+
+-(void)receiveComments{
+    NSMutableString *postString = [NSMutableString stringWithString:@"http://thestudysolution.com/fbla_outfitter/serverside/getcommentsforoutfit.php"];
+    [postString appendString:[NSString stringWithFormat:@"?%@=%@", @"post_id", _post_id]];
+    [postString setString:[postString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:postString]];
+    [request setHTTPMethod:@"POST"];
+    postConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    NSURL *url = [NSURL URLWithString:postString];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    [self getComments:data];
+    NSLog(@"%@", jsonComments);
+}
+
+-(void) refreshTable{
+    [self receiveComments];
+    [refreshControl endRefreshing];
+    [self->tableView reloadData];
 }
 
 
@@ -93,6 +126,50 @@
     }else{
         
     }
+}
+
+//TableView Properties
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    if ([jsonComments count]) {
+        
+        messageLabel.text = @"";
+        messageLabel.hidden = YES;
+        self->tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+        
+    } else {
+        
+        // Display a message when the table is empty
+        /*UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];*/
+        messageLabel.hidden = NO;
+        messageLabel.text = @"No data is available. Pull to refresh";
+        //messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        //messageLabel.font = [UIFont fontWithName:@"Arial" size:15];
+        [messageLabel sizeToFit];
+        
+        self->tableView.backgroundView = messageLabel;
+        self->tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    
+    return 0;
+}
+
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [jsonComments count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CommentViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"cell"];
+    NSDictionary *info = [jsonComments objectAtIndex:indexPath.row];
+    cell.commentLabel.text = [info objectForKey:@"comment"];
+    return cell;
 }
 
 /*
