@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     
     self.navbar.hidden = YES;
+    self.backBtn.hidden = YES;
     self.bio.layer.borderWidth = 0.4f;
     self.bio.layer.borderColor = [[UIColor lightGrayColor]CGColor];
     self.bio.layer.cornerRadius = 6;
@@ -52,6 +53,7 @@
     self.registerSubmit.hidden = NO;
     self.navbar.hidden = NO;
     self.bio.hidden = NO;
+    self.backBtn.hidden = NO;
     
 }
 
@@ -77,6 +79,7 @@
     self.registerSubmit.hidden = YES;
     self.navbar.hidden = YES;
     self.bio.hidden = YES;
+    self.backBtn.hidden = YES;
 }
 
 -(void)login: (NSString *) username withString:(NSString *) password{
@@ -202,6 +205,10 @@
         [self.bio resignFirstResponder];
         self.bio.text = @"About me...";
         self.bio.textColor = [UIColor lightGrayColor];
+        [_usernameLogin resignFirstResponder];
+        [_passwordLogin resignFirstResponder];
+        [self.view endEditing:YES];
+
     }
     
 }
