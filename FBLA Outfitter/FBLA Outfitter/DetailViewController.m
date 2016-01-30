@@ -101,11 +101,68 @@
     NSLog(@"%@", jsonComments);
 }
 
+
+
 -(void) refreshTable{
     [self receiveComments];
     [refreshControl endRefreshing];
     [self->tableView reloadData];
 }
+
+//Chat Input Properties
+- (void)tappedView:(UITapGestureRecognizer*)tapper
+{
+    [_chatInput resignFirstResponder];
+}
+
+#pragma mark - THChatInputDelegate
+
+- (void)chat:(THChatInput*)input sendWasPressed:(NSString*)text
+{
+    [self makeComment:text];
+    [_chatInput setText:@""];
+    [_chatInput resignFirstResponder];
+    [self refreshTable];
+}
+
+- (void)chatShowEmojiInput:(THChatInput*)input
+{
+    _chatInput.textView.inputView = _chatInput.textView.inputView == nil ? _emojiInputView : nil;
+    
+    [_chatInput.textView reloadInputViews];
+}
+
+- (void)chatShowAttachInput:(THChatInput*)input
+{
+    
+}
+
+
+-(void) makeComment:(NSString *)comment{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"Please fill out a response"
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+    
+    
+    
+    if([comment isEqual:@""] || [comment isEqual:@"Question about outfit?"])
+        [alert show];
+
+    
+    NSMutableString *postString = [NSMutableString stringWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/makecomment.php"];
+    [postString appendString:[NSString stringWithFormat:@"?%@=%@", @"user_id", _user_id]];
+    [postString appendString:[NSString stringWithFormat:@"&%@=%@", @"post_id", _post_id]];
+    [postString appendString:[NSString stringWithFormat:@"&%@=%@", @"comment_text", comment]];
+    [postString setString:[postString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:postString]];
+    [request setHTTPMethod:@"POST"];
+    postConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [self refreshTable];
+}
+
 
 
 - (IBAction)like:(id)sender {

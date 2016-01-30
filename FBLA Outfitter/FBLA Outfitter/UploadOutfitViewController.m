@@ -41,7 +41,10 @@
 }
 - (IBAction)takePic:(id)sender {
     [self takeImageWithCamera];
+}
 
+-(IBAction)resign:(id)sender{
+    [_chatInput.textView resignFirstResponder];
 }
 
 
@@ -55,11 +58,9 @@
 
 - (void)chat:(THChatInput*)input sendWasPressed:(NSString*)text
 {
-    //[self postMessage:text];
     [self uploadPost:text];
     [_chatInput setText:@""];
     [_chatInput resignFirstResponder];
-    //[self refreshTable];
 }
 
 - (void)chatShowEmojiInput:(THChatInput*)input

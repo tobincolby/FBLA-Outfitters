@@ -33,6 +33,8 @@
     self->tableView.rowHeight = UITableViewAutomaticDimension;
     self->tableView.estimatedRowHeight = 310;
     
+    
+    
     refreshControl = [[UIRefreshControl alloc]init];
     [self->tableView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
@@ -141,25 +143,24 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"thisCell"];
     
+    usernameArray = [[NSMutableArray alloc]init];
+    
     CustomCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"thisCell"];
     
     NSDictionary *info = [json objectAtIndex:indexPath.row];
-    NSDictionary *userInfo = [userArray objectAtIndex:indexPath.row];
+    NSDictionary *userInfo;
     for (int i=0; i<[userArray count]; i++) {
+        userInfo = [userArray objectAtIndex:i];
         if ([[userInfo objectForKey:@"user_id"] isEqualToString:[info objectForKey:@"user_id"]]) {
-            [usernameArray addObject:[userInfo objectForKey:@"user_id"]];
+            [usernameArray addObject:[userInfo objectForKey:@"username"]];
         }
     }
-    
     
     NSString *img = [@"http://www.thestudysolution.com/fbla_outfitter/" stringByAppendingString:[info objectForKey:@"post_image_url"]];
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:img]];
     
-    NSLog(@"%@", usernameArray);
-    
-    cell.username.text = [info objectForKey:@"user_id"];
-    //cell.username.text = [usernameArray objectAtIndex:indexPath.row];
+    cell.username.text = [usernameArray objectAtIndex:0];
     cell.caption.text = [info objectForKey:@"post_text"];
     cell.photo.image = [UIImage imageWithData:data];
     
