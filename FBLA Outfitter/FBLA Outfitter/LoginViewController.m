@@ -203,7 +203,7 @@
     UITouch * touch = [touches anyObject];
     if(touch.phase == UITouchPhaseBegan){
         [self.bio resignFirstResponder];
-        self.bio.text = @"About me...";
+        //self.bio.text = @"About me...";
         self.bio.textColor = [UIColor lightGrayColor];
         [_usernameLogin resignFirstResponder];
         [_passwordLogin resignFirstResponder];
