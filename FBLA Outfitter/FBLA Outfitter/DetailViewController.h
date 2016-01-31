@@ -34,4 +34,6 @@
 @property (strong, nonatomic) IBOutlet THChatInput *chatInput;
 @property (strong, nonatomic) IBOutlet UIView *emojiInputView;
 
+-(IBAction)shareOutfit:(id)sender;
+
 @end

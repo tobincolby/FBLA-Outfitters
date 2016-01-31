@@ -185,6 +185,18 @@
     }
 }
 
+-(IBAction)shareOutfit:(id)sender{
+    NSString *shareCaption = captionText.text;
+    UIImage *shareImage = [UIImage imageWithData:_photo];
+    NSString *appName = [NSString stringWithString:[[[NSBundle mainBundle] infoDictionary]   objectForKey:@"CFBundleName"]];
+    NSURL *appStoreURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.com/app/%@",[appName stringByReplacingOccurrencesOfString:@" " withString:@""]]];
+    NSArray *shareItems = @[shareCaption, shareImage, appStoreURL];
+    UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    activity.excludedActivityTypes = @[];
+    [self presentViewController:activity animated:YES completion:nil];
+    
+}
+
 //TableView Properties
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
