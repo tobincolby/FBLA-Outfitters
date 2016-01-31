@@ -190,6 +190,7 @@
     UIImage *shareImage = [UIImage imageWithData:_photo];
     NSString *appName = [NSString stringWithString:[[[NSBundle mainBundle] infoDictionary]   objectForKey:@"CFBundleName"]];
     NSURL *appStoreURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.com/app/%@",[appName stringByReplacingOccurrencesOfString:@" " withString:@""]]];
+    //NSURL *appStoreURL = [NSURL URLWithString:[NSString stringWithFormat:@"<BR><BR><BR><A HREF=\"http://FBLAOutfitter://\">Open App</A>"]];
     NSArray *shareItems = @[shareCaption, shareImage, appStoreURL];
     UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
     activity.excludedActivityTypes = @[];
