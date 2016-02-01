@@ -9,7 +9,7 @@
 #import "SearchUserViewController.h"
 #import "CommentViewCell.h"
 #import "SWRevealViewController.h"
-
+#import "ViewMyOutfitsViewController.h"
 @interface SearchUserViewController ()
 
 @end
@@ -24,6 +24,10 @@
     _barButton.image = [UIImage imageNamed:@"menu2.png"];
     self.navigationItem.title = @"Search for Users";
 
+    UIBarButtonItem *BackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [[self navigationItem] setBackBarButtonItem:BackButton];
+    
     [self getUsers];
     [self setSearchArray];
     self->tableView.rowHeight = UITableViewAutomaticDimension;
@@ -46,20 +50,54 @@
     usersSearch = [[NSMutableArray alloc]init];
     for(int i=0; i<[jsonUsers count]; i++){
         info = [jsonUsers objectAtIndex:i];
-        [usersSearch addObject:[info objectForKey:@"username"]];
+        [usersSearch addObject:info];
     }
 }
 
 //Search Bar Properties
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    
+    if([searchText.lowercaseString isEqualToString:@""]){
+        [usersSearch removeAllObjects];
+        for(int i=0; i<[jsonUsers count]; i++){
+            NSDictionary *info = [jsonUsers objectAtIndex:i];
+            [usersSearch addObject:info];
+        }
+        [self->tableView reloadData];
+    }else{
+    NSMutableArray *newArr = [[NSMutableArray alloc]init];
+    for(int i=0;i<[jsonUsers count];i++){
+        NSString *username = [[jsonUsers objectAtIndex:i] objectForKey:@"username"];
+        if([username rangeOfString:searchText.lowercaseString].location != NSNotFound){
+            [newArr addObject:[jsonUsers objectAtIndex:i]];
+        }
+    }
+    usersSearch = newArr;
+    [self->tableView reloadData];
+    }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"findperson" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"findperson"]){
+        ViewMyOutfitsViewController *mine = [segue destinationViewController];
+        NSIndexPath *indexPath = [self->tableView indexPathForSelectedRow];
+        NSDictionary *info = [usersSearch objectAtIndex:indexPath.row];
+        mine.nameText = [NSString stringWithFormat:@"%@ %@",[info objectForKey:@"first_name"],[info objectForKey:@"last_name"]];
+        mine.usernameText = [info objectForKey:@"username"];
+        mine.bioText = [info objectForKey:@"bio"];
+        mine.user_id = [info objectForKey:@"user_id"];
+        
+    }
+    
+}
 
 //TableView Properties
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CommentViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.commentLabel.text = [usersSearch objectAtIndex:indexPath.row];
+    cell.commentLabel.text = [[usersSearch objectAtIndex:indexPath.row] objectForKey:@"username"];
     return cell;
 }
 

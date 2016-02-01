@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 #import "CommentViewCell.h"
-
+#import "ViewMyOutfitsViewController.h"
 @interface DetailViewController ()
 
 @end
@@ -35,6 +35,10 @@
     refreshControl = [[UIRefreshControl alloc]init];
     [self->tableView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    
+    UIBarButtonItem *BackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [[self navigationItem] setBackBarButtonItem:BackButton];
     
     
     NSError *error;
@@ -79,10 +83,24 @@
     //NSLog(@"%@", jsonUser);
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"goToUser"]){
+        ViewMyOutfitsViewController *mine = [segue destinationViewController];
+        mine.user_id = _user_id;
+        mine.usernameText = usernameLabel.titleLabel.text;
+        NSDictionary *info = [jsonUser objectAtIndex:0];
+        mine.bioText= [info objectForKey:@"bio"];
+        mine.nameText = [NSString stringWithFormat:@"%@ %@",[info objectForKey:@"first_name"],[info objectForKey:@"last_name"]];
+        
+        
+        
+    }
+}
+
 -(void) setUsername{
     NSIndexPath *indexPath;
     NSDictionary *info = [jsonUser objectAtIndex:indexPath.row];
-    usernameLabel.text = [info objectForKey:@"username"];
+    [usernameLabel setTitle:[info objectForKey:@"username"] forState:UIControlStateNormal];
 }
 
 -(void)getComments:(NSData *) data{

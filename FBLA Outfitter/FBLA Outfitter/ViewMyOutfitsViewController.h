@@ -19,6 +19,12 @@
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 @property (strong, nonatomic) NSString *user_id;
+@property (strong, nonatomic)UILabel *username;
+@property (strong, nonatomic)UILabel *name;
+@property (strong, nonatomic)UITextView *bio;
+@property (strong, nonatomic)NSString *nameText;
+@property (strong, nonatomic)NSString *usernameText;
+@property (strong, nonatomic)NSString *bioText;
 
 
 @end

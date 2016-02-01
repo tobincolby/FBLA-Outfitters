@@ -128,11 +128,13 @@
 -(void)registration{
     NSMutableString *str = [NSMutableString stringWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/newuser.php?"];
     [str appendFormat:@"first_name=%@&last_name=%@&username=%@&email=%@&password=%@&bio=%@",[self.firstname text],[self.lastname text],[self.usernameRegister text],[self.email text],[self.passwordRegister text],[self.bio text]];
-    NSURL *url = [NSURL URLWithString:str];
     
+    [str replaceOccurrencesOfString:@" " withString:@"%20" options:kNilOptions range:NSMakeRange(0, [str length])];
+      NSURL *url = [NSURL URLWithString:str];
     NSError *error = nil;
-    
+    NSLog(str);
     NSString *returnString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    //NSLog(str);
     if([returnString isEqualToString:@"failure"]){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Registration Failure"
                                                        message: @"Sorry for the inconvenience, but this user could not be registered. Please try again at a later time!"

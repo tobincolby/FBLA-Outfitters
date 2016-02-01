@@ -17,7 +17,7 @@ For Mac:
 	Xcode 7.2
 	Internet Connection*
 
-This application will not run on a computer with a Windows based operating system
+This application will not run on a computer with a Windows/Linux/Ubuntu based operating system
 
 *This application uses the internet connection in order to connect to a server hosted at “http://www.thestudysolution.com/“ in order to store and request information in a database hosted at this address.
 

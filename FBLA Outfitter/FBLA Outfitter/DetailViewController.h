@@ -13,7 +13,7 @@
     IBOutlet UITextView *captionText;
     IBOutlet UILabel *likesLabel;
     IBOutlet UIImageView *photoImg;
-    IBOutlet UILabel *usernameLabel;
+    IBOutlet UIButton *usernameLabel;
     NSMutableArray *jsonUser;
     NSMutableArray *jsonComments;
     NSURLConnection *postConnection;

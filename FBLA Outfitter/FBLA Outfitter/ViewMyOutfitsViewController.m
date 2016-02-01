@@ -22,14 +22,25 @@
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);
     _barButton.image = [UIImage imageNamed:@"menu2.png"];
-    self.navigationItem.title = @"View My Outfits";
+    
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    if([self.user_id isEqualToString:@""] || self.user_id == nil){
+        self.navigationItem.title = @"View My Outfits";
+        self.user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+    self.username.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
+    self.name.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"name"];
+    self.bio.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"bio"];
+    }else{
+        if([self.usernameText isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"username"]]){
+            self.navigationItem.title = @"View My Outfits";
+        }else
+        self.navigationItem.title = [NSString stringWithFormat:@"View %@'s Outfits",self.usernameText];
+        self.username.text = self.usernameText;
+        self.name.text = self.nameText;
+        self.bio.text = self.bioText;
+    }
     
-    username.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
-    name.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"name"];
-    bio.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"bio"];
-    _user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
     //NSLog(@"%@", _user_id);
     [self getMyPhotos];
     
