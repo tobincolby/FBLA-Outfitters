@@ -206,6 +206,8 @@
 }
 
 -(IBAction)shareOutfit:(id)sender{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Notice" message:@"If you are using the simulator to run this application, the share feature will not work due to the limited capabilities of the simulator!" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+    [alert show];
     NSString *shareCaption = captionText.text;
     UIImage *shareImage = [UIImage imageWithData:_photo];
     NSURL *appStoreURL = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/openapp.php"];
