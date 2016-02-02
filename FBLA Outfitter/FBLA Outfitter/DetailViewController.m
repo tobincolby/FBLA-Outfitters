@@ -18,17 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.likeOufit.enabled = YES;
-    
+    usernameArray = [[NSMutableArray alloc]init];
     likesLabel.text = [NSString stringWithFormat:@"Likes: %@",_likes];
     captionText.text = _caption;
     photoImg.image = [UIImage imageWithData:_photo];
     self.navigationItem.title = @"View Outfits";
+    
+    _logged_user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
     
     _chatInput.lblPlaceholder.text = @"Response...";
     
     [self getUserName];
     [self setUsername];
     [self receiveComments];
+    [self getUsers];
     self->tableView.rowHeight = UITableViewAutomaticDimension;
     self->tableView.estimatedRowHeight = 75;
     
@@ -65,6 +68,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) getAllUsers:(NSData *)data{
+    NSError *error;
+    jsonUsers = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+}
+
+-(void)getUsers{
+    NSURL *url = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getUsers.php"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    [self getAllUsers:data];
+}
+
 -(void) getUser:(NSData *)data{
     NSError *error;
     jsonUser = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
@@ -83,6 +97,10 @@
     //NSLog(@"%@", jsonUser);
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"comment" sender:self];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"goToUser"]){
         ViewMyOutfitsViewController *mine = [segue destinationViewController];
@@ -90,9 +108,17 @@
         mine.usernameText = usernameLabel.titleLabel.text;
         NSDictionary *info = [jsonUser objectAtIndex:0];
         mine.bioText= [info objectForKey:@"bio"];
-        mine.nameText = [NSString stringWithFormat:@"%@ %@",[info objectForKey:@"first_name"],[info objectForKey:@"last_name"]];
-        
-        
+        mine.nameText = [NSString stringWithFormat:@"(%@ %@)",[info objectForKey:@"first_name"],[info objectForKey:@"last_name"]];
+    }
+    
+    if([segue.identifier isEqualToString:@"comment"]){
+        ViewMyOutfitsViewController *viewUser = [segue destinationViewController];
+        NSIndexPath *indexPath = [self->tableView indexPathForSelectedRow];
+        NSDictionary *info = [usernameArray objectAtIndex:indexPath.row];
+        viewUser.user_id = [info objectForKey:@"user_id"];
+        viewUser.usernameText = [info objectForKey:@"username"];
+        viewUser.bioText = [info objectForKey:@"bio"];
+        viewUser.nameText = [NSString stringWithFormat:@"(%@ %@)", [info objectForKey:@"first_name"],[info objectForKey:@"last_name"]];
         
     }
 }
@@ -124,7 +150,10 @@
 
 
 -(void) refreshTable{
+    [self getUserName];
+    [self setUsername];
     [self receiveComments];
+    [self getUsers];
     [refreshControl endRefreshing];
     [self->tableView reloadData];
 }
@@ -173,7 +202,7 @@
 
     
     NSMutableString *postString = [NSMutableString stringWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/makecomment.php"];
-    [postString appendString:[NSString stringWithFormat:@"?%@=%@", @"user_id", _user_id]];
+    [postString appendString:[NSString stringWithFormat:@"?%@=%@", @"user_id", _logged_user_id]];
     [postString appendString:[NSString stringWithFormat:@"&%@=%@", @"post_id", _post_id]];
     [postString appendString:[NSString stringWithFormat:@"&%@=%@", @"comment_text", comment]];
     [postString setString:[postString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -258,8 +287,17 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CommentViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
     NSDictionary *info = [jsonComments objectAtIndex:indexPath.row];
+    NSDictionary *userInfo;
+    for(int i=0; i<[jsonUsers count]; i++){
+        userInfo =[jsonUsers objectAtIndex:i];
+        if([[userInfo objectForKey:@"user_id"]isEqualToString:[info objectForKey:@"user_id"]])
+            [usernameArray addObject:userInfo];
+    }
     cell.commentLabel.text = [info objectForKey:@"comment"];
+    cell.usernameLabel.text = [[usernameArray objectAtIndex:indexPath.row]objectForKey:@"username"];
+    //NSLog(@"%@", usernameArray);
     return cell;
 }
 

@@ -26,6 +26,8 @@
     _barButton.image = [UIImage imageNamed:@"menu2.png"];
     self.navigationItem.title = @"View Outfits";
     
+    usernameArray = [[NSMutableArray alloc]init];
+    
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     [self getPosts];
@@ -142,8 +144,6 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"thisCell"];
-    
-    usernameArray = [[NSMutableArray alloc]init];
     
     CustomCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"thisCell"];
     

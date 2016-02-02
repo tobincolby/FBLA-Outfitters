@@ -7,7 +7,7 @@
 //
 
 #import "SearchUserViewController.h"
-#import "CommentViewCell.h"
+#import "SearchCell.h"
 #import "SWRevealViewController.h"
 #import "ViewMyOutfitsViewController.h"
 @interface SearchUserViewController ()
@@ -96,8 +96,8 @@
 
 //TableView Properties
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CommentViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.commentLabel.text = [[usersSearch objectAtIndex:indexPath.row] objectForKey:@"username"];
+    SearchCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.searchLabel.text = [[usersSearch objectAtIndex:indexPath.row] objectForKey:@"username"];
     return cell;
 }
 

@@ -29,7 +29,7 @@
         self.navigationItem.title = @"View My Outfits";
         self.user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
     self.username.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
-    self.name.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"name"];
+    self.name.text = [NSString stringWithFormat:@"(%@)",[[NSUserDefaults standardUserDefaults] valueForKey:@"name"] ];
     self.bio.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"bio"];
     }else{
         if([self.usernameText isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"username"]]){

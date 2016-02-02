@@ -14,14 +14,24 @@
     IBOutlet UILabel *likesLabel;
     IBOutlet UIImageView *photoImg;
     IBOutlet UIButton *usernameLabel;
+    
+    //User who posted outfit
     NSMutableArray *jsonUser;
+    //All of the comments
     NSMutableArray *jsonComments;
+    //All of the users
+    NSMutableArray *jsonUsers;
+    //Usernames of users who posted comments
+    NSMutableArray *usernameArray;
+    
     NSURLConnection *postConnection;
     IBOutlet UITableView *tableView;
     UIRefreshControl *refreshControl;
     IBOutlet UILabel *messageLabel;
     
 }
+
+@property (strong, nonatomic) NSString *logged_user_id;
 
 @property (weak, nonatomic) IBOutlet UIButton *likeOufit;
 @property (strong, nonatomic) NSString *post_id;

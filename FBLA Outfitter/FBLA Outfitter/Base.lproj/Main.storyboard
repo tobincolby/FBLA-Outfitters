@@ -450,7 +450,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kvC-gM-jNj">
                                 <rect key="frame" x="20" y="236" width="335" height="57"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcW-8o-kDd">
@@ -478,22 +478,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjF-xq-pxv">
-                                                    <rect key="frame" x="8" y="8" width="359" height="26"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjF-xq-pxv">
+                                                    <rect key="frame" x="8" y="38" width="359" height="26"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gM-rA-O8C">
+                                                    <rect key="frame" x="8" y="9" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MjF-xq-pxv" firstAttribute="top" secondItem="DOJ-wj-1g7" secondAttribute="topMargin" id="2Jb-hB-xZx"/>
-                                                <constraint firstItem="MjF-xq-pxv" firstAttribute="trailing" secondItem="DOJ-wj-1g7" secondAttribute="trailingMargin" constant="7" id="SsS-jD-xHD"/>
-                                                <constraint firstItem="MjF-xq-pxv" firstAttribute="leading" secondItem="DOJ-wj-1g7" secondAttribute="leadingMargin" constant="7" id="TMR-Vk-pzv"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="MjF-xq-pxv" secondAttribute="bottom" constant="7" id="aTc-To-Rl2"/>
+                                                <constraint firstItem="5gM-rA-O8C" firstAttribute="top" secondItem="DOJ-wj-1g7" secondAttribute="topMargin" id="40n-Lw-H4E"/>
+                                                <constraint firstItem="MjF-xq-pxv" firstAttribute="trailing" secondItem="DOJ-wj-1g7" secondAttribute="trailingMargin" constant="7" id="BDj-BL-lwf"/>
+                                                <constraint firstItem="MjF-xq-pxv" firstAttribute="bottom" secondItem="DOJ-wj-1g7" secondAttribute="bottomMargin" constant="2.5" id="RLD-6G-7nh"/>
+                                                <constraint firstItem="5gM-rA-O8C" firstAttribute="leading" secondItem="DOJ-wj-1g7" secondAttribute="leadingMargin" constant="7" id="b25-TW-eOk"/>
+                                                <constraint firstItem="5gM-rA-O8C" firstAttribute="trailing" secondItem="DOJ-wj-1g7" secondAttribute="trailingMargin" constant="7" id="fzO-se-xgx"/>
+                                                <constraint firstItem="MjF-xq-pxv" firstAttribute="top" secondItem="5gM-rA-O8C" secondAttribute="bottom" constant="7" id="k8V-5W-OWB"/>
+                                                <constraint firstItem="MjF-xq-pxv" firstAttribute="leading" secondItem="DOJ-wj-1g7" secondAttribute="leadingMargin" constant="7" id="rrG-qd-6IM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="commentLabel" destination="MjF-xq-pxv" id="Sz7-fT-SlB"/>
+                                            <outlet property="commentLabel" destination="MjF-xq-pxv" id="sta-2n-gas"/>
+                                            <outlet property="usernameLabel" destination="5gM-rA-O8C" id="icC-Em-x1i"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -556,11 +566,12 @@
                         <outlet property="photoImg" destination="Tkb-jV-W4n" id="ZAa-8H-N86"/>
                         <outlet property="tableView" destination="ZfM-qd-RaE" id="P5b-Pg-wey"/>
                         <outlet property="usernameLabel" destination="G3x-73-81d" id="zf4-Rm-Aog"/>
+                        <segue destination="Nzs-x2-0Kn" kind="show" identifier="comment" id="Al1-12-PYy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhG-CK-ZLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724.5" y="-473.5"/>
+            <point key="canvasLocation" x="1722.5" y="-466.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s3B-r4-rHd">
@@ -613,17 +624,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p53-fz-Dat">
-                                <rect key="frame" x="7" y="124" width="152" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="82" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Bio" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bap-nD-YK1">
-                                <rect key="frame" x="167" y="72" width="188" height="126"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PvP-sJ-krB">
                                 <rect key="frame" x="0.0" y="212" width="375" height="455"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -659,9 +664,9 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9p-vW-GKa">
-                                <rect key="frame" x="7" y="72" width="152" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="27" y="126" width="157" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="_____________________________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpW-FJ-IJo">
@@ -670,6 +675,12 @@
                                 <color key="textColor" red="0.71378026829999996" green="0.71378026829999996" blue="0.71378026829999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Bio" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bap-nD-YK1">
+                                <rect key="frame" x="198" y="82" width="157" height="109"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -807,7 +818,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="70" id="c6M-VC-wlz" customClass="CommentViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="70" id="c6M-VC-wlz" customClass="SearchCell">
                                         <rect key="frame" x="0.0" y="92" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c6M-VC-wlz" id="wCE-BL-KgL">
@@ -829,7 +840,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="commentLabel" destination="LEa-ln-Nsi" id="JwT-PK-mAq"/>
+                                            <outlet property="searchLabel" destination="LEa-ln-Nsi" id="tpI-HT-foc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -838,7 +849,7 @@
                                     <outlet property="delegate" destination="prd-a4-8Nd" id="VUD-pH-8Gj"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dcq-Fw-UQv">
+                            <searchBar contentMode="redraw" fixedFrame="YES" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Dcq-Fw-UQv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -878,17 +889,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUb-Be-82e">
-                                <rect key="frame" x="7" y="124" width="152" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="82" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Bio" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qLG-E4-rNG">
-                                <rect key="frame" x="167" y="72" width="188" height="126"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NzL-dx-Gj3">
                                 <rect key="frame" x="0.0" y="212" width="375" height="455"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -924,9 +929,9 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEu-PF-sTh">
-                                <rect key="frame" x="7" y="72" width="152" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="27" y="126" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="_____________________________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-XD-gw1">
@@ -935,6 +940,12 @@
                                 <color key="textColor" red="0.71378026829999996" green="0.71378026829999996" blue="0.71378026829999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Bio" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qLG-E4-rNG">
+                                <rect key="frame" x="198" y="82" width="157" height="109"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -957,10 +968,10 @@
         <image name="menu2.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xnu-9l-HDU"/>
         <segue reference="i7V-7Z-GrC"/>
         <segue reference="IYB-Jy-9ig"/>
-        <segue reference="why-0C-357"/>
-        <segue reference="oBg-BC-0fY"/>
+        <segue reference="Xnu-9l-HDU"/>
+        <segue reference="Al1-12-PYy"/>
+        <segue reference="Duu-nU-xtn"/>
     </inferredMetricsTieBreakers>
 </document>

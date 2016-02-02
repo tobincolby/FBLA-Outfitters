@@ -10,6 +10,7 @@
 		940343F61C5ED132001693F7 /* SearchUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940343F51C5ED132001693F7 /* SearchUserViewController.m */; };
 		941BA4C81C53EBCA000CD909 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 941BA4C71C53EBCA000CD909 /* CustomCell.m */; };
 		94222A5B1C53FF0100E64EA9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94222A5A1C53FF0100E64EA9 /* DetailViewController.m */; };
+		943C8DE71C6043760040C72C /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 943C8DE61C6043760040C72C /* SearchCell.m */; };
 		946153D91C55341C00FA866A /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 946153D81C55341C00FA866A /* CollectionViewCell.m */; };
 		94896C821C5BEC34001A44FF /* CommentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94896C811C5BEC34001A44FF /* CommentViewCell.m */; };
 		9493B8361C533AF700E050CD /* THChatInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9493B8351C533AF700E050CD /* THChatInput.m */; };
@@ -48,6 +49,8 @@
 		941BA4C71C53EBCA000CD909 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		94222A591C53FF0100E64EA9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		94222A5A1C53FF0100E64EA9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		943C8DE51C6043760040C72C /* SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
+		943C8DE61C6043760040C72C /* SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
 		946153D71C55341C00FA866A /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		946153D81C55341C00FA866A /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		94896C801C5BEC34001A44FF /* CommentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewCell.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				946153D81C55341C00FA866A /* CollectionViewCell.m */,
 				940343F41C5ED132001693F7 /* SearchUserViewController.h */,
 				940343F51C5ED132001693F7 /* SearchUserViewController.m */,
+				943C8DE51C6043760040C72C /* SearchCell.h */,
+				943C8DE61C6043760040C72C /* SearchCell.m */,
 				EEAFB9E41BDD883C00AFF6C9 /* Main.storyboard */,
 				EEAFB9E71BDD883D00AFF6C9 /* Images.xcassets */,
 				EEAFB9E91BDD883D00AFF6C9 /* LaunchScreen.xib */,
@@ -329,6 +334,7 @@
 				EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */,
 				EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */,
 				94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */,
+				943C8DE71C6043760040C72C /* SearchCell.m in Sources */,
 				946153D91C55341C00FA866A /* CollectionViewCell.m in Sources */,
 				94222A5B1C53FF0100E64EA9 /* DetailViewController.m in Sources */,
 			);
