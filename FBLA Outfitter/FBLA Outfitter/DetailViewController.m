@@ -33,7 +33,7 @@
     [self receiveComments];
     [self getUsers];
     self->tableView.rowHeight = UITableViewAutomaticDimension;
-    self->tableView.estimatedRowHeight = 75;
+    self->tableView.estimatedRowHeight = 100;
     
     refreshControl = [[UIRefreshControl alloc]init];
     [self->tableView addSubview:refreshControl];

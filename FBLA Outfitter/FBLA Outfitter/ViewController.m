@@ -160,7 +160,7 @@
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:img]];
     
-    cell.username.text = [usernameArray objectAtIndex:0];
+    cell.username.text = [usernameArray objectAtIndex:indexPath.row];
     cell.caption.text = [info objectForKey:@"post_text"];
     cell.photo.image = [UIImage imageWithData:data];
     

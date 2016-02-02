@@ -19,7 +19,6 @@
 		94CCC8181C508F3000F61E04 /* app icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CCC8171C508F3000F61E04 /* app icon.png */; };
 		94CCC81A1C508F3A00F61E04 /* menu1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CCC8191C508F3A00F61E04 /* menu1.png */; };
 		94CCC81C1C5093AD00F61E04 /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CCC81B1C5093AD00F61E04 /* menu2.png */; };
-		EE1FDFEC1C50779400487D2A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1FDFEB1C50779400487D2A /* RegisterViewController.m */; };
 		EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */; };
 		EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9EC1C4DE07000A03B2D /* UploadOutfitViewController.m */; };
 		EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9DC1BDD883C00AFF6C9 /* main.m */; };
@@ -64,8 +63,6 @@
 		94CCC8171C508F3000F61E04 /* app icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon.png"; sourceTree = "<group>"; };
 		94CCC8191C508F3A00F61E04 /* menu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu1.png; sourceTree = "<group>"; };
 		94CCC81B1C5093AD00F61E04 /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
-		EE1FDFEA1C50779400487D2A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		EE1FDFEB1C50779400487D2A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		EE53B9E61C4DDFF700A03B2D /* ViewMyOutfitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewMyOutfitsViewController.h; sourceTree = "<group>"; };
 		EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewMyOutfitsViewController.m; sourceTree = "<group>"; };
 		EE53B9EB1C4DE07000A03B2D /* UploadOutfitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadOutfitViewController.h; sourceTree = "<group>"; };
@@ -181,8 +178,6 @@
 				EEAFB9E71BDD883D00AFF6C9 /* Images.xcassets */,
 				EEAFB9E91BDD883D00AFF6C9 /* LaunchScreen.xib */,
 				EEAFB9DA1BDD883C00AFF6C9 /* Supporting Files */,
-				EE1FDFEA1C50779400487D2A /* RegisterViewController.h */,
-				EE1FDFEB1C50779400487D2A /* RegisterViewController.m */,
 			);
 			path = "FBLA Outfitter";
 			sourceTree = "<group>";
@@ -328,7 +323,6 @@
 				940343F61C5ED132001693F7 /* SearchUserViewController.m in Sources */,
 				EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */,
 				EEC893741C120F680067C65D /* LoginViewController.m in Sources */,
-				EE1FDFEC1C50779400487D2A /* RegisterViewController.m in Sources */,
 				94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */,
 				94896C821C5BEC34001A44FF /* CommentViewCell.m in Sources */,
 				EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */,
