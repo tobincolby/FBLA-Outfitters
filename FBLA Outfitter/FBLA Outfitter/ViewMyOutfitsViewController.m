@@ -30,7 +30,12 @@
         self.user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
     self.username.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
     self.name.text = [NSString stringWithFormat:@"(%@)",[[NSUserDefaults standardUserDefaults] valueForKey:@"name"] ];
-    self.bio.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"bio"];
+        NSMutableString *bioStuff = [NSMutableString stringWithString:[[NSUserDefaults standardUserDefaults] valueForKey:@"bio"]];
+        bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"PLUSPLUS" withString:@"+"];
+        bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"COMMA7727" withString:@"'"];
+        bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"%26" withString:@"&"];
+        bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"%2F" withString:@"/"];
+    self.bio.text = bioStuff;
     }else{
         if([self.usernameText isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"username"]]){
             self.navigationItem.title = @"View My Outfits";
@@ -38,7 +43,12 @@
         self.navigationItem.title = [NSString stringWithFormat:@"View %@'s Outfits",self.usernameText];
         self.username.text = self.usernameText;
         self.name.text = self.nameText;
-        self.bio.text = self.bioText;
+        NSMutableString *bioStuff = [NSMutableString stringWithString:self.bioText];
+        bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"PLUSPLUS" withString:@"+"];
+        bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"COMMA7727" withString:@"'"];
+        bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"%26" withString:@"&"];
+        bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"%2F" withString:@"/"];
+        self.bio.text = bioStuff;
     }
     
     //NSLog(@"%@", _user_id);

@@ -20,7 +20,12 @@
     self.likeOufit.enabled = YES;
     usernameArray = [[NSMutableArray alloc]init];
     likesLabel.text = [NSString stringWithFormat:@"Likes: %@",_likes];
-    captionText.text = _caption;
+    NSMutableString *str = [NSMutableString stringWithString:_caption];
+    str = [str stringByReplacingOccurrencesOfString:@"%2B" withString:@"+"];
+    str = [str stringByReplacingOccurrencesOfString:@"%27" withString:@"'"];
+    str = [str stringByReplacingOccurrencesOfString:@"%26" withString:@"&"];
+    str = [str stringByReplacingOccurrencesOfString:@"%2F" withString:@"/"];
+    captionText.text = str;
     photoImg.image = [UIImage imageWithData:_photo];
     self.navigationItem.title = @"View Outfits";
     
@@ -151,9 +156,9 @@
 
 -(void) refreshTable{
     [self getUserName];
-    [self setUsername];
+    //[self setUsername];
     [self receiveComments];
-    [self getUsers];
+    //[self getUsers];
     [refreshControl endRefreshing];
     [self->tableView reloadData];
 }
@@ -201,11 +206,21 @@
         [alert show];
 
     
+    NSMutableString *str = [NSMutableString stringWithString:comment];
+    [str replaceOccurrencesOfString:@"'" withString:@"%27" options:kNilOptions range:NSMakeRange(0, [comment length])];
+    [str replaceOccurrencesOfString:@"&" withString:@"%26" options:kNilOptions range:NSMakeRange(0, [comment length])];
+    [str replaceOccurrencesOfString:@"/" withString:@"%2F" options:kNilOptions range:NSMakeRange(0, [comment length])];
+
+    
     NSMutableString *postString = [NSMutableString stringWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/makecomment.php"];
     [postString appendString:[NSString stringWithFormat:@"?%@=%@", @"user_id", _logged_user_id]];
     [postString appendString:[NSString stringWithFormat:@"&%@=%@", @"post_id", _post_id]];
-    [postString appendString:[NSString stringWithFormat:@"&%@=%@", @"comment_text", comment]];
+    [postString appendString:[NSString stringWithFormat:@"&%@=%@", @"comment_text", str]];
     [postString setString:[postString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    //if ([postString rangeOfString:@"+"].location != NSNotFound)
+    //{
+        postString = [postString stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+    //}
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:postString]];
     [request setHTTPMethod:@"POST"];
     postConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -295,7 +310,13 @@
         if([[userInfo objectForKey:@"user_id"]isEqualToString:[info objectForKey:@"user_id"]])
             [usernameArray addObject:userInfo];
     }
-    cell.commentLabel.text = [info objectForKey:@"comment"];
+    NSMutableString *str = [NSMutableString stringWithString:[info objectForKey:@"comment"]];
+    [str replaceOccurrencesOfString:@"%27" withString:@"'" options:kNilOptions range:NSMakeRange(0, [str length])];
+    [str replaceOccurrencesOfString:@"%26" withString:@"&" options:kNilOptions range:NSMakeRange(0, [str length])];
+    [str replaceOccurrencesOfString:@"%2F" withString:@"/" options:kNilOptions range:NSMakeRange(0, [str length])];
+
+    
+    cell.commentLabel.text = str;
     cell.usernameLabel.text = [[usernameArray objectAtIndex:indexPath.row]objectForKey:@"username"];
     //NSLog(@"%@", usernameArray);
     return cell;

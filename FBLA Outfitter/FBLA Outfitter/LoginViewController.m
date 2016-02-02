@@ -126,13 +126,19 @@
 
 
 -(void)registration{
-    NSMutableString *str = [NSMutableString stringWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/newuser.php?"];
-    [str appendFormat:@"first_name=%@&last_name=%@&username=%@&email=%@&password=%@&bio=%@",[self.firstname text],[self.lastname text],[self.usernameRegister text],[self.email text],[self.passwordRegister text],[self.bio text]];
-    
-    [str replaceOccurrencesOfString:@" " withString:@"%20" options:kNilOptions range:NSMakeRange(0, [str length])];
-      NSURL *url = [NSURL URLWithString:str];
+    //NSMutableString *bioStuff = [NSMutableString stringWithString:[self.bio text]];
+    //[bioStuff replaceOccurrencesOfString:@"+" withString:@"%2B" options:kNilOptions range:NSMakeRange(0, [bioStuff length])];
+    //[bioStuff replaceOccurrencesOfString:@"&" withString:@"%26" options:kNilOptions range:NSMakeRange(0, [bioStuff length])];
+    //[bioStuff replaceOccurrencesOfString:@"/" withString:@"%2F" options:kNilOptions range:NSMakeRange(0, [bioStuff length])];
+    NSMutableString *strURL = [NSMutableString stringWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/newuser.php?"];
+    [strURL appendFormat:@"first_name=%@&last_name=%@&username=%@&email=%@&password=%@&bio=%@",[self.firstname text],[self.lastname text],[self.usernameRegister text],[self.email text],[self.passwordRegister text],[self.bio text]];
+
+    [strURL replaceOccurrencesOfString:@"'" withString:@"COMMA7727" options:kNilOptions range:NSMakeRange(0, [strURL length])];
+    [strURL replaceOccurrencesOfString:@"+" withString:@"PLUSPLUS" options:kNilOptions range:NSMakeRange(0, [strURL length])];
+    [strURL replaceOccurrencesOfString:@" " withString:@"%20" options:kNilOptions range:NSMakeRange(0, [strURL length])];
+      NSURL *url = [NSURL URLWithString:strURL];
     NSError *error = nil;
-    NSLog(str);
+    NSLog(strURL);
     NSString *returnString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     //NSLog(str);
     if([returnString isEqualToString:@"failure"]){

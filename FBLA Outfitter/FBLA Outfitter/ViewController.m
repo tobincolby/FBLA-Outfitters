@@ -161,7 +161,12 @@
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:img]];
     
     cell.username.text = [usernameArray objectAtIndex:indexPath.row];
-    cell.caption.text = [info objectForKey:@"post_text"];
+    NSMutableString *str = [NSMutableString stringWithString:[info objectForKey:@"post_text"]];
+    str = [str stringByReplacingOccurrencesOfString:@"%2B" withString:@"+"];
+    str = [str stringByReplacingOccurrencesOfString:@"%27" withString:@"'"];
+    str = [str stringByReplacingOccurrencesOfString:@"%26" withString:@"&"];
+    str = [str stringByReplacingOccurrencesOfString:@"%2F" withString:@"/"];
+    cell.caption.text = str;
     cell.photo.image = [UIImage imageWithData:data];
     
     

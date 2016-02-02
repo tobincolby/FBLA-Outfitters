@@ -31,7 +31,10 @@
     
     
     // Do any additional setup after loading the view.
-    [_chatInput.textView becomeFirstResponder];
+    if (self.view.frame.size.height != 480){
+        [_chatInput.textView becomeFirstResponder];
+
+    }
     [super viewDidLoad];
 
 }
@@ -145,10 +148,16 @@
     //Populate a dictionary with all the regular values you would like to send.
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     NSString *user = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
-        
+        NSMutableString *str = [NSMutableString stringWithString:text];
+        str = [str stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+        str = [str stringByReplacingOccurrencesOfString:@"'" withString:@"%27"];
+        str = [str stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
+        str = [str stringByReplacingOccurrencesOfString:@"/" withString:@"%2F"];
+
+
     [parameters setValue:user forKey:@"user_id"];
     
-    [parameters setValue:text forKey:@"post_text"];
+    [parameters setValue:str forKey:@"post_text"];
     
     
     

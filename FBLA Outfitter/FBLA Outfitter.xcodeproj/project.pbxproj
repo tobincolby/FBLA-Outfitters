@@ -11,6 +11,9 @@
 		941BA4C81C53EBCA000CD909 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 941BA4C71C53EBCA000CD909 /* CustomCell.m */; };
 		94222A5B1C53FF0100E64EA9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94222A5A1C53FF0100E64EA9 /* DetailViewController.m */; };
 		943C8DE71C6043760040C72C /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 943C8DE61C6043760040C72C /* SearchCell.m */; };
+		943C8DEB1C60703D0040C72C /* Iphone6plus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943C8DEA1C60703D0040C72C /* Iphone6plus.storyboard */; };
+		943C8DED1C6079F20040C72C /* Iphone5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943C8DEC1C6079F20040C72C /* Iphone5.storyboard */; };
+		943C8DEF1C6080DC0040C72C /* Iphone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943C8DEE1C6080DC0040C72C /* Iphone4.storyboard */; };
 		946153D91C55341C00FA866A /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 946153D81C55341C00FA866A /* CollectionViewCell.m */; };
 		94896C821C5BEC34001A44FF /* CommentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94896C811C5BEC34001A44FF /* CommentViewCell.m */; };
 		9493B8361C533AF700E050CD /* THChatInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9493B8351C533AF700E050CD /* THChatInput.m */; };
@@ -50,6 +53,9 @@
 		94222A5A1C53FF0100E64EA9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		943C8DE51C6043760040C72C /* SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
 		943C8DE61C6043760040C72C /* SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
+		943C8DEA1C60703D0040C72C /* Iphone6plus.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Iphone6plus.storyboard; sourceTree = "<group>"; };
+		943C8DEC1C6079F20040C72C /* Iphone5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Iphone5.storyboard; sourceTree = "<group>"; };
+		943C8DEE1C6080DC0040C72C /* Iphone4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Iphone4.storyboard; sourceTree = "<group>"; };
 		946153D71C55341C00FA866A /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		946153D81C55341C00FA866A /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		94896C801C5BEC34001A44FF /* CommentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewCell.h; sourceTree = "<group>"; };
@@ -174,7 +180,10 @@
 				940343F51C5ED132001693F7 /* SearchUserViewController.m */,
 				943C8DE51C6043760040C72C /* SearchCell.h */,
 				943C8DE61C6043760040C72C /* SearchCell.m */,
+				943C8DEE1C6080DC0040C72C /* Iphone4.storyboard */,
+				943C8DEC1C6079F20040C72C /* Iphone5.storyboard */,
 				EEAFB9E41BDD883C00AFF6C9 /* Main.storyboard */,
+				943C8DEA1C60703D0040C72C /* Iphone6plus.storyboard */,
 				EEAFB9E71BDD883D00AFF6C9 /* Images.xcassets */,
 				EEAFB9E91BDD883D00AFF6C9 /* LaunchScreen.xib */,
 				EEAFB9DA1BDD883C00AFF6C9 /* Supporting Files */,
@@ -294,8 +303,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAFB9E61BDD883C00AFF6C9 /* Main.storyboard in Resources */,
+				943C8DED1C6079F20040C72C /* Iphone5.storyboard in Resources */,
 				94CCC81A1C508F3A00F61E04 /* menu1.png in Resources */,
 				94CCC8181C508F3000F61E04 /* app icon.png in Resources */,
+				943C8DEF1C6080DC0040C72C /* Iphone4.storyboard in Resources */,
+				943C8DEB1C60703D0040C72C /* Iphone6plus.storyboard in Resources */,
 				94CCC81C1C5093AD00F61E04 /* menu2.png in Resources */,
 				EEAFB9EB1BDD883D00AFF6C9 /* LaunchScreen.xib in Resources */,
 				EEAFB9E81BDD883D00AFF6C9 /* Images.xcassets in Resources */,

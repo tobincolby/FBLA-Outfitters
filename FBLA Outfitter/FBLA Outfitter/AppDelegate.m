@@ -17,13 +17,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString *identifier;
+    CGSize iosScreenSize = [[UIScreen mainScreen] bounds].size;
+    NSString *board;
     NSString *user = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+    
     if(user != nil)
         identifier = @"logged";
     else
         identifier = @"fail";
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    if(iosScreenSize.height == 480)
+        board = @"Iphone4";
+    if(iosScreenSize.height == 568)
+        board = @"Iphone5";
+    if(iosScreenSize.height == 667)
+        board = @"Main";
+    if(iosScreenSize.height == 736)
+        board = @"Iphone6plus";
+    
+    
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:board bundle:nil];
     
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:identifier];
     
