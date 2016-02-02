@@ -153,6 +153,7 @@
         userInfo = [userArray objectAtIndex:i];
         if ([[userInfo objectForKey:@"user_id"] isEqualToString:[info objectForKey:@"user_id"]]) {
             [usernameArray addObject:[userInfo objectForKey:@"username"]];
+            cell.username.text = [userInfo objectForKey:@"username"];
         }
     }
     
@@ -160,7 +161,7 @@
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:img]];
     
-    cell.username.text = [usernameArray objectAtIndex:indexPath.row];
+    //cell.username.text = [usernameArray objectAtIndex:indexPath.row];
     NSMutableString *str = [NSMutableString stringWithString:[info objectForKey:@"post_text"]];
     str = [str stringByReplacingOccurrencesOfString:@"%2B" withString:@"+"];
     str = [str stringByReplacingOccurrencesOfString:@"%27" withString:@"'"];

@@ -307,8 +307,10 @@
     NSDictionary *userInfo;
     for(int i=0; i<[jsonUsers count]; i++){
         userInfo =[jsonUsers objectAtIndex:i];
-        if([[userInfo objectForKey:@"user_id"]isEqualToString:[info objectForKey:@"user_id"]])
+        if([[userInfo objectForKey:@"user_id"]isEqualToString:[info objectForKey:@"user_id"]]){
             [usernameArray addObject:userInfo];
+        cell.usernameLabel.text = [userInfo objectForKey:@"username"];
+        }
     }
     NSMutableString *str = [NSMutableString stringWithString:[info objectForKey:@"comment"]];
     [str replaceOccurrencesOfString:@"%27" withString:@"'" options:kNilOptions range:NSMakeRange(0, [str length])];
@@ -317,7 +319,7 @@
 
     
     cell.commentLabel.text = str;
-    cell.usernameLabel.text = [[usernameArray objectAtIndex:indexPath.row]objectForKey:@"username"];
+    //cell.usernameLabel.text = [[usernameArray objectAtIndex:indexPath.row]objectForKey:@"username"];
     //NSLog(@"%@", usernameArray);
     return cell;
 }
