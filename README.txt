@@ -48,15 +48,28 @@ Limited Capabilities of Simulator
 ==============================
 Due to the limited capabilities of the iPhone simulator that the application will run on, there are some features that will not be able to work, such as the “Sharing” feature, as it requires a messaging/emailing app that doesn’t exist on the iPhone simulator. In addition to this, taking a photo with the camera to upload an outfit is also not possible due to the fact that the simulator lacks a camera.
 
+In addition to this, on the simulator, there is a text glitch that appears on the outfits detailed view controller after posting a comment. This glitch doesn’t appear when the application is run on an actual iPhone device. This is a result of the simulator’s low development quality. When a comment is posted, the username referring to the comment posted is incorrect sometimes; however, when the outfits detailed view controller is loaded again, the username is correct for the posted comment. This glitch is a result of the low quality of the simulator and is not a bug in the code.
+
 How to Run Application (Simulator) (Not for sale on App Store)
 =============================
 For Mac:
-	1. Open up Folder named “FBLA Outfitter”
-	2. Double click on file named “FBLA Outfitter.xcodeproj”
+	1. Open up Folder named “FBLA Outfitter”.
+	2. Double click on file named “FBLA Outfitter.xcodeproj”.
 	3. Once Xcode has opened the project successfully, in the top left hand corner of the Xcode interface, there is a play/stop button with a target simulator to the right of it.
 	4. Select the desired simulator from the list of simulators given and press the play/run button.
 	5. This will launch the simulator with the application running from it.
 	6. If the simulator does not run the application right away once the simulator has launched and the home screen of the simulator is visible, then press the stop button in the Xcode interface, and once the application stops, press the play/run button again, and the application will run.
+
+How to Run Application (iPhone) (Through Xcode) 
+**This method only works if you have a developer’s license**
+=============================
+On Mac:
+	1. Open up Folder named “FBLA Outfitter”
+	2. Double click on file named “FBLA Outfitter.xcodeproj”
+	3. Once Xcode has opened the project, there will be a file navigator on the right hand side.At the top of the file navigator, there will be a file with a blue logo named FBLA Outfitter. Click on this file and it will navigate you to the project properties.
+	4. In this view, under the category, “Identity,” there will be a section that denotes where a Team can be placed in. Select this drop down menu and either add your developer’s account as a team for this application or select your developer’s account to use them as a team for this application.
+	5. Once the developer’s account has been linked to the application, plug your phone into the Mac computer, and the name of the phone should appear in the top left hand corner of Xcode to the right of a play/stop button. 
+	6. Once this phone pops up as a device in Xcode, you can press the play button in order to start the application to run it.
 
 File Locations
 =============================
