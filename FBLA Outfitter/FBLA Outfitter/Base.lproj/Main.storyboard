@@ -715,21 +715,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpZ-Va-Qhy">
-                                <rect key="frame" x="184" y="298" width="107" height="30"/>
-                                <state key="normal" title="Library Capture">
+                                <rect key="frame" x="223" y="298" width="132" height="30"/>
+                                <state key="normal" title="Photo From Library">
                                     <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="lookInLibrary:" destination="CS5-Ug-tY7" eventType="touchUpInside" id="CMq-Ib-sQl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYa-XI-19k">
-                                <rect key="frame" x="83" y="298" width="58" height="30"/>
-                                <state key="normal" title="Take Pic">
-                                    <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePic:" destination="CS5-Ug-tY7" eventType="touchUpInside" id="bbm-en-fFg"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dbk-4R-V4d">
@@ -742,6 +733,15 @@
                                     <outlet property="delegate" destination="CS5-Ug-tY7" id="gBz-1m-Xuj"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYa-XI-19k">
+                                <rect key="frame" x="20" y="298" width="140" height="30"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePic:" destination="CS5-Ug-tY7" eventType="touchUpInside" id="bbm-en-fFg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
