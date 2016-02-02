@@ -5,6 +5,8 @@ Authors
 Colby Tobin
 Ryan Tobin
 
+
+
 General Usage
 =============================
 This is an application designed for the purpose of giving users the capability to share tips/information on different styles of fashion according to the FBLA-style dress code. Users have the ability to create accounts within this application, and use these accounts to upload their own photos and request varying tips and guidance regarding their outfits. In addition, these users have the ability to view other individuals’ outfits and provide feedback and comments to the user giving a social aspect to this application.
@@ -36,13 +38,17 @@ This application will not run on a computer with a Windows/Linux/Ubuntu based op
 
 *This application uses the internet connection in order to connect to a server hosted at “http://www.thestudysolution.com/“ in order to store and request information in a database hosted at this address.
 
-Application Permissions/Limitations
+Application Permissions
 =============================
 In the application, it will ask the user for permission to access his/her photo library and/or camera on the phone. The user must give the application permission to access the photo library and camera. The application will only be able to perform fully if these permissions are granted. 
 
+
+
+Limited Capabilities of Simulator
+==============================
 Due to the limited capabilities of the iPhone simulator that the application will run on, there are some features that will not be able to work, such as the “Sharing” feature, as it requires a messaging/emailing app that doesn’t exist on the iPhone simulator. In addition to this, taking a photo with the camera to upload an outfit is also not possible due to the fact that the simulator lacks a camera.
 
-How to Run Application
+How to Run Application (Simulator) (Not for sale on App Store)
 =============================
 For Mac:
 	1. Open up Folder named “FBLA Outfitter”
@@ -52,7 +58,15 @@ For Mac:
 	5. This will launch the simulator with the application running from it.
 	6. If the simulator does not run the application right away once the simulator has launched and the home screen of the simulator is visible, then press the stop button in the Xcode interface, and once the application stops, press the play/run button again, and the application will run.
 
-
+File Locations
+=============================
+GUI Screenshots 
+	“Application_Screenshots.pdf”
+Main Project File
+	“FBLA Outfitter/FBLA Outfitter.xcodeproj”
+Source Code
+	“FBLA Outfitter/FBLA Outfitter/”
+	They are the *.m, *.h, *.storyboard files within this directory
 
 iOS Application Files
 =============================
@@ -83,6 +97,9 @@ SearchUserViewController.m
 SearchCell.h
 SearchCell.m
 Main.storyboard
+Iphone6plus.storyboard
+Iphone5.storyboard
+Iphone4.storyboard
 Images.xcassets
 LaunchScreen.xib
 SWRevealViewController.h
