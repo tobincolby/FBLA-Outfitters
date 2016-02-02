@@ -48,7 +48,6 @@ Limited Capabilities of Simulator
 ==============================
 Due to the limited capabilities of the iPhone simulator that the application will run on, there are some features that will not be able to work, such as the “Sharing” feature, as it requires a messaging/emailing app that doesn’t exist on the iPhone simulator. In addition to this, taking a photo with the camera to upload an outfit is also not possible due to the fact that the simulator lacks a camera.
 
-In addition to this, on the simulator, there is a text glitch that appears on the outfits detailed view controller after posting a comment. This glitch doesn’t appear when the application is run on an actual iPhone device. This is a result of the simulator’s low development quality. When a comment is posted, the username referring to the comment posted is incorrect sometimes; however, when the outfits detailed view controller is loaded again, the username is correct for the posted comment. This glitch is a result of the low quality of the simulator and is not a bug in the code.
 
 How to Run Application (Simulator) (Not for sale on App Store)
 =============================
