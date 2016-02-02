@@ -64,9 +64,12 @@ GUI Screenshots
 	“Application_Screenshots.pdf”
 Main Project File
 	“FBLA Outfitter/FBLA Outfitter.xcodeproj”
-Source Code
+Source Code (iOS)
 	“FBLA Outfitter/FBLA Outfitter/”
 	They are the *.m, *.h, *.storyboard files within this directory
+Source Code (Server Files)
+	“FBLA Outfitter/Server Files/“
+	They are the *.php files within this directory
 
 iOS Application Files
 =============================
