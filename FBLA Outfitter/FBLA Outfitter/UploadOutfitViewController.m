@@ -9,7 +9,9 @@
 #import "UploadOutfitViewController.h"
 #import "SWRevealViewController.h"
 
-@interface UploadOutfitViewController ()
+@interface UploadOutfitViewController (){
+    UIAlertView *alert;
+}
 
 @end
 
@@ -35,15 +37,28 @@
         [_chatInput.textView becomeFirstResponder];
 
     }
+    
+    alert = [[UIAlertView alloc]initWithTitle:@"Select Image" message:@"Select an image to upload by taking a picture from your Camera or Photo Library!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Camera",@"Photo Library", nil];
+    [alert show];
+    
     [super viewDidLoad];
 
 }
-- (IBAction)lookInLibrary:(id)sender {
-    [self selectImageFromLibrary];
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(alertView == alert){
+    if(buttonIndex == 1){
+        [self takeImageWithCamera];
+    }else if(buttonIndex == 2){
+        [self selectImageFromLibrary];
+    }
+    }
 }
+
+
 - (IBAction)takePic:(id)sender {
-    [self takeImageWithCamera];
+  
+    [alert show];
 }
 
 -(IBAction)resign:(id)sender{
@@ -87,12 +102,12 @@
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     [self presentViewController:picker animated:YES completion:NULL];
     }else{
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Source Unavailable"
+    UIAlertView *alertError = [[UIAlertView alloc]initWithTitle: @"Source Unavailable"
                                                    message: @"Sorry for the inconvenience, but your camera is currently unavailable!"
                                                   delegate: self
                                          cancelButtonTitle:@"Dismiss"
                                          otherButtonTitles:nil];
-    [alert show];
+    [alertError show];
     }
 }
 

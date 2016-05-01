@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "THChatInput.h"
 
-@interface UploadOutfitViewController : UIViewController <UIImagePickerControllerDelegate, THChatInputDelegate>
+@interface UploadOutfitViewController : UIViewController <UIImagePickerControllerDelegate, THChatInputDelegate,UIAlertViewDelegate>
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 

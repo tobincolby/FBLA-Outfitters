@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    menu = @[@"title", @"tab1", @"tab2", @"tab3", @"search", @"tab4"];
+    menu = @[@"title", @"view", @"mine", @"friend", @"upload", @"search",@"logout"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +32,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 5){
+    if (indexPath.row == 6){
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"email"];
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"name"];
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"user_id"];

@@ -51,6 +51,25 @@
         self.bio.text = bioStuff;
     }
     
+    if(![self.navigationItem.title isEqualToString:@"View My Outfits"]){
+        self.followButton.hidden = NO;
+        NSString *user = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/followinguser.php?user_id=%@&person_following=%@",user,self.user_id]];
+        NSError *error;
+        NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+        if([result isEqualToString:@"following"]){
+            [self.followButton setTitle:@"Unfollow User" forState:UIControlStateNormal];
+            
+            [self.followButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        }else{
+            [self.followButton setTitle:@"Follow User" forState:UIControlStateNormal];
+            
+            [self.followButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        }
+    }else{
+        self.followButton.hidden = YES;
+    }
+    
     //NSLog(@"%@", _user_id);
     [self getMyPhotos];
     
@@ -58,6 +77,47 @@
     [self->collectionView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshCollection) forControlEvents:UIControlEventValueChanged];
     self->collectionView.alwaysBounceVertical = YES;
+    
+}
+- (IBAction)followUser:(id)sender {
+    if([self.followButton.titleLabel.text isEqualToString:@"Follow User"]){
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+    NSString *follow_id = self.user_id;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/followuser.php?user_id=%@&person_following=%@",user_id,follow_id]];
+        //NSLog(url);
+    NSError *error;
+    NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    
+    if([result isEqualToString:@"yes"]){
+        [self.followButton setTitle:@"Unfollow User" forState:UIControlStateNormal];
+        
+        [self.followButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        //self.followButton.titleLabel.textColor = [UIColor grayColor];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"There was a problem when trying to follow this user. Please try again!" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+        [alert show];
+    }
+    }else{
+        //unfollow
+        NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
+        NSString *follow_id = self.user_id;
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/unfollowuser.php?user_id=%@&person_following=%@",user_id,follow_id]];
+        //NSLog(url);
+        NSError *error;
+        NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+        
+        if([result isEqualToString:@"yes"]){
+            [self.followButton setTitle:@"Follow User" forState:UIControlStateNormal];
+            
+            [self.followButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            //self.followButton.titleLabel.textColor = [UIColor grayColor];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"There was a problem when trying to unfollow this user. Please try again!" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+            [alert show];
+        }
+
+    }
+    
     
 }
 

@@ -25,6 +25,7 @@
 @property (strong, nonatomic)NSString *nameText;
 @property (strong, nonatomic)NSString *usernameText;
 @property (strong, nonatomic)NSString *bioText;
+@property (weak, nonatomic) IBOutlet UIButton *followButton;
 
 
 @end
