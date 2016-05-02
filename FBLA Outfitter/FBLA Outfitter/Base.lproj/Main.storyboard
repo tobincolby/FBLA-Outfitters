@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVb-jn-gJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-968.5" y="-247.5"/>
+            <point key="canvasLocation" x="-1201.5" y="-146.5"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="rm4-to-qJf">
@@ -694,11 +694,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Bio" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bap-nD-YK1">
-                                <rect key="frame" x="198" y="82" width="157" height="109"/>
+                                <rect key="frame" x="198" y="82" width="157" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWU-D9-Fp9">
+                                <rect key="frame" x="143" y="170" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVi-ye-wtY">
+                                <rect key="frame" x="268" y="170" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -712,6 +724,8 @@
                         <outlet property="barButton" destination="Ady-ZF-eP0" id="hrl-az-NN0"/>
                         <outlet property="bio" destination="Bap-nD-YK1" id="eW1-81-AqA"/>
                         <outlet property="collectionView" destination="PvP-sJ-krB" id="AjL-Yr-KuX"/>
+                        <outlet property="followerNum" destination="bWU-D9-Fp9" id="HmE-y2-7DS"/>
+                        <outlet property="followingNum" destination="sVi-ye-wtY" id="NN2-8T-ft4"/>
                         <outlet property="name" destination="R9p-vW-GKa" id="eSR-t5-r9K"/>
                         <outlet property="username" destination="p53-fz-Dat" id="hQ2-jC-cM4"/>
                     </connections>
@@ -950,7 +964,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Bio" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qLG-E4-rNG">
-                                <rect key="frame" x="198" y="82" width="157" height="109"/>
+                                <rect key="frame" x="198" y="82" width="157" height="65"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -965,6 +979,18 @@
                                     <action selector="followUser:" destination="Nzs-x2-0Kn" eventType="touchUpInside" id="MTU-y7-kun"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5y-OJ-6EH">
+                                <rect key="frame" x="143" y="165" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGk-4c-06V">
+                                <rect key="frame" x="268" y="165" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -974,6 +1000,8 @@
                         <outlet property="bio" destination="qLG-E4-rNG" id="je5-ac-1IM"/>
                         <outlet property="collectionView" destination="NzL-dx-Gj3" id="DQ4-sk-ROW"/>
                         <outlet property="followButton" destination="sQm-J4-jit" id="f1f-lY-nhD"/>
+                        <outlet property="followerNum" destination="B5y-OJ-6EH" id="8YJ-Rc-POw"/>
+                        <outlet property="followingNum" destination="TGk-4c-06V" id="0HT-7T-aYe"/>
                         <outlet property="name" destination="wEu-PF-sTh" id="ibb-rf-XUQ"/>
                         <outlet property="username" destination="dUb-Be-82e" id="Owm-TB-v8x"/>
                     </connections>
@@ -988,10 +1016,10 @@
         <image name="menu2.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lUP-Im-Kss"/>
-        <segue reference="u7U-30-PxU"/>
-        <segue reference="daw-ju-zyY"/>
-        <segue reference="Duu-nU-xtn"/>
+        <segue reference="IYB-Jy-9ig"/>
+        <segue reference="why-0C-357"/>
         <segue reference="oBg-BC-0fY"/>
+        <segue reference="daw-ju-zyY"/>
+        <segue reference="u7U-30-PxU"/>
     </inferredMetricsTieBreakers>
 </document>

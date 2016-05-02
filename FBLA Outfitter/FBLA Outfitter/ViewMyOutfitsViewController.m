@@ -70,6 +70,11 @@
         self.followButton.hidden = YES;
     }
     
+    [self followers];
+    
+
+    
+    
     //NSLog(@"%@", _user_id);
     [self getMyPhotos];
     
@@ -79,6 +84,20 @@
     self->collectionView.alwaysBounceVertical = YES;
     
 }
+
+-(void)followers{
+    NSURL *urlFollower = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/numberfollower.php?user_id=%@",self.user_id]];
+    NSError *error;
+    NSString *followResult = [NSString stringWithContentsOfURL:urlFollower encoding:NSUTF8StringEncoding error:&error];
+    NSString *followerNum = [followResult substringToIndex:[followResult rangeOfString:@","].location];
+    NSString *followingNum = [followResult substringFromIndex:[followResult rangeOfString:@","].location];
+    
+    [self.followerNum setText:[NSString stringWithFormat:@"Followers: %@",followerNum]];
+    [self.followingNum setText:[NSString stringWithFormat:@"Following: %@", followingNum]];
+    
+    
+}
+
 - (IBAction)followUser:(id)sender {
     if([self.followButton.titleLabel.text isEqualToString:@"Follow User"]){
     NSString *user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
@@ -92,6 +111,7 @@
         [self.followButton setTitle:@"Unfollow User" forState:UIControlStateNormal];
         
         [self.followButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [self followers];
         //self.followButton.titleLabel.textColor = [UIColor grayColor];
     }else{
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"There was a problem when trying to follow this user. Please try again!" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
@@ -110,6 +130,7 @@
             [self.followButton setTitle:@"Follow User" forState:UIControlStateNormal];
             
             [self.followButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [self followers];
             //self.followButton.titleLabel.textColor = [UIColor grayColor];
         }else{
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"There was a problem when trying to unfollow this user. Please try again!" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];

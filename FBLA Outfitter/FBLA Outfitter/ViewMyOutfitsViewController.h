@@ -16,6 +16,8 @@
     NSMutableArray *json;
     UIRefreshControl *refreshControl;
 }
+@property (weak, nonatomic) IBOutlet UILabel *followerNum;
+@property (weak, nonatomic) IBOutlet UILabel *followingNum;
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 @property (strong, nonatomic) NSString *user_id;
