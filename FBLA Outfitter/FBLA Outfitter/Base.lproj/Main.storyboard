@@ -951,12 +951,6 @@
                                     <outlet property="delegate" destination="Nzs-x2-0Kn" id="6dh-2q-BUh"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEu-PF-sTh">
-                                <rect key="frame" x="27" y="126" width="147" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="_____________________________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-XD-gw1">
                                 <rect key="frame" x="-1" y="183" width="395" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -969,11 +963,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQm-J4-jit">
-                                <rect key="frame" x="27" y="161" width="108" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQm-J4-jit">
+                                <rect key="frame" x="20" y="161" width="108" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Follow User">
-                                    <color key="titleColor" red="1" green="0.039375383573851952" blue="0.15503683958560732" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.039375383569999999" blue="0.1550368396" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="followUser:" destination="Nzs-x2-0Kn" eventType="touchUpInside" id="MTU-y7-kun"/>
@@ -989,6 +983,12 @@
                                 <rect key="frame" x="268" y="165" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEu-PF-sTh">
+                                <rect key="frame" x="20" y="126" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1016,10 +1016,10 @@
         <image name="menu2.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IYB-Jy-9ig"/>
-        <segue reference="why-0C-357"/>
-        <segue reference="oBg-BC-0fY"/>
-        <segue reference="daw-ju-zyY"/>
         <segue reference="u7U-30-PxU"/>
+        <segue reference="daw-ju-zyY"/>
+        <segue reference="IYB-Jy-9ig"/>
+        <segue reference="oBg-BC-0fY"/>
+        <segue reference="Duu-nU-xtn"/>
     </inferredMetricsTieBreakers>
 </document>

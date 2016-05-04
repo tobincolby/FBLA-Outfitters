@@ -53,18 +53,19 @@
     
     if(![self.navigationItem.title isEqualToString:@"View My Outfits"]){
         self.followButton.hidden = NO;
+        self.followButton.layer.cornerRadius = 0.8f;
         NSString *user = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/followinguser.php?user_id=%@&person_following=%@",user,self.user_id]];
         NSError *error;
         NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
         if([result isEqualToString:@"following"]){
             [self.followButton setTitle:@"Unfollow User" forState:UIControlStateNormal];
-            
-            [self.followButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            [self.followButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [self.followButton setBackgroundColor:[UIColor redColor]];
         }else{
             [self.followButton setTitle:@"Follow User" forState:UIControlStateNormal];
-            
-            [self.followButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [self.followButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [self.followButton setBackgroundColor:[UIColor lightGrayColor]];
         }
     }else{
         self.followButton.hidden = YES;
@@ -108,9 +109,13 @@
     NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     
     if([result isEqualToString:@"yes"]){
-        [self.followButton setTitle:@"Unfollow User" forState:UIControlStateNormal];
+        /*[self.followButton setTitle:@"Unfollow User" forState:UIControlStateNormal];
         
-        [self.followButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [self.followButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];*/
+        [self.followButton setTitle:@"Unfollow User" forState:UIControlStateNormal];
+        [self.followButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [self.followButton setBackgroundColor:[UIColor whiteColor]];
+
         [self followers];
         //self.followButton.titleLabel.textColor = [UIColor grayColor];
     }else{
@@ -127,9 +132,13 @@
         NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
         
         if([result isEqualToString:@"yes"]){
-            [self.followButton setTitle:@"Follow User" forState:UIControlStateNormal];
+            /*[self.followButton setTitle:@"Follow User" forState:UIControlStateNormal];
             
+            [self.followButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];*/
+            [self.followButton setTitle:@"Follow User" forState:UIControlStateNormal];
             [self.followButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [self.followButton setBackgroundColor:[UIColor whiteColor]];
+
             [self followers];
             //self.followButton.titleLabel.textColor = [UIColor grayColor];
         }else{
