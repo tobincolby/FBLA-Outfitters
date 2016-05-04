@@ -1004,12 +1004,18 @@
                                 <state key="normal" title="#">
                                     <color key="titleColor" red="0.71378026829999996" green="0.71378026829999996" blue="0.71378026829999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Elo-DT-09o" kind="show" identifier="follower" id="HSq-VZ-qeS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiA-Sx-Rjb">
                                 <rect key="frame" x="303" y="73" width="30" height="30"/>
                                 <state key="normal" title="#">
                                     <color key="titleColor" red="0.71378026829999996" green="0.71378026829999996" blue="0.71378026829999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Elo-DT-09o" kind="show" identifier="following" id="Zeg-VG-frV"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Bio" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qLG-E4-rNG">
                                 <rect key="frame" x="198" y="126" width="157" height="65"/>
@@ -1038,16 +1044,37 @@
             </objects>
             <point key="canvasLocation" x="2230.5" y="-491.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="N69-Ju-9Wa">
+            <objects>
+                <viewController id="Elo-DT-09o" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hZO-ti-Hr3"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ds-ng-kcU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jG4-H5-fJD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="opP-lF-gw2"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBc-bD-xQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2714.5" y="-491.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="app icon.png" width="87" height="87"/>
         <image name="menu2.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="daw-ju-zyY"/>
         <segue reference="u7U-30-PxU"/>
         <segue reference="lUP-Im-Kss"/>
-        <segue reference="why-0C-357"/>
+        <segue reference="daw-ju-zyY"/>
         <segue reference="oBg-BC-0fY"/>
+        <segue reference="Duu-nU-xtn"/>
+        <segue reference="Zeg-VG-frV"/>
     </inferredMetricsTieBreakers>
 </document>

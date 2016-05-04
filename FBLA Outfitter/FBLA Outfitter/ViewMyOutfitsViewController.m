@@ -10,13 +10,13 @@
 #import "SWRevealViewController.h"
 #import "CollectionViewCell.h"
 #import "DetailViewController.h"
+#import "FollowersViewController.h"
 
 @interface ViewMyOutfitsViewController ()
 
 @end
 
 @implementation ViewMyOutfitsViewController
-
 @synthesize username = _username;
 @synthesize name = _name;
 @synthesize bio = _bio;
@@ -230,8 +230,19 @@
         detailView.photo = data;
     }
     
+    if([[segue identifier] isEqualToString:@"follower"]){
+        FollowersViewController *view = [segue destinationViewController];
+        [view setFollower:followers];
+        //view.follower = followers;
+    }
+    
+    if([[segue identifier] isEqualToString:@"following"]){
+        FollowersViewController *view = [segue destinationViewController];
+        [view setFollower:following];
+        //view.follower = following;
+    }
+    
 }
-
 
 
 //Collection View properties

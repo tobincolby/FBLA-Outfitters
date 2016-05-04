@@ -15,6 +15,7 @@
 		943C8DED1C6079F20040C72C /* Iphone5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943C8DEC1C6079F20040C72C /* Iphone5.storyboard */; };
 		943C8DEF1C6080DC0040C72C /* Iphone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943C8DEE1C6080DC0040C72C /* Iphone4.storyboard */; };
 		946153D91C55341C00FA866A /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 946153D81C55341C00FA866A /* CollectionViewCell.m */; };
+		948777F01CDAAFA000319AA9 /* FollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948777EF1CDAAFA000319AA9 /* FollowersViewController.m */; };
 		94896C821C5BEC34001A44FF /* CommentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94896C811C5BEC34001A44FF /* CommentViewCell.m */; };
 		9493B8361C533AF700E050CD /* THChatInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9493B8351C533AF700E050CD /* THChatInput.m */; };
 		94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */; };
@@ -58,6 +59,8 @@
 		943C8DEE1C6080DC0040C72C /* Iphone4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Iphone4.storyboard; sourceTree = "<group>"; };
 		946153D71C55341C00FA866A /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		946153D81C55341C00FA866A /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		948777EE1CDAAFA000319AA9 /* FollowersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowersViewController.h; sourceTree = "<group>"; };
+		948777EF1CDAAFA000319AA9 /* FollowersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowersViewController.m; sourceTree = "<group>"; };
 		94896C801C5BEC34001A44FF /* CommentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewCell.h; sourceTree = "<group>"; };
 		94896C811C5BEC34001A44FF /* CommentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewCell.m; sourceTree = "<group>"; };
 		9493B8341C533AF700E050CD /* THChatInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THChatInput.h; path = ../THChatInput.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 			children = (
 				EE53B9E61C4DDFF700A03B2D /* ViewMyOutfitsViewController.h */,
 				EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */,
+				948777EE1CDAAFA000319AA9 /* FollowersViewController.h */,
+				948777EF1CDAAFA000319AA9 /* FollowersViewController.m */,
 			);
 			name = viewmyoutfits;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948777F01CDAAFA000319AA9 /* FollowersViewController.m in Sources */,
 				EEAFB9E31BDD883C00AFF6C9 /* ViewController.m in Sources */,
 				EEAFB9E01BDD883C00AFF6C9 /* AppDelegate.m in Sources */,
 				941BA4C81C53EBCA000CD909 /* CustomCell.m in Sources */,
