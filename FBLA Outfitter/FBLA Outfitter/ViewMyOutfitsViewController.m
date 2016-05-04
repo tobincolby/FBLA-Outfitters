@@ -169,6 +169,7 @@
 
 -(void) viewDidAppear:(BOOL)animated{
     [self getMyPhotos];
+    [self followers];
     [self refreshCollection];
     [super viewDidAppear:YES];
 }
