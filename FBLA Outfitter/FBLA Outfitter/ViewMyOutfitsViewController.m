@@ -17,6 +17,11 @@
 
 @implementation ViewMyOutfitsViewController
 
+@synthesize username = _username;
+@synthesize name = _name;
+@synthesize bio = _bio;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _barButton.target = self.revealViewController;
@@ -25,22 +30,23 @@
     
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
     if([self.user_id isEqualToString:@""] || self.user_id == nil){
         self.navigationItem.title = @"View My Outfits";
         self.user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
-    self.username.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
-    self.name.text = [NSString stringWithFormat:@"(%@)",[[NSUserDefaults standardUserDefaults] valueForKey:@"name"] ];
+        self.username.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
+        self.name.text = [NSString stringWithFormat:@"(%@)",[[NSUserDefaults standardUserDefaults] valueForKey:@"name"] ];
         NSMutableString *bioStuff = [NSMutableString stringWithString:[[NSUserDefaults standardUserDefaults] valueForKey:@"bio"]];
         bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"PLUSPLUS" withString:@"+"];
         bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"COMMA7727" withString:@"'"];
         bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"%26" withString:@"&"];
         bioStuff = [bioStuff stringByReplacingOccurrencesOfString:@"%2F" withString:@"/"];
-    self.bio.text = bioStuff;
+        self.bio.text = bioStuff;
     }else{
         if([self.usernameText isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"username"]]){
             self.navigationItem.title = @"View My Outfits";
         }else
-        self.navigationItem.title = [NSString stringWithFormat:@"View %@'s Outfits",self.usernameText];
+        self.navigationItem.title = [NSString stringWithFormat:@"View %@'s Outfits", self.usernameText];
         self.username.text = self.usernameText;
         self.name.text = self.nameText;
         NSMutableString *bioStuff = [NSMutableString stringWithString:self.bioText];
@@ -53,7 +59,7 @@
     
     if(![self.navigationItem.title isEqualToString:@"View My Outfits"]){
         self.followButton.hidden = NO;
-        self.followButton.layer.cornerRadius = 0.8f;
+        self.followButton.layer.cornerRadius = 6;
         NSString *user = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/followinguser.php?user_id=%@&person_following=%@",user,self.user_id]];
         NSError *error;
@@ -65,7 +71,7 @@
         }else{
             [self.followButton setTitle:@"Follow User" forState:UIControlStateNormal];
             [self.followButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [self.followButton setBackgroundColor:[UIColor lightGrayColor]];
+            [self.followButton setBackgroundColor:[UIColor colorWithRed:211.0/255.0 green:211.0/255.0 blue:211.0 /255.0 alpha:1.0]];
         }
     }else{
         self.followButton.hidden = YES;
@@ -87,16 +93,25 @@
 }
 
 -(void)followers{
-    NSURL *urlFollower = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/numberfollower.php?user_id=%@",self.user_id]];
+    NSURL *urlFollower = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getFollowers.php?user_id=%@",self.user_id]];
+    NSURL *urlFollowing = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getFollowing.php?user_id=%@", self.user_id]];
     NSError *error;
-    NSString *followResult = [NSString stringWithContentsOfURL:urlFollower encoding:NSUTF8StringEncoding error:&error];
-    NSString *followerNum = [followResult substringToIndex:[followResult rangeOfString:@","].location];
-    NSString *followingNum = [followResult substringFromIndex:[followResult rangeOfString:@","].location];
+    NSData *followerData = [NSData dataWithContentsOfURL:urlFollower];
+    NSData *followingData = [NSData dataWithContentsOfURL:urlFollowing];
+    followers = [NSJSONSerialization JSONObjectWithData:followerData options:kNilOptions error:&error];
+    following = [NSJSONSerialization JSONObjectWithData:followingData options:kNilOptions error:&error];
+    NSString *followerNum = [NSString stringWithFormat:@"%lu", (unsigned long)[followers count]];
+    NSString *followingNum = [NSString stringWithFormat:@"%lu", (unsigned long)[following count]];
     
-    [self.followerNum setText:[NSString stringWithFormat:@"Followers: %@",followerNum]];
-    [self.followingNum setText:[NSString stringWithFormat:@"Following: %@", followingNum]];
+    if([followerNum isEqualToString:@"null"] || followerNum == nil){
+        followerNum = @"0";
+    }
+    if([followingNum isEqualToString:@"null"] || followingNum == nil){
+        followingNum = @"0";
+    }
     
-    
+    [self.viewFollowers setTitle:followerNum forState:UIControlStateNormal];
+    [self.viewFollowing setTitle:followingNum forState:UIControlStateNormal];
 }
 
 - (IBAction)followUser:(id)sender {
@@ -113,8 +128,8 @@
         
         [self.followButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];*/
         [self.followButton setTitle:@"Unfollow User" forState:UIControlStateNormal];
-        [self.followButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        [self.followButton setBackgroundColor:[UIColor whiteColor]];
+        [self.followButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.followButton setBackgroundColor:[UIColor redColor]];
 
         [self followers];
         //self.followButton.titleLabel.textColor = [UIColor grayColor];
@@ -136,8 +151,8 @@
             
             [self.followButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];*/
             [self.followButton setTitle:@"Follow User" forState:UIControlStateNormal];
-            [self.followButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-            [self.followButton setBackgroundColor:[UIColor whiteColor]];
+            [self.followButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [self.followButton setBackgroundColor:[UIColor colorWithRed:211.0/255.0 green:211.0/255.0 blue:211.0 /255.0 alpha:1.0]];
 
             [self followers];
             //self.followButton.titleLabel.textColor = [UIColor grayColor];
@@ -147,6 +162,7 @@
         }
 
     }
+    [self followers];
     
     
 }

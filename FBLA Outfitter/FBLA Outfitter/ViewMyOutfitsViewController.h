@@ -15,6 +15,8 @@
     IBOutlet UITextView *bio;
     NSMutableArray *json;
     UIRefreshControl *refreshControl;
+    NSMutableArray *followers;
+    NSMutableArray *following;
 }
 @property (weak, nonatomic) IBOutlet UILabel *followerNum;
 @property (weak, nonatomic) IBOutlet UILabel *followingNum;
@@ -28,6 +30,8 @@
 @property (strong, nonatomic)NSString *usernameText;
 @property (strong, nonatomic)NSString *bioText;
 @property (weak, nonatomic) IBOutlet UIButton *followButton;
+@property (strong, nonatomic) IBOutlet UIButton *viewFollowers;
+@property (strong, nonatomic) IBOutlet UIButton *viewFollowing;
 
 
 @end
