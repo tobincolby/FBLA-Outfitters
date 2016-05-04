@@ -393,8 +393,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="eqs-Pg-se0"/>
                                                     <exclude reference="8I2-mP-6Ag"/>
+                                                    <exclude reference="eqs-Pg-se0"/>
                                                     <exclude reference="9bf-O2-f0L"/>
                                                 </mask>
                                             </variation>

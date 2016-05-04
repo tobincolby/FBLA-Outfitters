@@ -627,7 +627,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMN-Zc-BJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951.5" y="534.5"/>
+            <point key="canvasLocation" x="875.5" y="1166.5"/>
         </scene>
         <!--View My Outfits View Controller-->
         <scene sceneID="CHm-Wx-Z9S">
@@ -806,7 +806,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQT-5r-wi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="787.5" y="-649.5"/>
+=======
+            <point key="canvasLocation" x="543.5" y="-898.5"/>
+>>>>>>> Stashed changes
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3wm-Ts-Ecf">
@@ -1017,9 +1021,16 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IYB-Jy-9ig"/>
+<<<<<<< Updated upstream
         <segue reference="why-0C-357"/>
         <segue reference="oBg-BC-0fY"/>
         <segue reference="daw-ju-zyY"/>
         <segue reference="u7U-30-PxU"/>
+=======
+        <segue reference="Xnu-9l-HDU"/>
+        <segue reference="oBg-BC-0fY"/>
+        <segue reference="Duu-nU-xtn"/>
+        <segue reference="i7V-7Z-GrC"/>
+>>>>>>> Stashed changes
     </inferredMetricsTieBreakers>
 </document>
