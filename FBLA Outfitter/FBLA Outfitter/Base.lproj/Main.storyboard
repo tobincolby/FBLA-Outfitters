@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lFU-rX-ILC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lFU-rX-ILC">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -806,11 +806,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQT-5r-wi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< Updated upstream
             <point key="canvasLocation" x="787.5" y="-649.5"/>
-=======
-            <point key="canvasLocation" x="543.5" y="-898.5"/>
->>>>>>> Stashed changes
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3wm-Ts-Ecf">
@@ -1021,16 +1017,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IYB-Jy-9ig"/>
-<<<<<<< Updated upstream
         <segue reference="why-0C-357"/>
         <segue reference="oBg-BC-0fY"/>
         <segue reference="daw-ju-zyY"/>
         <segue reference="u7U-30-PxU"/>
-=======
-        <segue reference="Xnu-9l-HDU"/>
-        <segue reference="oBg-BC-0fY"/>
-        <segue reference="Duu-nU-xtn"/>
-        <segue reference="i7V-7Z-GrC"/>
->>>>>>> Stashed changes
     </inferredMetricsTieBreakers>
 </document>
