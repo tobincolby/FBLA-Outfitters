@@ -232,14 +232,14 @@
     
     if([[segue identifier] isEqualToString:@"follower"]){
         FollowersViewController *view = [segue destinationViewController];
-        [view setFollower:followers];
-        //view.follower = followers;
+        view.follower = followers;
+        view.navTitle = @"Followers";
     }
     
     if([[segue identifier] isEqualToString:@"following"]){
         FollowersViewController *view = [segue destinationViewController];
-        [view setFollower:following];
-        //view.follower = following;
+        view.follower = following;
+        view.navTitle = @"Following";
     }
     
 }

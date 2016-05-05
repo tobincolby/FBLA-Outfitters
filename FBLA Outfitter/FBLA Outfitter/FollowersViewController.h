@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FollowersViewController : UIViewController 
+@interface FollowersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
-    
+    IBOutlet UITableView * tableView;
 }
+
 @property (strong, nonatomic) NSMutableArray *follower;
 @property (strong, nonatomic) NSMutableArray *usernames;
--(void) setFollower:(NSMutableArray *)follower;
+@property (strong, nonatomic) NSString *navTitle;
 
 @end

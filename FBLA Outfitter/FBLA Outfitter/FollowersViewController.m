@@ -8,6 +8,7 @@
 
 #import "FollowersViewController.h"
 #import "ViewMyOutfitsViewController.h"
+#import "SearchCell.h"
 
 @interface FollowersViewController ()
 
@@ -21,6 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self getUsernames];
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    tableView.estimatedRowHeight = 70;
+    self.navigationItem.title = _navTitle;
 }
 
 -(NSString*) getUserNameById:(NSString *)user_id{
@@ -35,15 +39,25 @@
     _usernames = [[NSMutableArray alloc] init];
     for (int i=0; i<[_follower count]; i++) {
         NSDictionary *info = [_follower objectAtIndex:i];
-        _usernames[i] = [self getUserNameById:[info objectForKey:@"user_id"]];
+        if([self.navTitle isEqualToString:@"Followers"]){
+            _usernames[i] = [self getUserNameById:[info objectForKey:@"user_id"]];
+        } else{
+            _usernames[i] = [self getUserNameById:[info objectForKey:@"person_following_id"]];
+        }
     }
     NSLog(@"%@", _usernames);
 }
 
--(void) setFollower:(NSMutableArray *)follower{
-    self.follower = follower;
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_usernames count];
 }
 
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    SearchCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"user"];
+    cell.searchLabel.text = [_usernames objectAtIndex:indexPath.row];
+    return cell;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

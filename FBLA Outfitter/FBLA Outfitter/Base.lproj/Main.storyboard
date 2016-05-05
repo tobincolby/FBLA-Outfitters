@@ -1044,10 +1044,10 @@
             </objects>
             <point key="canvasLocation" x="2230.5" y="-491.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Followers View Controller-->
         <scene sceneID="N69-Ju-9Wa">
             <objects>
-                <viewController id="Elo-DT-09o" sceneMemberID="viewController">
+                <viewController id="Elo-DT-09o" customClass="FollowersViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hZO-ti-Hr3"/>
                         <viewControllerLayoutGuide type="bottom" id="3ds-ng-kcU"/>
@@ -1055,10 +1055,50 @@
                     <view key="view" contentMode="scaleToFill" id="jG4-H5-fJD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M5V-gQ-pzS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="user" rowHeight="70" id="mJ1-mL-e4F" customClass="SearchCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJ1-mL-e4F" id="jGt-rM-F5W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APg-Nu-RYN">
+                                                    <rect key="frame" x="8" y="19" width="359" height="32"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="APg-Nu-RYN" firstAttribute="leading" secondItem="jGt-rM-F5W" secondAttribute="leadingMargin" constant="7" id="GFK-dE-l6g"/>
+                                                <constraint firstItem="APg-Nu-RYN" firstAttribute="top" secondItem="jGt-rM-F5W" secondAttribute="topMargin" id="IXl-Lc-xFM"/>
+                                                <constraint firstItem="APg-Nu-RYN" firstAttribute="trailing" secondItem="jGt-rM-F5W" secondAttribute="trailingMargin" constant="7" id="JpI-d0-Yw1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="APg-Nu-RYN" secondAttribute="bottom" constant="7" id="oxW-FD-3Fv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchLabel" destination="APg-Nu-RYN" id="lmU-jM-DpG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Elo-DT-09o" id="kAN-zo-re9"/>
+                                    <outlet property="delegate" destination="Elo-DT-09o" id="3yt-L9-wzt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="opP-lF-gw2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="M5V-gQ-pzS" id="oEn-BY-gos"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBc-bD-xQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1070,11 +1110,11 @@
         <image name="menu2.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u7U-30-PxU"/>
         <segue reference="lUP-Im-Kss"/>
         <segue reference="daw-ju-zyY"/>
-        <segue reference="oBg-BC-0fY"/>
-        <segue reference="Duu-nU-xtn"/>
+        <segue reference="u7U-30-PxU"/>
+        <segue reference="jHX-34-W5W"/>
         <segue reference="Zeg-VG-frV"/>
+        <segue reference="Duu-nU-xtn"/>
     </inferredMetricsTieBreakers>
 </document>
