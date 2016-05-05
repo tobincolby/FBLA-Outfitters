@@ -8,6 +8,7 @@
 
 #import "NavigationViewController.h"
 #import "SWRevealViewController.h"
+#import "ViewController.h"
 
 @interface NavigationViewController ()
 
@@ -40,6 +41,14 @@
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"bio"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self performSegueWithIdentifier:@"logout" sender:self];
+    }
+    if(indexPath.row == 3){
+        ViewController *view = [[ViewController alloc] init];
+        view.navTitle = @"View Friend's Outfits";
+    }
+    if(indexPath.row == 1){
+        ViewController * view = [[ViewController alloc] init];
+        view.navTitle = @"View Outfits";
     }
     
 }

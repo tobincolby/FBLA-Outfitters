@@ -22,6 +22,7 @@
 }
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
+@property (strong, nonatomic) NSString * navTitle;
 
 
 @end

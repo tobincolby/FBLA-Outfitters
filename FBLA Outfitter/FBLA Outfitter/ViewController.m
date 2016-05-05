@@ -24,6 +24,7 @@
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);
     _barButton.image = [UIImage imageNamed:@"menu2.png"];
+    //self.navigationItem.title = _navTitle;
     self.navigationItem.title = @"View Outfits";
     
     usernameArray = [[NSMutableArray alloc]init];
