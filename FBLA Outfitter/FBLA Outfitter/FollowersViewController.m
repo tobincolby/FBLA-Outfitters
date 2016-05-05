@@ -10,7 +10,10 @@
 #import "ViewMyOutfitsViewController.h"
 #import "SearchCell.h"
 
-@interface FollowersViewController ()
+@interface FollowersViewController (){
+    NSMutableArray *userArr;
+    NSString *selectedUserID;
+}
 
 @end
 
@@ -25,6 +28,7 @@
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 70;
     self.navigationItem.title = _navTitle;
+    [self getUsers];
 }
 
 -(NSString*) getUserNameById:(NSString *)user_id{
@@ -52,6 +56,31 @@
     return [_usernames count];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *username = [_usernames objectAtIndex:indexPath.row];
+    NSString *select = @"0";
+    for(int i=0;i<[userArr count];i++){
+        NSDictionary *info = [userArr objectAtIndex:i];
+        if([[info objectForKey:@"username"] isEqualToString:username]){
+            select = [info objectForKey:@"user_id"];
+        }
+    }
+    selectedUserID = select;
+    [self performSegueWithIdentifier:@"toPerson" sender:self];
+}
+
+-(void)getUsers{
+    NSURL *url = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getUsers.php"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSError *error;
+    NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    userArr = [[NSMutableArray alloc]init];
+    NSDictionary *info;
+    for(int i=0;i<[jsonArray count];i++){
+        info = [jsonArray objectAtIndex:i];
+        [userArr addObject:info];
+    }
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SearchCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"user"];
@@ -64,14 +93,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"toPerson"]){
+        ViewMyOutfitsViewController *mine = [segue destinationViewController];
+        for(int i=0;i<[userArr count];i++){
+            NSDictionary *dict = [userArr objectAtIndex:i];
+            if ([[dict objectForKey:@"user_id"] isEqualToString:selectedUserID]) {
+                mine.nameText = [NSString stringWithFormat:@"%@ %@",[dict objectForKey:@"first_name"],[dict objectForKey:@"last_name"]];
+                mine.usernameText = [dict objectForKey:@"username"];
+                mine.bioText = [dict objectForKey:@"bio"];
+                mine.user_id = [dict objectForKey:@"user_id"];
+            }
+        
+        }
+    }
 }
-*/
+
 
 @end
