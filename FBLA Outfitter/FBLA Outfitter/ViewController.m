@@ -18,14 +18,18 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);
     _barButton.image = [UIImage imageNamed:@"menu2.png"];
-    //self.navigationItem.title = _navTitle;
-    self.navigationItem.title = @"View Outfits";
+    if(_navTitle == nil || [_navTitle isEqualToString:@""]){
+        _navTitle = @"View Outfits";
+    }
+    self.navigationItem.title = _navTitle;
+    //self.navigationItem.title = @"View Outfits";
     
     usernameArray = [[NSMutableArray alloc]init];
     
@@ -36,7 +40,7 @@
     self->tableView.rowHeight = UITableViewAutomaticDimension;
     self->tableView.estimatedRowHeight = 310;
     
-    
+    user_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_id"];
     
     refreshControl = [[UIRefreshControl alloc]init];
     [self->tableView addSubview:refreshControl];
@@ -58,8 +62,12 @@
 
 
 -(void) getPosts{
-    
-    NSURL *url = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/viewalloutfits.php"];
+    NSURL *url;
+    if([_navTitle isEqualToString:@"View Outfits"]){
+        url = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/viewalloutfits.php"];
+    } else {
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getFollowingOutfits.php?user_id=%@", self->user_id]];
+    }
     NSData *data = [NSData dataWithContentsOfURL:url];
     [self getData:data];
 }
@@ -70,7 +78,12 @@
 }
 
 -(void) getUsers{
-    NSURL *url = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getUsers.php"];
+    NSURL *url;
+    if([_navTitle isEqualToString:@"View Outfits"]){
+        url = [NSURL URLWithString:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getUsers.php"];
+    } else {
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getFollowingUsers.php?user_id=%@", self->user_id]];
+    }
     NSData *data = [NSData dataWithContentsOfURL:url];
     [self getUsernames:data];
 }
@@ -101,6 +114,7 @@
 }
 -(void) refreshTable{
     [self getPosts];
+    [self getUsers];
     [refreshControl endRefreshing];
     [self->tableView reloadData];
 }

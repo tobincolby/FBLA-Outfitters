@@ -42,16 +42,10 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self performSegueWithIdentifier:@"logout" sender:self];
     }
-    if(indexPath.row == 3){
-        ViewController *view = [[ViewController alloc] init];
-        view.navTitle = @"View Friend's Outfits";
-    }
-    if(indexPath.row == 1){
-        ViewController * view = [[ViewController alloc] init];
-        view.navTitle = @"View Outfits";
-    }
     
 }
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     // Return the number of sections.
@@ -79,6 +73,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
+        if([[segue identifier] isEqualToString:@"view_friend"]){
+            ViewController *view = [segue destinationViewController];
+            view.navTitle = @"View Friend's Outfits";
+        }
+        if([[segue identifier] isEqualToString:@"view_all"]){
+            ViewController *view = [segue destinationViewController];
+            view.navTitle = @"View Outfits";
+        }
         SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
         
         swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {

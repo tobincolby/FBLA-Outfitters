@@ -89,6 +89,9 @@
     [self->collectionView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshCollection) forControlEvents:UIControlEventValueChanged];
     self->collectionView.alwaysBounceVertical = YES;
+    UIBarButtonItem *BackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [[self navigationItem] setBackBarButtonItem:BackButton];
     
 }
 

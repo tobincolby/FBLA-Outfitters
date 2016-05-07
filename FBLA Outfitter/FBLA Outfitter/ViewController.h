@@ -18,12 +18,12 @@
     NSString *username;
     NSMutableArray *userArray;
     NSMutableArray *usernameArray;
+    
    
 }
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 @property (strong, nonatomic) NSString * navTitle;
-
 
 @end
 

@@ -29,6 +29,9 @@
     tableView.estimatedRowHeight = 70;
     self.navigationItem.title = _navTitle;
     [self getUsers];
+    UIBarButtonItem *BackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [[self navigationItem] setBackBarButtonItem:BackButton];
 }
 
 -(NSString*) getUserNameById:(NSString *)user_id{

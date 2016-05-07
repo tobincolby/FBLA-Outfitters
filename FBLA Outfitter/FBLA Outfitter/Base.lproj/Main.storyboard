@@ -210,7 +210,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.17614215350000001" green="0.17614215350000001" blue="0.17614215350000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="SpR-UI-2vq" kind="custom" customClass="SWRevealViewControllerSegue" id="u7U-30-PxU"/>
+                                    <segue destination="SpR-UI-2vq" kind="custom" identifier="view_all" customClass="SWRevealViewControllerSegue" id="u7U-30-PxU"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mine" textLabel="o3k-Cj-4fu" style="IBUITableViewCellStyleDefault" id="X4c-Jb-W2c">
@@ -251,6 +251,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.17614215350000001" green="0.17614215350000001" blue="0.17614215350000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="SpR-UI-2vq" kind="custom" identifier="view_friend" customClass="SWRevealViewControllerSegue" id="BgH-VJ-PiY"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="upload" textLabel="49u-09-9Pw" style="IBUITableViewCellStyleDefault" id="xkh-h9-7s9">
                                 <rect key="frame" x="0.0" y="198" width="375" height="44"/>
@@ -360,7 +363,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No data available. Pull to refresh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBJ-Qn-Ndy">
-                                <rect key="frame" x="64" y="326" width="246" height="21"/>
+                                <rect key="frame" x="20" y="326" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -448,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSf-Ig-1Ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588.5" y="880.5"/>
+            <point key="canvasLocation" x="641.5" y="118.5"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="lWJ-KL-lBO">
@@ -670,6 +673,9 @@
                                 <state key="normal" title="#">
                                     <color key="titleColor" red="0.71378026829999996" green="0.71378026829999996" blue="0.71378026829999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Elo-DT-09o" kind="show" identifier="follower" id="0l2-bN-YLO"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PvP-sJ-krB">
                                 <rect key="frame" x="0.0" y="212" width="375" height="455"/>
@@ -722,6 +728,9 @@
                                 <state key="normal" title="#">
                                     <color key="titleColor" red="0.71378026829999996" green="0.71378026829999996" blue="0.71378026829999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Elo-DT-09o" kind="show" identifier="following" id="4lf-PN-l2R"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1103,7 +1112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBc-bD-xQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2714.5" y="-491.5"/>
+            <point key="canvasLocation" x="1449.5" y="487.5"/>
         </scene>
     </scenes>
     <resources>
@@ -1111,11 +1120,11 @@
         <image name="menu2.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u7U-30-PxU"/>
+        <segue reference="BgH-VJ-PiY"/>
         <segue reference="daw-ju-zyY"/>
         <segue reference="lUP-Im-Kss"/>
+        <segue reference="Mx1-wF-eTg"/>
+        <segue reference="4lf-PN-l2R"/>
         <segue reference="Opo-3D-MoV"/>
-        <segue reference="HSq-VZ-qeS"/>
-        <segue reference="Duu-nU-xtn"/>
     </inferredMetricsTieBreakers>
 </document>
