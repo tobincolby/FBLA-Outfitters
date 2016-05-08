@@ -18,6 +18,11 @@
 		948777F01CDAAFA000319AA9 /* FollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948777EF1CDAAFA000319AA9 /* FollowersViewController.m */; };
 		94896C821C5BEC34001A44FF /* CommentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94896C811C5BEC34001A44FF /* CommentViewCell.m */; };
 		9493B8361C533AF700E050CD /* THChatInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9493B8351C533AF700E050CD /* THChatInput.m */; };
+		94AC33EA1CDED70C00F61406 /* liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33E81CDED70C00F61406 /* liked.png */; };
+		94AC33ED1CDEDA1400F61406 /* notLiked.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33EC1CDEDA1400F61406 /* notLiked.png */; };
+		94AC33F01CDEDACB00F61406 /* liked1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33EE1CDEDACB00F61406 /* liked1.png */; };
+		94AC33F11CDEDACB00F61406 /* unLiked1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33EF1CDEDACB00F61406 /* unLiked1.png */; };
+		94AC33F31CDEDE0600F61406 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33F21CDEDE0600F61406 /* share.png */; };
 		94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */; };
 		94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC0D7E1C038962004A5D62 /* NavigationViewController.m */; };
 		94CCC8181C508F3000F61E04 /* app icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CCC8171C508F3000F61E04 /* app icon.png */; };
@@ -65,6 +70,11 @@
 		94896C811C5BEC34001A44FF /* CommentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewCell.m; sourceTree = "<group>"; };
 		9493B8341C533AF700E050CD /* THChatInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THChatInput.h; path = ../THChatInput.h; sourceTree = "<group>"; };
 		9493B8351C533AF700E050CD /* THChatInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THChatInput.m; path = ../THChatInput.m; sourceTree = "<group>"; };
+		94AC33E81CDED70C00F61406 /* liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liked.png; sourceTree = "<group>"; };
+		94AC33EC1CDEDA1400F61406 /* notLiked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notLiked.png; sourceTree = "<group>"; };
+		94AC33EE1CDEDACB00F61406 /* liked1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liked1.png; sourceTree = "<group>"; };
+		94AC33EF1CDEDACB00F61406 /* unLiked1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unLiked1.png; sourceTree = "<group>"; };
+		94AC33F21CDEDE0600F61406 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		94BC0D7A1C038915004A5D62 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		94BC0D7B1C038915004A5D62 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		94BC0D7D1C038962004A5D62 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
@@ -199,6 +209,11 @@
 		EEAFB9DA1BDD883C00AFF6C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				94AC33F21CDEDE0600F61406 /* share.png */,
+				94AC33EE1CDEDACB00F61406 /* liked1.png */,
+				94AC33EF1CDEDACB00F61406 /* unLiked1.png */,
+				94AC33E81CDED70C00F61406 /* liked.png */,
+				94AC33EC1CDEDA1400F61406 /* notLiked.png */,
 				94CCC81B1C5093AD00F61E04 /* menu2.png */,
 				94CCC8171C508F3000F61E04 /* app icon.png */,
 				94CCC8191C508F3A00F61E04 /* menu1.png */,
@@ -310,10 +325,15 @@
 				EEAFB9E61BDD883C00AFF6C9 /* Main.storyboard in Resources */,
 				943C8DED1C6079F20040C72C /* Iphone5.storyboard in Resources */,
 				94CCC81A1C508F3A00F61E04 /* menu1.png in Resources */,
+				94AC33F31CDEDE0600F61406 /* share.png in Resources */,
+				94AC33F01CDEDACB00F61406 /* liked1.png in Resources */,
+				94AC33F11CDEDACB00F61406 /* unLiked1.png in Resources */,
 				94CCC8181C508F3000F61E04 /* app icon.png in Resources */,
 				943C8DEF1C6080DC0040C72C /* Iphone4.storyboard in Resources */,
+				94AC33ED1CDEDA1400F61406 /* notLiked.png in Resources */,
 				943C8DEB1C60703D0040C72C /* Iphone6plus.storyboard in Resources */,
 				94CCC81C1C5093AD00F61E04 /* menu2.png in Resources */,
+				94AC33EA1CDED70C00F61406 /* liked.png in Resources */,
 				EEAFB9EB1BDD883D00AFF6C9 /* LaunchScreen.xib in Resources */,
 				EEAFB9E81BDD883D00AFF6C9 /* Images.xcassets in Resources */,
 			);

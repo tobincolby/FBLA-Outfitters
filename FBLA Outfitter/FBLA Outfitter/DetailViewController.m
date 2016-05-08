@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.likeOufit.enabled = YES;
     usernameArray = [[NSMutableArray alloc]init];
-    likesLabel.text = [NSString stringWithFormat:@"Likes: %@",_likes];
+    likesLabel.text = [NSString stringWithFormat:@"%@",_likes];
     NSMutableString *str = [NSMutableString stringWithString:_caption];
     str = [str stringByReplacingOccurrencesOfString:@"%2B" withString:@"+"];
     str = [str stringByReplacingOccurrencesOfString:@"%27" withString:@"'"];
@@ -62,7 +62,8 @@
             if ([[dict2 objectForKey:@"user_id" ] isEqualToString: [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]]) {
                 //blur out like_oufit
                 self.likeOufit.enabled = NO;
-                [self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+                [self.likeOufit setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateDisabled];
+                //[self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             }
         }
     }
@@ -240,9 +241,10 @@
     NSLog(@"%@", url);
     NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     if([result isEqualToString:@"success"]){
-        likesLabel.text = [NSString stringWithFormat:@"Likes: %i",([_likes intValue] + 1)];
+        likesLabel.text = [NSString stringWithFormat:@"%i",([_likes intValue] + 1)];
         self.likeOufit.enabled = NO;
-        [self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [self.likeOufit setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateDisabled];
+        //[self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
 
     }else{
         
