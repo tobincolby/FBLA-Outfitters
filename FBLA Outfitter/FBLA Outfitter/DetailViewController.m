@@ -9,7 +9,9 @@
 #import "DetailViewController.h"
 #import "CommentViewCell.h"
 #import "ViewMyOutfitsViewController.h"
-@interface DetailViewController ()
+@interface DetailViewController (){
+    BOOL liked;
+}
 
 @end
 
@@ -53,7 +55,7 @@
     NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/getlikesforoutfit.php?post_id=%@",_post_id]];
     NSString *resultS = [NSString stringWithContentsOfURL:url2 encoding:NSUTF8StringEncoding error:&error];
     if([resultS isEqualToString:@"0"]){
-        
+        liked = NO;
     }else{
         NSData *data2 = [NSData dataWithContentsOfURL:url2];
         NSMutableArray *json2 = [NSJSONSerialization JSONObjectWithData:data2 options:kNilOptions error:&error];
@@ -61,8 +63,9 @@
             NSDictionary *dict2 = [json2 objectAtIndex:i];
             if ([[dict2 objectForKey:@"user_id" ] isEqualToString: [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]]) {
                 //blur out like_oufit
-                self.likeOufit.enabled = NO;
-                [self.likeOufit setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateDisabled];
+                //self.likeOufit.enabled = NO;
+                [self.likeOufit setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateNormal];
+                liked = YES;
                 //[self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             }
         }
@@ -231,9 +234,30 @@
 
 
 - (IBAction)like:(id)sender {
+    if(liked){
+        [self unlikeOutfit];
+    }else{
     [self likeOutfit];
+    }
 }
-                       
+
+-(void)unlikeOutfit{
+    NSError *error;
+    NSString *user_id = [[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thestudysolution.com/fbla_outfitter/serverside/unlikeoutfit.php?user_id=%@&post_id=%@",user_id,_post_id]];
+    NSLog(@"%@", url);
+    NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    if([result isEqualToString:@"success"]){
+        likesLabel.text = [NSString stringWithFormat:@"%i",([likesLabel.text intValue] - 1)];
+        //self.likeOufit.enabled = YES;
+        [self.likeOufit setImage:[UIImage imageNamed:@"notLiked.png"] forState:UIControlStateNormal];
+        //[self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        liked = NO;
+    }else{
+        
+    }
+}
+
 -(void)likeOutfit{
     NSError *error;
     NSString *user_id = [[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"];
@@ -241,11 +265,11 @@
     NSLog(@"%@", url);
     NSString *result = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     if([result isEqualToString:@"success"]){
-        likesLabel.text = [NSString stringWithFormat:@"%i",([_likes intValue] + 1)];
-        self.likeOufit.enabled = NO;
-        [self.likeOufit setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateDisabled];
+        likesLabel.text = [NSString stringWithFormat:@"%i",([likesLabel.text intValue] + 1)];
+        //self.likeOufit.enabled = NO;
+        [self.likeOufit setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateNormal];
         //[self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-
+        liked = YES;
     }else{
         
     }

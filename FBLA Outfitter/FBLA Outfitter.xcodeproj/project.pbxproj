@@ -18,7 +18,7 @@
 		948777F01CDAAFA000319AA9 /* FollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948777EF1CDAAFA000319AA9 /* FollowersViewController.m */; };
 		94896C821C5BEC34001A44FF /* CommentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94896C811C5BEC34001A44FF /* CommentViewCell.m */; };
 		9493B8361C533AF700E050CD /* THChatInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9493B8351C533AF700E050CD /* THChatInput.m */; };
-		94AC33EA1CDED70C00F61406 /* liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33E81CDED70C00F61406 /* liked.png */; };
+		94AC33EA1CDED70C00F61406 /* liked3.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33E81CDED70C00F61406 /* liked3.png */; };
 		94AC33ED1CDEDA1400F61406 /* notLiked.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33EC1CDEDA1400F61406 /* notLiked.png */; };
 		94AC33F01CDEDACB00F61406 /* liked1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33EE1CDEDACB00F61406 /* liked1.png */; };
 		94AC33F11CDEDACB00F61406 /* unLiked1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AC33EF1CDEDACB00F61406 /* unLiked1.png */; };
@@ -38,6 +38,7 @@
 		EEAFB9EB1BDD883D00AFF6C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAFB9E91BDD883D00AFF6C9 /* LaunchScreen.xib */; };
 		EEAFB9F71BDD883D00AFF6C9 /* FBLA_OutfitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9F61BDD883D00AFF6C9 /* FBLA_OutfitterTests.m */; };
 		EEC893741C120F680067C65D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC893731C120F680067C65D /* LoginViewController.m */; };
+		EEF268B51CDFB76300FEB563 /* liked.png in Resources */ = {isa = PBXBuildFile; fileRef = EEF268B41CDFB76300FEB563 /* liked.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +71,7 @@
 		94896C811C5BEC34001A44FF /* CommentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewCell.m; sourceTree = "<group>"; };
 		9493B8341C533AF700E050CD /* THChatInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THChatInput.h; path = ../THChatInput.h; sourceTree = "<group>"; };
 		9493B8351C533AF700E050CD /* THChatInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THChatInput.m; path = ../THChatInput.m; sourceTree = "<group>"; };
-		94AC33E81CDED70C00F61406 /* liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liked.png; sourceTree = "<group>"; };
+		94AC33E81CDED70C00F61406 /* liked3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liked3.png; sourceTree = "<group>"; };
 		94AC33EC1CDEDA1400F61406 /* notLiked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notLiked.png; sourceTree = "<group>"; };
 		94AC33EE1CDEDACB00F61406 /* liked1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liked1.png; sourceTree = "<group>"; };
 		94AC33EF1CDEDACB00F61406 /* unLiked1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unLiked1.png; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		EEAFB9F61BDD883D00AFF6C9 /* FBLA_OutfitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBLA_OutfitterTests.m; sourceTree = "<group>"; };
 		EEC893721C120F670067C65D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		EEC893731C120F680067C65D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EEF268B41CDFB76300FEB563 /* liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = liked.png; path = ../../../../../Downloads/liked.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +214,8 @@
 				94AC33F21CDEDE0600F61406 /* share.png */,
 				94AC33EE1CDEDACB00F61406 /* liked1.png */,
 				94AC33EF1CDEDACB00F61406 /* unLiked1.png */,
-				94AC33E81CDED70C00F61406 /* liked.png */,
+				EEF268B41CDFB76300FEB563 /* liked.png */,
+				94AC33E81CDED70C00F61406 /* liked3.png */,
 				94AC33EC1CDEDA1400F61406 /* notLiked.png */,
 				94CCC81B1C5093AD00F61E04 /* menu2.png */,
 				94CCC8171C508F3000F61E04 /* app icon.png */,
@@ -329,11 +332,12 @@
 				94AC33F01CDEDACB00F61406 /* liked1.png in Resources */,
 				94AC33F11CDEDACB00F61406 /* unLiked1.png in Resources */,
 				94CCC8181C508F3000F61E04 /* app icon.png in Resources */,
+				EEF268B51CDFB76300FEB563 /* liked.png in Resources */,
 				943C8DEF1C6080DC0040C72C /* Iphone4.storyboard in Resources */,
 				94AC33ED1CDEDA1400F61406 /* notLiked.png in Resources */,
 				943C8DEB1C60703D0040C72C /* Iphone6plus.storyboard in Resources */,
 				94CCC81C1C5093AD00F61E04 /* menu2.png in Resources */,
-				94AC33EA1CDED70C00F61406 /* liked.png in Resources */,
+				94AC33EA1CDED70C00F61406 /* liked3.png in Resources */,
 				EEAFB9EB1BDD883D00AFF6C9 /* LaunchScreen.xib in Resources */,
 				EEAFB9E81BDD883D00AFF6C9 /* Images.xcassets in Resources */,
 			);
