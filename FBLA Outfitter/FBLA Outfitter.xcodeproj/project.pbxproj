@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		940343F61C5ED132001693F7 /* SearchUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940343F51C5ED132001693F7 /* SearchUserViewController.m */; };
+		9416009A1CE01836003640BF /* liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 941600991CE01836003640BF /* liked.png */; };
 		941BA4C81C53EBCA000CD909 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 941BA4C71C53EBCA000CD909 /* CustomCell.m */; };
 		94222A5B1C53FF0100E64EA9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94222A5A1C53FF0100E64EA9 /* DetailViewController.m */; };
 		943C8DE71C6043760040C72C /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 943C8DE61C6043760040C72C /* SearchCell.m */; };
@@ -38,7 +39,6 @@
 		EEAFB9EB1BDD883D00AFF6C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAFB9E91BDD883D00AFF6C9 /* LaunchScreen.xib */; };
 		EEAFB9F71BDD883D00AFF6C9 /* FBLA_OutfitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9F61BDD883D00AFF6C9 /* FBLA_OutfitterTests.m */; };
 		EEC893741C120F680067C65D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC893731C120F680067C65D /* LoginViewController.m */; };
-		EEF268B51CDFB76300FEB563 /* liked.png in Resources */ = {isa = PBXBuildFile; fileRef = EEF268B41CDFB76300FEB563 /* liked.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +54,7 @@
 /* Begin PBXFileReference section */
 		940343F41C5ED132001693F7 /* SearchUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchUserViewController.h; sourceTree = "<group>"; };
 		940343F51C5ED132001693F7 /* SearchUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUserViewController.m; sourceTree = "<group>"; };
+		941600991CE01836003640BF /* liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liked.png; sourceTree = "<group>"; };
 		941BA4C61C53EBCA000CD909 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		941BA4C71C53EBCA000CD909 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		94222A591C53FF0100E64EA9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		EEAFB9F61BDD883D00AFF6C9 /* FBLA_OutfitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBLA_OutfitterTests.m; sourceTree = "<group>"; };
 		EEC893721C120F670067C65D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		EEC893731C120F680067C65D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		EEF268B41CDFB76300FEB563 /* liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = liked.png; path = ../../../../../Downloads/liked.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,10 +211,10 @@
 		EEAFB9DA1BDD883C00AFF6C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				941600991CE01836003640BF /* liked.png */,
 				94AC33F21CDEDE0600F61406 /* share.png */,
 				94AC33EE1CDEDACB00F61406 /* liked1.png */,
 				94AC33EF1CDEDACB00F61406 /* unLiked1.png */,
-				EEF268B41CDFB76300FEB563 /* liked.png */,
 				94AC33E81CDED70C00F61406 /* liked3.png */,
 				94AC33EC1CDEDA1400F61406 /* notLiked.png */,
 				94CCC81B1C5093AD00F61E04 /* menu2.png */,
@@ -327,12 +327,12 @@
 			files = (
 				EEAFB9E61BDD883C00AFF6C9 /* Main.storyboard in Resources */,
 				943C8DED1C6079F20040C72C /* Iphone5.storyboard in Resources */,
+				9416009A1CE01836003640BF /* liked.png in Resources */,
 				94CCC81A1C508F3A00F61E04 /* menu1.png in Resources */,
 				94AC33F31CDEDE0600F61406 /* share.png in Resources */,
 				94AC33F01CDEDACB00F61406 /* liked1.png in Resources */,
 				94AC33F11CDEDACB00F61406 /* unLiked1.png in Resources */,
 				94CCC8181C508F3000F61E04 /* app icon.png in Resources */,
-				EEF268B51CDFB76300FEB563 /* liked.png in Resources */,
 				943C8DEF1C6080DC0040C72C /* Iphone4.storyboard in Resources */,
 				94AC33ED1CDEDA1400F61406 /* notLiked.png in Resources */,
 				943C8DEB1C60703D0040C72C /* Iphone6plus.storyboard in Resources */,
