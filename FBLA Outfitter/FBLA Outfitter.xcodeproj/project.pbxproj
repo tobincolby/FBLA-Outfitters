@@ -31,6 +31,7 @@
 		94CCC81C1C5093AD00F61E04 /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CCC81B1C5093AD00F61E04 /* menu2.png */; };
 		EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */; };
 		EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9EC1C4DE07000A03B2D /* UploadOutfitViewController.m */; };
+		EEA4FC5E1CE245DD00B3499E /* rsz_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA4FC5D1CE245DD00B3499E /* rsz_liked.png */; };
 		EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9DC1BDD883C00AFF6C9 /* main.m */; };
 		EEAFB9E01BDD883C00AFF6C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9DF1BDD883C00AFF6C9 /* AppDelegate.m */; };
 		EEAFB9E31BDD883C00AFF6C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFB9E21BDD883C00AFF6C9 /* ViewController.m */; };
@@ -88,6 +89,7 @@
 		EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewMyOutfitsViewController.m; sourceTree = "<group>"; };
 		EE53B9EB1C4DE07000A03B2D /* UploadOutfitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadOutfitViewController.h; sourceTree = "<group>"; };
 		EE53B9EC1C4DE07000A03B2D /* UploadOutfitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadOutfitViewController.m; sourceTree = "<group>"; };
+		EEA4FC5D1CE245DD00B3499E /* rsz_liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rsz_liked.png; sourceTree = "<group>"; };
 		EEAFB9D71BDD883C00AFF6C9 /* FBLA Outfitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FBLA Outfitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAFB9DB1BDD883C00AFF6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAFB9DC1BDD883C00AFF6C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				941600991CE01836003640BF /* liked.png */,
+				EEA4FC5D1CE245DD00B3499E /* rsz_liked.png */,
 				94AC33F21CDEDE0600F61406 /* share.png */,
 				94AC33EE1CDEDACB00F61406 /* liked1.png */,
 				94AC33EF1CDEDACB00F61406 /* unLiked1.png */,
@@ -332,6 +335,7 @@
 				94AC33F31CDEDE0600F61406 /* share.png in Resources */,
 				94AC33F01CDEDACB00F61406 /* liked1.png in Resources */,
 				94AC33F11CDEDACB00F61406 /* unLiked1.png in Resources */,
+				EEA4FC5E1CE245DD00B3499E /* rsz_liked.png in Resources */,
 				94CCC8181C508F3000F61E04 /* app icon.png in Resources */,
 				943C8DEF1C6080DC0040C72C /* Iphone4.storyboard in Resources */,
 				94AC33ED1CDEDA1400F61406 /* notLiked.png in Resources */,

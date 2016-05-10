@@ -64,7 +64,7 @@
             if ([[dict2 objectForKey:@"user_id" ] isEqualToString: [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]]) {
                 //blur out like_oufit
                 //self.likeOufit.enabled = NO;
-                [self.likeOufit setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateNormal];
+                [self.likeOufit setImage:[UIImage imageNamed:@"rsz_liked.png"] forState:UIControlStateNormal];
                 liked = YES;
                 //[self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             }
@@ -267,7 +267,7 @@
     if([result isEqualToString:@"success"]){
         likesLabel.text = [NSString stringWithFormat:@"%i",([likesLabel.text intValue] + 1)];
         //self.likeOufit.enabled = NO;
-        [self.likeOufit setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateNormal];
+        [self.likeOufit setImage:[UIImage imageNamed:@"rsz_liked.png"] forState:UIControlStateNormal];
         //[self.likeOufit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         liked = YES;
     }else{
