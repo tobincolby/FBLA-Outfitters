@@ -61,8 +61,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="f4f-9P-mEh">
                                 <rect key="frame" x="112" y="138" width="150" height="150"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FBLA Outfitters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ3-1e-T9e">
-                                <rect key="frame" x="101" y="93" width="172" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FBLA Outfitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ3-1e-T9e">
+                                <rect key="frame" x="101" y="93" width="172" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1148,10 +1148,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Opo-3D-MoV"/>
-        <segue reference="0l2-bN-YLO"/>
-        <segue reference="lUP-Im-Kss"/>
-        <segue reference="u7U-30-PxU"/>
-        <segue reference="Mx1-wF-eTg"/>
+        <segue reference="HSq-VZ-qeS"/>
+        <segue reference="Duu-nU-xtn"/>
+        <segue reference="IYB-Jy-9ig"/>
+        <segue reference="Xnu-9l-HDU"/>
         <segue reference="i7V-7Z-GrC"/>
     </inferredMetricsTieBreakers>
 </document>
