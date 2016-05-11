@@ -1095,7 +1095,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="user" rowHeight="70" id="mJ1-mL-e4F" customClass="SearchCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJ1-mL-e4F" id="jGt-rM-F5W">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
@@ -1147,11 +1147,11 @@
         <image name="share.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BgH-VJ-PiY"/>
-        <segue reference="lUP-Im-Kss"/>
+        <segue reference="IYB-Jy-9ig"/>
+        <segue reference="0l2-bN-YLO"/>
+        <segue reference="why-0C-357"/>
+        <segue reference="Opo-3D-MoV"/>
         <segue reference="daw-ju-zyY"/>
-        <segue reference="Mx1-wF-eTg"/>
-        <segue reference="oBg-BC-0fY"/>
-        <segue reference="4lf-PN-l2R"/>
+        <segue reference="u7U-30-PxU"/>
     </inferredMetricsTieBreakers>
 </document>

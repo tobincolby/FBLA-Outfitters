@@ -170,9 +170,17 @@
 
 
 - (IBAction)takePic:(id)sender {
-  
-    //[alert show];
-    [self show];
+    TWPhotoPickerController *photoPicker = [[TWPhotoPickerController alloc] init];
+    
+    photoPicker.cropBlock = ^(UIImage *image) {
+        //do something
+        self.imgHolder.image = image;
+    };
+    
+    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:photoPicker];
+    [navCon setNavigationBarHidden:YES];
+    
+    [self presentViewController:navCon animated:YES completion:NULL];
 }
 
 -(IBAction)sumbit:(id)sender{

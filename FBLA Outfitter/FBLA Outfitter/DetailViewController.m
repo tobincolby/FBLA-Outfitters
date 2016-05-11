@@ -171,6 +171,7 @@
 - (void)tappedView:(UITapGestureRecognizer*)tapper
 {
     [_chatInput resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
 #pragma mark - THChatInputDelegate
@@ -180,6 +181,7 @@
     [self makeComment:text];
     [_chatInput setText:@""];
     [_chatInput resignFirstResponder];
+    [self.view endEditing:YES];
     [self refreshTable];
 }
 
