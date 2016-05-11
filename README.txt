@@ -24,6 +24,7 @@ How to Use
 9. Another option that the user has is to view their own posted outfits through the side menu bar. By selecting “View My Outfits”, the user has the ability to view all of the outfits they’ve posted thus far. They can click on these outfits to view more information regarding their outfits.
 10. Another option that the user has is to upload an outfit. In order to view this capability, the user must select “Upload Outfit.” At this stage, the user has the ability to take a picture using their phone or select an image from their photo library to upload into the application for others to view. The user can also ask a question about this outfit as a caption in attempts to get information from others about their outfit. 
 11. Another option that the user has is to search for other users. In order to view this capability, the user must select “Search For Users.” In this view, the user can type in different usernames to search for a specific user. Once the desired username is found, the user can click on this username to view all of the outfits that this user has posted to the application thus far. From this view, the user can click on each of these outfits to view more information regarding the outfits.
+12. Another option that the user has is to view his friend’s outfits. In the app, the user has the capability to follow different users. Once he follows these users, he can view each of the user’s outfits that they have posted as a way to filter those specific outfits out. Similar to the view all outfits page, the user can click on any of the outfits posted in order to view more details on the outfit.
 
 
 Installation Requirements
@@ -126,8 +127,15 @@ main.m
 Server Application Files
 =============================
 db.php
+followinguser.php
+followuser.php
 getcommentsforoutfit.php
+getFollowers.php
+getFollowing.php
+getFollowingOutfits.php
+getFollowingUsers.php
 getlikesforoutfit.php
+getUsername.php
 getUsers.php
 infoforuser.php
 likeoutfit.php
@@ -135,7 +143,10 @@ login.php
 makecomment.php
 newuser.php
 openapp.php
+unfollowuser.php
+unlikeoutfit.php
 uploadoutfit.php
+users_i_follow.php
 viewalloutfits.php
 viewmyoutfits.php
 viewoutfit.php
@@ -167,3 +178,7 @@ Tables:
 		user_id
 		comment
 		post_id
+	followers
+		follow_id
+		user_id
+		person_following_id
