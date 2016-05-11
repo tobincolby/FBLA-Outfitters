@@ -29,6 +29,11 @@
 		94CCC8181C508F3000F61E04 /* app icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CCC8171C508F3000F61E04 /* app icon.png */; };
 		94CCC81A1C508F3A00F61E04 /* menu1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CCC8191C508F3A00F61E04 /* menu1.png */; };
 		94CCC81C1C5093AD00F61E04 /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CCC81B1C5093AD00F61E04 /* menu2.png */; };
+		94E8C62A1CE2D1E400D4CF4A /* TWPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E8C6291CE2D1E400D4CF4A /* TWPhotoPickerController.m */; };
+		94E8C62C1CE2D1ED00D4CF4A /* TWImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E8C62B1CE2D1ED00D4CF4A /* TWImageScrollView.m */; };
+		94E8C62E1CE2D20000D4CF4A /* TWPhotoLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E8C62D1CE2D20000D4CF4A /* TWPhotoLoader.m */; };
+		94E8C6301CE2D20900D4CF4A /* TWPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E8C62F1CE2D20900D4CF4A /* TWPhotoCollectionViewCell.m */; };
+		94E8C6321CE2D21300D4CF4A /* TWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E8C6311CE2D21300D4CF4A /* TWPhoto.m */; };
 		EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */; };
 		EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53B9EC1C4DE07000A03B2D /* UploadOutfitViewController.m */; };
 		EEA4FC5E1CE245DD00B3499E /* rsz_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA4FC5D1CE245DD00B3499E /* rsz_liked.png */; };
@@ -85,6 +90,16 @@
 		94CCC8171C508F3000F61E04 /* app icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon.png"; sourceTree = "<group>"; };
 		94CCC8191C508F3A00F61E04 /* menu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu1.png; sourceTree = "<group>"; };
 		94CCC81B1C5093AD00F61E04 /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
+		94E8C6291CE2D1E400D4CF4A /* TWPhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPhotoPickerController.m; sourceTree = "<group>"; };
+		94E8C62B1CE2D1ED00D4CF4A /* TWImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWImageScrollView.m; sourceTree = "<group>"; };
+		94E8C62D1CE2D20000D4CF4A /* TWPhotoLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPhotoLoader.m; sourceTree = "<group>"; };
+		94E8C62F1CE2D20900D4CF4A /* TWPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		94E8C6311CE2D21300D4CF4A /* TWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPhoto.m; sourceTree = "<group>"; };
+		94E8C6331CE2D21F00D4CF4A /* TWPhotoPickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWPhotoPickerController.h; sourceTree = "<group>"; };
+		94E8C6341CE2D21F00D4CF4A /* TWPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		94E8C6351CE2D22A00D4CF4A /* TWImageScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWImageScrollView.h; sourceTree = "<group>"; };
+		94E8C6361CE2D22A00D4CF4A /* TWPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWPhoto.h; sourceTree = "<group>"; };
+		94E8C6371CE2D22A00D4CF4A /* TWPhotoLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWPhotoLoader.h; sourceTree = "<group>"; };
 		EE53B9E61C4DDFF700A03B2D /* ViewMyOutfitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewMyOutfitsViewController.h; sourceTree = "<group>"; };
 		EE53B9E71C4DDFF700A03B2D /* ViewMyOutfitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewMyOutfitsViewController.m; sourceTree = "<group>"; };
 		EE53B9EB1C4DE07000A03B2D /* UploadOutfitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadOutfitViewController.h; sourceTree = "<group>"; };
@@ -134,6 +149,23 @@
 			path = SlideOutMenuFiles;
 			sourceTree = "<group>";
 		};
+		94E8C6281CE2D15400D4CF4A /* IGPicker */ = {
+			isa = PBXGroup;
+			children = (
+				94E8C6291CE2D1E400D4CF4A /* TWPhotoPickerController.m */,
+				94E8C62B1CE2D1ED00D4CF4A /* TWImageScrollView.m */,
+				94E8C62D1CE2D20000D4CF4A /* TWPhotoLoader.m */,
+				94E8C62F1CE2D20900D4CF4A /* TWPhotoCollectionViewCell.m */,
+				94E8C6311CE2D21300D4CF4A /* TWPhoto.m */,
+				94E8C6331CE2D21F00D4CF4A /* TWPhotoPickerController.h */,
+				94E8C6341CE2D21F00D4CF4A /* TWPhotoCollectionViewCell.h */,
+				94E8C6351CE2D22A00D4CF4A /* TWImageScrollView.h */,
+				94E8C6361CE2D22A00D4CF4A /* TWPhoto.h */,
+				94E8C6371CE2D22A00D4CF4A /* TWPhotoLoader.h */,
+			);
+			name = IGPicker;
+			sourceTree = "<group>";
+		};
 		EE53B9E91C4DE04200A03B2D /* viewmyoutfits */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +209,7 @@
 			children = (
 				9493B8341C533AF700E050CD /* THChatInput.h */,
 				9493B8351C533AF700E050CD /* THChatInput.m */,
+				94E8C6281CE2D15400D4CF4A /* IGPicker */,
 				EE53B9EA1C4DE05C00A03B2D /* uploadoufit */,
 				EE53B9E91C4DE04200A03B2D /* viewmyoutfits */,
 				EEAFB9DE1BDD883C00AFF6C9 /* AppDelegate.h */,
@@ -361,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E8C62C1CE2D1ED00D4CF4A /* TWImageScrollView.m in Sources */,
 				948777F01CDAAFA000319AA9 /* FollowersViewController.m in Sources */,
 				EEAFB9E31BDD883C00AFF6C9 /* ViewController.m in Sources */,
 				EEAFB9E01BDD883C00AFF6C9 /* AppDelegate.m in Sources */,
@@ -369,13 +403,17 @@
 				940343F61C5ED132001693F7 /* SearchUserViewController.m in Sources */,
 				EE53B9E81C4DDFF700A03B2D /* ViewMyOutfitsViewController.m in Sources */,
 				EEC893741C120F680067C65D /* LoginViewController.m in Sources */,
+				94E8C62A1CE2D1E400D4CF4A /* TWPhotoPickerController.m in Sources */,
 				94BC0D7F1C038962004A5D62 /* NavigationViewController.m in Sources */,
 				94896C821C5BEC34001A44FF /* CommentViewCell.m in Sources */,
+				94E8C62E1CE2D20000D4CF4A /* TWPhotoLoader.m in Sources */,
 				EEAFB9DD1BDD883C00AFF6C9 /* main.m in Sources */,
 				EE53B9ED1C4DE07000A03B2D /* UploadOutfitViewController.m in Sources */,
 				94BC0D7C1C038915004A5D62 /* SWRevealViewController.m in Sources */,
+				94E8C6321CE2D21300D4CF4A /* TWPhoto.m in Sources */,
 				943C8DE71C6043760040C72C /* SearchCell.m in Sources */,
 				946153D91C55341C00FA866A /* CollectionViewCell.m in Sources */,
+				94E8C6301CE2D20900D4CF4A /* TWPhotoCollectionViewCell.m in Sources */,
 				94222A5B1C53FF0100E64EA9 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

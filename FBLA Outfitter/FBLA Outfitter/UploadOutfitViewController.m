@@ -34,18 +34,131 @@
     
     // Do any additional setup after loading the view.
     if (self.view.frame.size.height != 480){
-        [_chatInput.textView becomeFirstResponder];
+        [_textView becomeFirstResponder];
 
     }
     
     alert = [[UIAlertView alloc]initWithTitle:@"Select Image" message:@"Select an image to upload by taking a picture from your Camera or Photo Library!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Camera",@"Photo Library", nil];
-    [alert show];
+    //[alert show];
+    
+    count = 0;
+    
+    [_scrollView setScrollEnabled:YES];
+    [_scrollView setContentSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
+    _textView.delegate = self;
+    _textView.text = @"Question...";
+    _textView.textColor = [UIColor lightGrayColor];
+
     
     [super viewDidLoad];
 
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+-(void) viewDidAppear:(BOOL)animated{
+    if(count == 0){
+        [self show];
+    }
+    [super viewDidAppear:YES];
+}
+
+-(void) show{
+    TWPhotoPickerController *photoPicker = [[TWPhotoPickerController alloc] init];
+    
+    photoPicker.cropBlock = ^(UIImage *image) {
+        //do something
+        self.imgHolder.image = image;
+    };
+    
+    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:photoPicker];
+    [navCon setNavigationBarHidden:YES];
+    
+    [self presentViewController:navCon animated:NO completion:NULL];
+    count++;
+}
+
+- (IBAction)showAction:(id)sender {
+    TWPhotoPickerController *photoPicker = [[TWPhotoPickerController alloc] init];
+    
+    photoPicker.cropBlock = ^(UIImage *image) {
+        //do something
+        self.imgHolder.image = image;
+    };
+    
+    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:photoPicker];
+    [navCon setNavigationBarHidden:YES];
+    
+    [self presentViewController:navCon animated:YES completion:NULL];
+}
+
+
+//Text View Properties
+-(BOOL)textView:(UITextView *)_textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    [self adjustFrames];
+    return YES;
+}
+
+
+-(void) adjustFrames {
+    CGRect textFrame = _textView.frame;
+    textFrame.size.height = _textView.contentSize.height;
+    
+    CGRect imageFrame = self.imgHolder.frame;
+    imageFrame.origin.y += (textFrame.size.height - _textView.frame.size.height);
+    self.imgHolder.frame = imageFrame;
+    self.imgHolder.translatesAutoresizingMaskIntoConstraints = YES;
+    
+    /*CGRect buttonFrame = _editButton.frame;
+    buttonFrame.origin.y += (textFrame.size.height - _textView.frame.size.height);
+    _editButton.frame = buttonFrame;
+    self.editButton.translatesAutoresizingMaskIntoConstraints = YES;
+    _submitButton.frame = buttonFrame;
+    self.submitButton.translatesAutoresizingMaskIntoConstraints = YES;*/
+    
+    _textView.frame = textFrame;
+    self.textView.translatesAutoresizingMaskIntoConstraints = YES;
+    
+    CGRect contentRect = CGRectZero;
+    for (UIView *view in self.scrollView.subviews) {
+        contentRect = CGRectUnion(contentRect, view.frame);
+    }
+    self.scrollView.contentSize = CGSizeMake(contentRect.size.width, contentRect.size.height+15);
+}
+
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textField {
+    if([self.textView.text isEqualToString:@""] || [self.textView.text isEqualToString:@"Question..."]){
+        self.textView.text = @"";
+    }
+    
+    self.textView.textColor = [UIColor blackColor];
+    
+    return YES;
+}
+
+-(BOOL)textViewShouldEndEditing:(UITextView *)textView{
+    if([self.textView.text isEqualToString:@""] || [self.textView.text isEqualToString:@"Question..."]){
+        self.textView.text = @"Question...";
+        self.textView.textColor = [UIColor lightGrayColor];
+    }
+    
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch * touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan) {
+        [self.textView resignFirstResponder];
+        [self.view endEditing:YES];
+        
+        if([self.textView.text isEqualToString:@""]){
+            self.textView.textColor = [UIColor lightGrayColor];
+            self.textView.text = @"Question...";
+        }
+    }
+}
+
+
+/*-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(alertView == alert){
     if(buttonIndex == 1){
         [self takeImageWithCamera];
@@ -53,44 +166,42 @@
         [self selectImageFromLibrary];
     }
     }
-}
+}*/
 
 
 - (IBAction)takePic:(id)sender {
   
-    [alert show];
+    //[alert show];
+    [self show];
+}
+
+-(IBAction)sumbit:(id)sender{
+    [self uploadPost:self.textView.text];
 }
 
 -(IBAction)resign:(id)sender{
-    [_chatInput.textView resignFirstResponder];
+    [_textView resignFirstResponder];
+    [self.view endEditing:YES];
+    
+    if([self.textView.text isEqualToString:@""]){
+        self.textView.textColor = [UIColor lightGrayColor];
+        self.textView.text = @"Question...";
+    }
+
 }
 
 
 //Chat Input Properties
 - (void)tappedView:(UITapGestureRecognizer*)tapper
 {
-    [_chatInput resignFirstResponder];
-}
-
-#pragma mark - THChatInputDelegate
-
-- (void)chat:(THChatInput*)input sendWasPressed:(NSString*)text
-{
-    [self uploadPost:text];
-    [_chatInput setText:@""];
-    [_chatInput resignFirstResponder];
-}
-
-- (void)chatShowEmojiInput:(THChatInput*)input
-{
-    _chatInput.textView.inputView = _chatInput.textView.inputView == nil ? _emojiInputView : nil;
+    [_textView resignFirstResponder];
+    [self.view endEditing:YES];
     
-    [_chatInput.textView reloadInputViews];
-}
+    if([self.textView.text isEqualToString:@""]){
+        self.textView.textColor = [UIColor lightGrayColor];
+        self.textView.text = @"Question...";
+    }
 
-- (void)chatShowAttachInput:(THChatInput*)input
-{
-    
 }
 
 
@@ -111,7 +222,7 @@
     }
 }
 
--(void)selectImageFromLibrary{
+/*-(void)selectImageFromLibrary{
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -133,7 +244,7 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
     [_chatInput.textView becomeFirstResponder];
 
-}
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -215,7 +326,7 @@
                                NSLog(responseString);
                                if ([httpResponse statusCode] == 200 && [responseString isEqualToString:@"success"]) {
                                    NSLog(@"success");
-                                   self.imgHolder.image = nil;
+                                   //self.imgHolder.image = nil;
                                    //text = @"";
                                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Upload Success"
                                                                                   message: @"Your outfit has been successfully uploaded!"
@@ -223,7 +334,9 @@
                                                                         cancelButtonTitle:@"Dismiss"
                                                                         otherButtonTitles:nil];
                                    [alert show];
-                                   [_chatInput.textView becomeFirstResponder];
+                                   [_textView becomeFirstResponder];
+                                   [_textView setText:@"Question..."];
+                                   [_textView setTextColor:[UIColor lightGrayColor]];
 
                                }else{
                                    NSLog(@"error");

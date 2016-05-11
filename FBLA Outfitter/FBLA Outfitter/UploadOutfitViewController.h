@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "THChatInput.h"
+#import "TWPhotoPickerController.h"
 
-@interface UploadOutfitViewController : UIViewController <UIImagePickerControllerDelegate, THChatInputDelegate,UIAlertViewDelegate>
+int count;
+@interface UploadOutfitViewController : UIViewController <UIImagePickerControllerDelegate, UITextViewDelegate>
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 
 @property (strong, nonatomic) IBOutlet UITextView *textView;
-@property (strong, nonatomic) IBOutlet THChatInput *chatInput;
-@property (strong, nonatomic) IBOutlet UIView *emojiInputView;
-
 @property (strong, nonatomic) IBOutlet UIImageView *imgHolder;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIButton *editButton;
+@property (strong, nonatomic) IBOutlet UIButton *submitButton;
 
 @end

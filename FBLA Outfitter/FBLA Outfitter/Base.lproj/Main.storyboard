@@ -767,7 +767,7 @@
             </objects>
             <point key="canvasLocation" x="1220.5" y="-379.5"/>
         </scene>
-        <!--Delegate-->
+        <!--Upload Outfit View Controller-->
         <scene sceneID="Juc-W4-dra">
             <objects>
                 <viewController id="CS5-Ug-tY7" customClass="UploadOutfitViewController" sceneMemberID="viewController">
@@ -779,25 +779,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYa-XI-19k">
-                                <rect key="frame" x="117" y="290" width="140" height="30"/>
-                                <state key="normal" title="Change Image">
-                                    <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePic:" destination="CS5-Ug-tY7" eventType="touchUpInside" id="bbm-en-fFg"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dbk-4R-V4d">
-                                <rect key="frame" x="69" y="72" width="237" height="210"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JlT-Nt-J0k" customClass="THChatInput">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="CS5-Ug-tY7" id="gBz-1m-Xuj"/>
-                                </connections>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMQ-8b-UcH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Hello" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G4x-Mj-2E8">
+                                        <rect key="frame" x="20" y="45" width="335" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYa-XI-19k">
+                                        <rect key="frame" x="20" y="8" width="140" height="30"/>
+                                        <state key="normal" title="Change Image">
+                                            <color key="titleColor" red="1" green="0.080206344479999997" blue="0.1019450027" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePic:" destination="CS5-Ug-tY7" eventType="touchUpInside" id="bbm-en-fFg"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dbk-4R-V4d">
+                                        <rect key="frame" x="20" y="85" width="335" height="308"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xf-42-k2o">
+                                        <rect key="frame" x="305" y="8" width="50" height="30"/>
+                                        <state key="normal" title="Upload">
+                                            <color key="titleColor" red="1" green="0.039375383569999999" blue="0.1550368396" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sumbit:" destination="CS5-Ug-tY7" eventType="touchUpInside" id="ugJ-F3-Alc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -812,8 +825,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="barButton" destination="Odm-WG-lIp" id="nx3-Yy-84g"/>
-                        <outlet property="chatInput" destination="JlT-Nt-J0k" id="olf-uX-DBd"/>
+                        <outlet property="editButton" destination="NYa-XI-19k" id="xNe-FF-Hb7"/>
                         <outlet property="imgHolder" destination="Dbk-4R-V4d" id="6yX-NA-hTn"/>
+                        <outlet property="scrollView" destination="wMQ-8b-UcH" id="zIi-2S-pHD"/>
+                        <outlet property="textView" destination="G4x-Mj-2E8" id="ADV-Fj-miR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HA3-0h-JMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
